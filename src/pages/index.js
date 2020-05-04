@@ -14,16 +14,34 @@ const IndexPage = () => (
     <Layout>
       <h1>
           Matthew Clarke.&nbsp;
-          <a href='/'>About</a>.&nbsp;
-          <a href='/'>Contact</a>.&nbsp;
+          <Link href='/'>About</Link>.&nbsp;
+          <Link href='/'>Contact</Link>.&nbsp;
           <br />
           Product Design.
       </h1>
       <div style={{ width: '460px' }} className="centered" >
         <Image />
       </div>
-      <Article>
-      </Article>
+      <Article
+        heading='Liminal'
+        slug='A personal media library for the web.'
+        footer='Principal Design. 2020–On-going.'
+      />
+      <Article
+        heading='Datavore Labs'
+        slug='The code-free tool for advanced time-series analysis.'
+        footer='Design Lead. 2019-On-going.'
+      />
+      <Article
+        heading='Splashlight x Telmar'
+        slug='The highest standards in e-commerce photography and video.'
+        footer='UX Manager. 2017-2019'
+      />
+      <Article
+        heading='Gagosian Gallery'
+        slug='Modern and contemporary art'
+        footer='Publications Assistant. 2020-On-going.'
+      />
     </Layout>
   </>
 );
