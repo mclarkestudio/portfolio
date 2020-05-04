@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "author": "Matthew Clarke <mclarkestudio@gmail.com>",
   "contributors": [
-    "Kyle Mathews <mathews.kyle@gmail.com>", 
+    "Kyle Mathews <mathews.kyle@gmail.com>",
     "Gatsby"
   ],
   "dependencies": {
@@ -20,7 +20,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.0.0"
+    "react-helmet": "^6.0.0",
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "prettier": "2.0.5"
