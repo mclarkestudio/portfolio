@@ -1,0 +1,40 @@
+
+* {
+    color: white;
+    font-family: Neue Haas Grotesk Text Pro;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 142.02%;
+}
+
+body {
+    background-color: black;
+}
+
+a:hover {
+    color: pink;
+    text-decoration: none;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+
+}
+
+@media only screen 
+  and (min-width: 40em) { 
+
+    h1 {
+        font-size: 3rem;
+        line-height: 142.02%;
+    }
+
+}
