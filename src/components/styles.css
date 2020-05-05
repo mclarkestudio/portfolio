@@ -1,23 +1,67 @@
 /* Base font */
 html {
-    font-size: 0.726rem;
+    font-size: 21px;
 }
 
 body {
-    background-color: rgb(17, 17, 20);
+    background-color: white;
+    padding: 0;
+    margin: 0;
 }
 
 * {
-    color: white;
+    color: BLACK;
     font-family: Neue Haas Grotesk Text Pro;
     font-style: normal;
     font-weight: 400;
     line-height: 142.02%;
 }
 
+a {
+    text-decoration-style: dotted;
+}
+
 a:hover {
-    color: pink;
+    /* color: pink; */
+    font-family: IBM Plex Mono;
+    font-style: italic;
+    font-weight: 100;
     text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    top: 0px;
+}
+
+h2 {
+    font-size: 1em;
+    position: sticky;
+}
+
+
+hr {
+    /* border-top: 2px darkgray solid; */
+    border-bottom: none;
+    margin-top: 2rem;
+}
+
+strong {
+    font-weight: 600;
 }
 
 .centered {
@@ -25,37 +69,14 @@ a:hover {
     margin-right: auto;
 }
 
-h1 {
-    font-size: 2em;
-    /* margin-top: 0; */
+.title, .title a {
+    margin-bottom: 40px;
+    mix-blend-mode: difference;
+    color: white;
+    z-index: 3;
 }
 
-hr {
-    border: 1px gray dashed;
-    margin-top: 70px;
-}
-
-strong {
-    font-weight: 600;
-}
-
-.svgIcon {
-    width: 2rem;
-    margin: 2.5rem;
-    margin-left: 0;
-}
-
-@media only screen 
-  and (min-width: 40em) { 
-
-    h1 {
-        font-size: 3rem;
-        line-height: 142.02%;
-    }
-
-    .svgIcon {
-        width: 2.5rem;
-        margin: 3.5rem;
-    }
-
+.footer {
+    background-color: beige;
+    height: 900px;
 }

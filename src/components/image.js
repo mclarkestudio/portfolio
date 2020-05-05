@@ -1,17 +1,48 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import styled from "styled-components"
+import { device } from './Device';
+import { transitionTime } from './Transition';
 
-/*
- * This component is built using `gatsby-image` to automatically serve optimized
- * images with lazy loading and reduced file sizes. The image is loaded using a
- * `useStaticQuery`, which allows us to load the image from directly within this
- * component, rather than having to pass the image data down from pages.
- *
- * For more information, see the docs:
- * - `gatsby-image`: https://gatsby.dev/gatsby-image
- * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
- */
+const ImageContainer = styled.div`
+  margin-left: 0;
+  width: 100%;
+  background-color: black;
+  transition: width ${transitionTime}, margin-left ${transitionTime};
+
+  @media ${device.laptop} { 
+    margin-left: 5%;
+    width: 90%;
+  }
+  @media ${device.laptopL} { 
+    margin-left: 10%;
+    width: 70%;
+  }
+`;
+
+const ImageCard = styled.div`
+  max-width: 300px;
+  margin: auto;
+  padding: 100px 20%;
+  z-index: 4;
+  transition: max-width ${transitionTime};
+  
+  @media ${device.tablet} { 
+    max-width: 350px;
+    /* padding: 10% 30%; */
+  }
+
+  @media ${device.laptop} { 
+    max-width: 400px;
+    /* padding: 10% 30%; */
+  }
+
+  @media ${device.laptopL} { 
+    max-width: 450px;
+    /* padding: 10% 30%; */
+  }
+`;
 
 const Image = () => {
   const data = useStaticQuery(graphql`
@@ -26,7 +57,13 @@ const Image = () => {
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <ImageContainer>
+      <ImageCard>
+        <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+      </ImageCard> 
+    </ImageContainer>
+  )
 }
 
 export default Image
