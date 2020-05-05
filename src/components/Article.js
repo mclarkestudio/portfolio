@@ -3,6 +3,15 @@ import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from "prop-types"
 import styled from 'styled-components'
 
+// const StyledIcon = styled.div`
+    
+// `;
+
+
+const Flex = styled.div`
+    display: flex;
+`;
+
 const Article = (props) => {
     const data = useStaticQuery(graphql`
     query {
@@ -18,13 +27,24 @@ const Article = (props) => {
 
     return (
         <>
-            <article {...props} style={{ maxWidth: '630px' }} className="centered">
+            <article
+                {...props}
+                style={{ maxWidth: '630px' }}
+                className="centered"
+            >
                 <hr />
-                <div className='flex'>
-                    <h1>{props.heading}</h1>
-                    <h1>{props.slug}</h1>
-                    <h2>{props.footer}</h2>
-                </div>
+                <Flex>
+                    <div>
+                        <svg className='svgIcon' viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L19 19L36 2" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 10"/>
+                        </svg>
+                    </div>
+                    <div style={{ maxWidth: '430px' }}>
+                        <h1><strong>{props.heading}</strong></h1>
+                        <h1>{props.slug}</h1>
+                        <h2>{props.footer}</h2>
+                    </div>
+                </Flex>
             </article>
         </>
     )

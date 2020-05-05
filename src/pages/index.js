@@ -19,7 +19,7 @@ const IndexPage = () => (
           <br />
           Product Design.
       </h1>
-      <div style={{ width: '460px' }} className="centered" >
+      <div style={{ maxWidth: '360px' }} className="centered" >
         <Image />
       </div>
       <Article

@@ -1,14 +1,18 @@
+/* Base font */
+html {
+    font-size: 0.726rem;
+}
+
+body {
+    background-color: rgb(17, 17, 20);
+}
 
 * {
     color: white;
     font-family: Neue Haas Grotesk Text Pro;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     line-height: 142.02%;
-}
-
-body {
-    background-color: black;
 }
 
 a:hover {
@@ -23,10 +27,22 @@ a:hover {
 
 h1 {
     font-size: 2em;
+    /* margin-top: 0; */
 }
 
-h2 {
+hr {
+    border: 1px gray dashed;
+    margin-top: 70px;
+}
 
+strong {
+    font-weight: 600;
+}
+
+.svgIcon {
+    width: 2rem;
+    margin: 2.5rem;
+    margin-left: 0;
 }
 
 @media only screen 
@@ -35,6 +51,11 @@ h2 {
     h1 {
         font-size: 3rem;
         line-height: 142.02%;
+    }
+
+    .svgIcon {
+        width: 2.5rem;
+        margin: 3.5rem;
     }
 
 }
