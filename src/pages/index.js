@@ -8,6 +8,8 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import Article from '../components/Article'
 import Type from "../components/Type"
+import { LayoutContainer } from '../components/PageLayout'
+
 import { ArticleCopy } from '../copy/ArticleCopy'
 
 const IndexPage = () => {
@@ -28,18 +30,19 @@ const IndexPage = () => {
         </Type>
         <Image />
       </div>
-      {/* <Type variant='' */}
-      {ArticleCopy.map(i => (
-        <Article
-          key={i}
-          i={i}
-          expanded={expanded}
-          setExpanded={setExpanded}
-          heading={i.heading}
-          slug={i.slug}
-          footer={i.footer}
-        />
-      ))}
+      <LayoutContainer bgcolor='white'>
+        {ArticleCopy.map(i => (
+          <Article
+            key={i}
+            i={i}
+            expanded={expanded}
+            setExpanded={setExpanded}
+            heading={i.heading}
+            slug={i.slug}
+            footer={i.footer}
+          />
+        ))}
+      </LayoutContainer>
       <div>About</div>
       <div>Contact</div>
     </Layout>

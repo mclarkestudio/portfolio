@@ -4,22 +4,7 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import { device } from './Device';
 import { transitionTime } from './Transition';
-
-const ImageContainer = styled.div`
-  margin-left: 0;
-  width: 100%;
-  background-color: black;
-  transition: width ${transitionTime}, margin-left ${transitionTime};
-
-  @media ${device.laptop} { 
-    margin-left: 5%;
-    width: 90%;
-  }
-  @media ${device.laptopL} { 
-    margin-left: 10%;
-    width: 70%;
-  }
-`;
+import LayoutContainer from "./PageLayout";
 
 const ImageCard = styled.div`
   max-width: 300px;
@@ -58,11 +43,11 @@ const Image = () => {
   `)
 
   return (
-    <ImageContainer>
+    <LayoutContainer bgcolor='black'>
       <ImageCard>
         <Img fluid={data.placeholderImage.childImageSharp.fluid} />
       </ImageCard> 
-    </ImageContainer>
+    </LayoutContainer>
   )
 }
 

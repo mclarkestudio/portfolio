@@ -17,9 +17,9 @@ const StyledH1 = styled.h1`
         font-size: 2.3rem;
     }
 
-    @media ${device.laptopL} {
+    /* @media ${device.laptopL} {
         font-size: 2.6rem;
-    }
+    } */
 `
 
 const Type = (props) => {
