@@ -51,6 +51,7 @@ const Article = ({i, expanded, setExpanded, ...props}) => {
             <article
                 // {...props}
                 className="centered"
+                id={props.heading}
                 // onMouseEnter={setDashArray("0")}
             >
                 <hr />
@@ -84,7 +85,7 @@ const Article = ({i, expanded, setExpanded, ...props}) => {
                         >
                             <Type variant='h1'>{props.slug}</Type>
                             <Type variant='h1'>{props.footer}</Type>
-                            {/* <Image /> */}
+                            <Image />
                         </motion.section>
                         )}
                     </AnimatePresence>

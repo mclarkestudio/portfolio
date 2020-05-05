@@ -4,10 +4,11 @@ import styled from 'styled-components'
 import { device } from './Device'
 import { transitionTime } from './Transition';
 
-const StyledH1 = styled.h1`
+const StyledH1 = styled.div`
     font-size: 1.5em;
     transition: font-size ${transitionTime};
     line-height: 142.02%;
+    display: ${props => props.inLine ? 'inline' : null };
 
     @media ${device.tablet} {
         font-size: 2rem;
@@ -16,10 +17,6 @@ const StyledH1 = styled.h1`
     @media ${device.laptop} {
         font-size: 2.3rem;
     }
-
-    /* @media ${device.laptopL} {
-        font-size: 2.6rem;
-    } */
 `
 
 const Type = (props) => {

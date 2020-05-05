@@ -21,13 +21,30 @@ const IndexPage = () => {
     <SEO title="Home" />
     <Layout>
       <div>
-        <Type className="title sticky">
-            Matthew Clarke.&nbsp;
+        <div className="title sticky">
+          <Type inLine className="title">
+            Matthew Clarke. &nbsp;
+          </Type>
+          <Type inLine className="title">
             <Link href='/'>About</Link>.&nbsp;
-            <Link href='/'>Contact</Link>.&nbsp;
-            <br />
-            Product Design.&nbsp;
-        </Type>
+          </Type>
+          <Type inLine className="title">
+            <Link href='/'>Contact</Link>.
+          </Type>
+          <Type className="title">
+            Product Designer. Web Developer. Team Lead.
+          </Type>
+          <Type>
+            <Link href='/'>L-2020+</Link>.&nbsp;
+          </Type>
+          <Type>
+            <Link href='/'>D-2020</Link>.&nbsp;
+          </Type>
+          <Type>
+            <Link href='/'>S-2018-20</Link>.&nbsp;
+          </Type>
+        </div>
+
         <Image />
       </div>
       <LayoutContainer bgcolor='white'>

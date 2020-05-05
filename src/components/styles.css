@@ -74,6 +74,7 @@ strong {
     mix-blend-mode: difference;
     color: white;
     z-index: 3;
+    /* display: inline; */
 }
 
 .footer {
