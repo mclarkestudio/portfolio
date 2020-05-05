@@ -49,7 +49,7 @@ const Article = ({i, expanded, setExpanded, ...props}) => {
     return (
         <>
             <article
-                {...props}
+                // {...props}
                 className="centered"
                 // onMouseEnter={setDashArray("0")}
             >
