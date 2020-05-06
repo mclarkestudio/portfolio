@@ -61,7 +61,7 @@ const IndexPage = () => {
             <a href='/#contact'>Contact</a>.
           </Type>
           <Type className="title">
-            Product Design + Development. Team Lead.
+            Product Design. Service Design. Team Lead.
           </Type>
           <br />
           {ArticleCopy.map(i => (

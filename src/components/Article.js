@@ -37,7 +37,7 @@ const CardHeader = styled.div`
 
 const ArticleContent = styled.div`
     width: 440px;
-    margin: auto;
+    margin: 0 auto auto auto;
 `;
 
 const Flex = styled.div`
@@ -47,6 +47,15 @@ const Flex = styled.div`
 const FlexItem = styled.div`
     /* flex: 50% 1 0; */
     width: 40%;
+    padding-right: 1rem;
+`;
+
+const Placeholder = styled.div`
+    /* flex: 50% 1 0; */
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+    
 `;
 
 const Article = ({i, ...props}) => {
@@ -66,24 +75,47 @@ const Article = ({i, ...props}) => {
                     <br />
                     <Type>
                         <a href={`/#${props.id}`}>
-                        <sup>{props.id}</sup>
-                        </a>&nbsp; <br/>
+                            <sup>{props.id}</sup>
+                        </a>
+                        <br/>
                     </Type>
                     <Flex>
                         <FlexItem>
                             <Type>
-                                {props.heading}&nbsp;
-                                {/* {props.slug} */}
+                                {props.heading}
                             </Type>
+                            <Placeholder />
                         </FlexItem>
                         <Flex>
                             <ArticleContent>
-                                <p>{props.para}</p>
+                                <h1>{props.slug}</h1>
+                                <p>
+                                Matthew Clarke is a product designer, developer,
+                                and team lead based in New York City.
+                                He has spent 5 years designing and improving user experience within agile product teams. As a design lead, Matthew works across a range of diciplines in order to define customer problems, prioritize work, and build products and services that work.
+
+                                Contact
+                                Download CV
+                                </p>
+                                <strong>Role</strong>
+                                <br />
+                                Principal Designer, Founder
+                                <br />
+                                <br />
+                                <strong>Responsibilities</strong>
+                                <br />
+                                Product concept through development.
+                                <br /> 
+                                <br />
+                                <br />
+
                             </ArticleContent>
                         </Flex>
                     </Flex>
-
             </article>
+            <Flex>
+                -
+            </Flex>
         </>
     )
 }
