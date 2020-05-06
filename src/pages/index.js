@@ -23,40 +23,38 @@ const IndexPage = () => {
       <div>
         <div className="title sticky">
           <Type inLine className="title">
-            Matthew Clarke. &nbsp;
+            Matthew Clarke,&nbsp;
           </Type>
           <Type inLine className="title">
-            <Link href='/'>About</Link>.&nbsp;
+            <Link href='/'>About</Link>,&nbsp;
           </Type>
           <Type inLine className="title">
             <Link href='/'>Contact</Link>.
           </Type>
           <Type className="title">
-            Product Designer. Web Developer. Team Lead.
+            Product Design and Development.
           </Type>
-          <Type>
-            <Link href='/'>L-2020+</Link>.&nbsp;
-          </Type>
-          <Type>
-            <Link href='/'>D-2020</Link>.&nbsp;
-          </Type>
-          <Type>
-            <Link href='/'>S-2018-20</Link>.&nbsp;
-          </Type>
-        </div>
 
+          {ArticleCopy.map(i => (
+              <Type key='id'>
+                <a href={`/#${i.id}`}>{i.id}</a>.&nbsp;
+              </Type>
+          ))}
+
+        </div>
         <Image />
       </div>
       <LayoutContainer bgcolor='white'>
         {ArticleCopy.map(i => (
           <Article
-            key={i}
+            key='id'
             i={i}
             expanded={expanded}
             setExpanded={setExpanded}
             heading={i.heading}
             slug={i.slug}
             footer={i.footer}
+            id={i.id}
           />
         ))}
       </LayoutContainer>

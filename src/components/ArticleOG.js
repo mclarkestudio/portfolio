@@ -18,7 +18,7 @@ const StyledSvg = styled.svg`
 `;
 
 const MotionCard = styled(motion.div)`
-    margin: 0rem 0 0 0;
+    margin: 1rem 0 0 0;
     width: 100%;
     z-index: 4;
     
@@ -38,7 +38,7 @@ const CardHeader = styled.div`
 const Article = ({i, expanded, setExpanded, ...props}) => {
 
     const [dashArray, setDashArray] = useState("1 7");
-    const isOpen = true;
+    const isOpen = i === expanded;
 
     const uri = encodeURI(props.heading);
 
@@ -49,13 +49,14 @@ const Article = ({i, expanded, setExpanded, ...props}) => {
                 className="centered"
                 // onMouseEnter={setDashArray("0")}
             >
+                <a name={props.id}></a>
+                <hr />
                 <MotionCard
                     initial={false}
                     animate={{ backgroundColor: isOpen ? "#FF0088" : "#0055FF" }}
                     onClick={() => setExpanded(isOpen ? false : i)}
                     className="sticky"
                 >
-                    <a name={props.id}></a>
                     <CardHeader >
                         <StyledType variant='h1'>
                             {props.heading}
@@ -78,9 +79,8 @@ const Article = ({i, expanded, setExpanded, ...props}) => {
                             }}
                             transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                         >
-                            {/* <Type>{props.slug}</Type>
-                            <Type>Design Lead, {props.footer}</Type> */}
-                            {/* <Type>{props.footer}</Type> */}
+                            <Type variant='h1'>{props.slug}</Type>
+                            <Type variant='h1'>{props.footer}</Type>
                         </motion.section>
                         )}
                     </AnimatePresence>

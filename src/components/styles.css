@@ -11,11 +11,18 @@ body {
 
 * {
     color: BLACK;
+    /* font-family: 'Dazzed TRIAL Medium'; */
     font-family: Neue Haas Grotesk Text Pro;
     font-style: normal;
     font-weight: 400;
     line-height: 142.02%;
 }
+/* 
+*::selection,
+*::-moz-selection {
+  background: white;
+  color: black;
+} */
 
 a {
     text-decoration-style: dotted;
@@ -52,7 +59,6 @@ h2 {
     font-size: 1em;
     position: sticky;
 }
-
 
 hr {
     /* border-top: 2px darkgray solid; */

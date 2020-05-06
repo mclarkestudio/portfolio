@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { device } from './Device'
 import { transitionTime } from './Transition';
 
-const StyledH1 = styled.div`
+const StyledDiv = styled.div`
     font-size: 1.5em;
     transition: font-size ${transitionTime};
     line-height: 142.02%;
@@ -23,15 +23,15 @@ const Type = (props) => {
 
     if (props.variant === 'h1') {
         return (
-            <StyledH1 {...props}>
+            <StyledDiv {...props}>
                 {props.children}
-            </StyledH1>
+            </StyledDiv>
         )
     } else {
         return (
-            <StyledH1 {...props}>
+            <StyledDiv as="p" {...props}>
                 {props.children}
-            </StyledH1>
+            </StyledDiv>
         )
     }
 }
