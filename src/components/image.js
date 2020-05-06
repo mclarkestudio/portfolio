@@ -43,7 +43,7 @@ const Image = () => {
   `)
 
   return (
-    <LayoutContainer bgcolor='black'>
+    <LayoutContainer bgcolor='#131217'>
       <ImageCard>
         <Img fluid={data.placeholderImage.childImageSharp.fluid} />
       </ImageCard> 

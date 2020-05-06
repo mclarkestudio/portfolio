@@ -5,7 +5,7 @@ import { device } from './Device'
 import { transitionTime } from './Transition';
 
 const StyledDiv = styled.div`
-    font-size: 1.5em;
+    font-size: 1.5rem;
     transition: font-size ${transitionTime};
     line-height: 142.02%;
     display: ${props => props.inLine ? 'inline' : null };
@@ -19,7 +19,24 @@ const StyledDiv = styled.div`
     }
 `
 
+const Tobias = styled(StyledDiv)`
+    font-family: IBM Plex Mono;
+    font-style: italic;
+    font-weight: 100;
+    font-size: 1rem !important;
+    /* margin-top: -10rem; */
+    color: orange;
+`
+
 const Type = (props) => {
+
+    if (props.tobias) {
+        return (
+            <Tobias {...props}>
+                {props.children}
+            </Tobias>
+        )
+    } 
 
     if (props.variant === 'h1') {
         return (
@@ -27,13 +44,13 @@ const Type = (props) => {
                 {props.children}
             </StyledDiv>
         )
-    } else {
-        return (
-            <StyledDiv as="p" {...props}>
-                {props.children}
-            </StyledDiv>
-        )
     }
+
+    return (
+        <StyledDiv as="p" {...props}>
+            {props.children}
+        </StyledDiv>
+    )
 }
 
 Type.propTypes = {

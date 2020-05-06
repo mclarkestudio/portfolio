@@ -35,11 +35,11 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
       </div>
-      <footer className="footer">
+      {/* <footer className="footer">
           © {new Date().getFullYear()},
           {` `}
           <a href="https://www.mclarkestudio.com">Matthew Clarke</a>
-      </footer>
+      </footer> */}
     </>
   )
 }

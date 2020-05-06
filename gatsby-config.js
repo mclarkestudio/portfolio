@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Matthew Clarke. Product Design and Development`,
+    description: `Matthew has spent the past 5 years designing human-centered tools and improving user experience and interface development.`,
+    author: `Matthew Clarke`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,13 +18,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Matthew Clarke, Product Design and Development Portfolio.`,
+        short_name: `Matthew Clarke`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#000`,
+        theme_color: `#000`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     // `gatsby-transformer-json`,

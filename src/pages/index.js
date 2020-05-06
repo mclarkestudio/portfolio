@@ -12,10 +12,42 @@ import { LayoutContainer } from '../components/PageLayout'
 
 import { ArticleCopy } from '../copy/ArticleCopy'
 
+const NavItem = ({i}) => {
+
+  // State for NavItems
+  const [hovered, setHovered] = useState(false);
+
+  // Local boolean enables showing div per item in iteration map
+  const isHovered = i === hovered;
+
+  function toggleHover(i) {
+    setHovered(!hovered);
+  }
+  
+  return (
+    <Type 
+      key='id' 
+      className="title"
+    >
+      <a
+        href={`/#${i.id}`}
+        onMouseEnter={() => toggleHover()}
+        onMouseOut={() => toggleHover()}
+      >
+        {i.id}
+      </a>&nbsp;
+      {hovered && (
+        <>
+          <strong className="title">{i.heading}</strong>
+          {/* <span className="title">{i.slug}</span> */}
+        </>
+      )}
+    </Type>
+  )
+}
+
+
 const IndexPage = () => {
-
-  const [expanded, setExpanded] = useState(0);
-
   return (
   <>
     <SEO title="Home" />
@@ -26,19 +58,22 @@ const IndexPage = () => {
             Matthew Clarke,&nbsp;
           </Type>
           <Type inLine className="title">
-            <Link href='/'>About</Link>,&nbsp;
+            <Link href='/#sbout'>About</Link>,&nbsp;
           </Type>
           <Type inLine className="title">
-            <Link href='/'>Contact</Link>.
+            <Link href='/#contact'>Contact</Link>.
           </Type>
           <Type className="title">
-            Product Design and Development.
+            Product Design. Service Design. Team Lead.
           </Type>
           <br />
           {ArticleCopy.map(i => (
-              <Type key='id' className="title">
-                <a href={`/#${i.id}`}>{i.id}</a>.&nbsp;
-              </Type>
+            <NavItem 
+              key={i.id}
+              i={i}
+              // hovered={hovered}
+              // setHovered={setHovered}
+            />
           ))}
         <br />
         </div>
@@ -47,19 +82,23 @@ const IndexPage = () => {
       <LayoutContainer bgcolor='white'>
         {ArticleCopy.map(i => (
           <Article
-            key='id'
+            key={i.id}
             i={i}
-            expanded={expanded}
-            setExpanded={setExpanded}
             heading={i.heading}
             slug={i.slug}
-            footer={i.footer}
+            date={i.date}
             id={i.id}
           />
         ))}
       </LayoutContainer>
-      <div>About</div>
-      <div>Contact</div>
+      <hr />
+      <LayoutContainer>
+        <Type>About</Type>
+        <p></p>
+      </LayoutContainer>
+      {/* <LayoutContainer bgcolor='beige'>
+        <Type> Contact</Type>
+      </LayoutContainer> */}
     </Layout>
   </>
   )
