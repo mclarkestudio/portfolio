@@ -9,6 +9,7 @@ import Type from '../components/Type'
 import Image from './image'
 import { transitionTime } from './Transition'
 import { LayoutContainer } from './PageLayout';
+import { device } from './Device';
 
 const HeadingType = styled(Type)`
     margin: 0;
@@ -37,16 +38,21 @@ const CardHeader = styled.div`
 
 const ArticleContent = styled.div`
     width: 440px;
-    margin: 0 auto auto auto;
+    /* margin: 0 auto auto auto; */
 `;
 
 const Flex = styled.div`
     display: flex;
+    flex-direction: column;
+
+    @media ${device.tablet} {
+        flex-direction: row;
+    }
 `;
 
 const FlexItem = styled.div`
     /* flex: 50% 1 0; */
-    width: 40%;
+    width: 33.33%;
     padding-right: 1rem;
 `;
 
@@ -75,16 +81,15 @@ const Article = ({i, ...props}) => {
                     <br />
                     <Type>
                         <a href={`/#${props.id}`}>
-                            <sup>{props.id}</sup>
-                        </a>
-                        <br/>
+                        <sup>{props.id}</sup>
+                        </a>&nbsp; <br/>
                     </Type>
                     <Flex>
                         <FlexItem>
                             <Type>
-                                {props.heading}
+                                {props.heading}&nbsp;
                             </Type>
-                            <Placeholder />
+                            {/* <Placeholder /> */}
                         </FlexItem>
                         <Flex>
                             <ArticleContent>
