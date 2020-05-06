@@ -18,6 +18,13 @@ body {
     line-height: 142.02%;
 }
 
+sup {
+    /* color: rgb(238, 24, 95); */
+    background-color: black;
+    color: white;
+    padding: 0.6rem 0;
+}
+
 a {
     text-decoration-style: dotted;
 }

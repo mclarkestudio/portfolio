@@ -25,7 +25,7 @@ const NavItem = ({i}) => {
     <Type 
       key='id' 
       className="title"
-    >&nbsp;
+    >
       <a
         href={`/#${i.id}`}
         onMouseEnter={() => toggleHover()}

@@ -3,13 +3,13 @@ import React, { useState } from 'react'
 import PropTypes from "prop-types"
 import styled from 'styled-components'
 // import { motion, AnimatePresence } from "framer-motion"
-
 // import { device } from './Device';
 import Type from '../components/Type'
 import Image from './image'
 import { transitionTime } from './Transition'
 import { LayoutContainer } from './PageLayout';
 import { device } from './Device';
+import Layout from './layout'
 
 const HeadingType = styled(Type)`
     margin: 0;
@@ -61,7 +61,6 @@ const Placeholder = styled.div`
     width: 100%;
     height: 100%;
     background-color: lightgray;
-    
 `;
 
 const Article = ({i, ...props}) => {
@@ -72,51 +71,72 @@ const Article = ({i, ...props}) => {
 
     return (
         <>
-            {/* <hr /> */}
+            <br />
+            <br />
             <article
                 className="centered"
             >
-                    <a name={props.id}></a>
-                    <br />
-                    <br />
-                    <Type>
-                        <a href={`/#${props.id}`}>
+                <a name={props.id}></a>
+
+                <Type className='sticky title' >
+                    <a href={`/#${props.id}`}>
                         <sup>{props.id}</sup>
-                        </a>&nbsp; <br/>
+                    </a>&nbsp; <br/>
+                    <Type className='title'>
+                        {props.heading}
                     </Type>
+                    {/* <Type>
+                        {props.slug}&nbsp;
+                    </Type> */}
+                </Type>
+                <Flex>
+                    <FlexItem>
+
+
+                        {/* <Placeholder /> */}
+                    </FlexItem>
                     <Flex>
-                        <FlexItem>
-                            <Type>
-                                {props.heading}&nbsp;
-                            </Type>
-                            {/* <Placeholder /> */}
-                        </FlexItem>
-                        <Flex>
-                            <ArticleContent>
-                                <h1>{props.slug}</h1>
-                                <p>
-                                Matthew Clarke is a product designer, developer,
-                                and team lead based in New York City.
-                                He has spent 5 years designing and improving user experience within agile product teams. As a design lead, Matthew works across a range of diciplines in order to define customer problems, prioritize work, and build products and services that work.
-
-                                Contact
-                                Download CV
-                                </p>
-                                <strong>Role</strong>
-                                <br />
-                                Principal Designer, Founder
-                                <br />
-                                <br />
-                                <strong>Responsibilities</strong>
-                                <br />
-                                Product concept through development.
-                                <br /> 
-                                <br />
-                                <br />
-
-                            </ArticleContent>
-                        </Flex>
+                        <ArticleContent>
+                            <h1>{props.slug}</h1>
+                            <p>
+                                {props.para}
+                            </p>
+                            <strong>Role</strong>
+                            <br />
+                            Principal Designer, Founder
+                            <br />
+                            <br />
+                            <strong>Responsibilities</strong>
+                            <br />
+                            Product concept through development.
+                            <br /> 
+                            <br />
+                            <br />
+                        </ArticleContent>
                     </Flex>
+                </Flex>
+                {/* <LayoutContainer>
+                    <ArticleContent>
+                        <br />
+                        <br />
+                        <h1>{props.slug}</h1>
+                        <p>
+                            {props.para}
+                        </p>
+                        <strong>Role</strong>
+                        <br />
+                        Principal Designer, Founder
+                        <br />
+                        <br />
+                        <strong>Responsibilities</strong>
+                        <br />
+                        Product concept through development.
+                        <br /> 
+                        <br />
+                        <br />
+                    </ArticleContent>
+                </LayoutContainer> */}
+                <Image />
             </article>
             <Flex>
                 -
@@ -136,7 +156,7 @@ Article.defaultProps = {
     heading: 'Liminal',
     slug: 'A personal media library for the web.',
     date: '2020–On-going.',
-    para: 'Liminal helps you collect web links, build feeds, and keep track of your interests.'
+    para: 'Liminal helps you collect web links, build feeds, and keep track of your interests. Liminal helps you collect web links, build feeds, and keep track of your interests. Liminal helps you collect web links, build feeds, and keep track of your interests. Liminal helps you collect web links, build feeds, and keep track of your interests. '
 }
 
 export default Article;

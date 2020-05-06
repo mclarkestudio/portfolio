@@ -18,12 +18,12 @@ export const LayoutContainer = styled.div`
   transition: width ${transitionTime}, margin-left ${transitionTime};
 
   @media ${device.laptop} { 
-    margin-left: 5%;
+    margin-left: 10%;
     width: 90%;
   }
   
   @media ${device.laptopL} { 
-    margin-left: 10%;
+    margin-left: 15%;
     width: 70%;
   }
 `;
