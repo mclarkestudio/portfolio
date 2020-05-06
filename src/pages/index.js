@@ -34,13 +34,13 @@ const IndexPage = () => {
           <Type className="title">
             Product Design and Development.
           </Type>
-
+          <br />
           {ArticleCopy.map(i => (
-              <Type key='id'>
+              <Type key='id' className="title">
                 <a href={`/#${i.id}`}>{i.id}</a>.&nbsp;
               </Type>
           ))}
-
+        <br />
         </div>
         <Image />
       </div>

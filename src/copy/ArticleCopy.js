@@ -12,13 +12,13 @@ export const ArticleCopy = [
         footer: '2020–On-going',
     },
     {
-        id: 'S-2020',
+        id: 'S-2019',
         heading: 'Splashlight x Telmar',
         slug: 'The highest standards in e-commerce photography and video.',
         footer: '2020–On-going',
     },
     {
-        id: 'G-2018',
+        id: 'G-2017',
         heading: 'Gagosian Gallery',
         slug: 'Modern and contemporary art.',
         footer: '2020-On-going.',
