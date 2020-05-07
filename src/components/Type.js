@@ -4,11 +4,25 @@ import styled from 'styled-components'
 import { device } from './Device'
 import { transitionTime } from './Transition';
 
-const StyledDiv = styled.div`
+const BaseType = styled.div`
     font-size: 1.5rem;
     transition: font-size ${transitionTime};
     line-height: 142.02%;
     display: ${props => props.inLine ? 'inline' : null };
+
+    /* 🔗 LINKS */
+    a {
+        text-decoration-style: dotted;
+    }
+
+    a:hover {
+        a:hover {
+        font-family: IBM Plex Mono;
+        font-style: italic;
+        font-weight: 100;
+        text-decoration: none;
+        }
+    }
 
     @media ${device.tablet} {
         font-size: 2rem;
@@ -19,37 +33,33 @@ const StyledDiv = styled.div`
     }
 `
 
-const Tobias = styled(StyledDiv)`
-    font-family: IBM Plex Mono;
-    font-style: italic;
-    font-weight: 100;
-    font-size: 1rem !important;
-    /* margin-top: -10rem; */
-    color: orange;
+const TitleType = styled(BaseType)`
+    /* margin-bottom: 40px; */
+    mix-blend-mode: difference;
+    color: white;
+    z-index: 3;
+    /* display: inline; */
+
+    * {
+        color: white
+    }
+
+    *::selection,
+    *::-moz-selection {
+    background: white;
+    color: black;
+    }
 `
 
 const Type = (props) => {
 
-    if (props.tobias) {
-        return (
-            <Tobias {...props}>
-                {props.children}
-            </Tobias>
-        )
-    } 
-
-    if (props.variant === 'h1') {
-        return (
-            <StyledDiv {...props}>
-                {props.children}
-            </StyledDiv>
-        )
-    }
+if (props.title) { return <TitleType {...props}>{props.children}</TitleType> }
+if (props.variant === 'h1') { return (<BaseType {...props}> {props.children} </BaseType>) }
 
     return (
-        <StyledDiv as="p" {...props}>
+        <BaseType {...props}>
             {props.children}
-        </StyledDiv>
+        </BaseType>
     )
 }
 

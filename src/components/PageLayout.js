@@ -9,26 +9,17 @@ export const LayoutContainer = styled.div`
   background-color: ${props => props.bgcolor || 'none'};
   transition: width ${transitionTime}, margin-left ${transitionTime};
 
-  @media ${device.laptop} { 
-    /* margin-left: 10%; */
-    width: 80%;
+  a {
+    color: pink;
+  }
+
+  @media ${device.laptop} {
+    width: 70%;
   }
   
-  @media ${device.laptopL} { 
-    /* margin-left: auto; */
+  @media ${device.laptopL} {
     width: 50%;
   }
 `;
-
-// LayoutContainer.propTypes = {
-//     heading: PropTypes.string.isRequired,
-// }
-
-// LayoutContainer.defaultProps = {
-//     heading: 'Liminal',
-//     slug: 'A personal media library for the web.',
-//     footer: '2020–On-going.',
-//     para: 'Liminal helps you collect web links, build feeds, and keep track of your interests.'
-// }
 
 export default LayoutContainer;

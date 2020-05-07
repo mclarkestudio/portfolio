@@ -73,20 +73,23 @@ const Article = ({i, ...props}) => {
         <>
             <br />
             <br />
-            <article
-                className="centered"
-            >
-                <a name={i.id}></a>
-
-                <Type className='sticky title' >
-                    <a href={`/#${i.id}`}>
-                        <sup>{i.id}</sup>
-                    </a>&nbsp; <br/>
-                    <Type className='title'>
+            <article>
+                <Type title className="sticky">
+                    <a name={i.id}></a>
+                        <a href={`/#${i.id}`}>
+                            <sup>{i.id}</sup>
+                        </a>
+                    <br/>
+                    <Type title>
                         {i.heading}
                     </Type>
-                    <Type className='title'>{i.role}</Type>
-                </Type>
+                    <Type title>{i.role}</Type>
+                    <p className='title'>{i.resp}</p>
+                </Type >
+                <br />
+                <Image />
+                <Image />
+                <Image />
                 <Image />
             </article>
             <Flex>

@@ -1,6 +1,6 @@
 /* Base font */
 html {
-    font-size: 21px;
+    font-size: 18px;
 }
 
 body {
@@ -10,7 +10,7 @@ body {
 }
 
 * {
-    color: BLACK;
+    /* color: black; */
     /* font-family: 'Dazzed TRIAL Medium'; */
     font-family: Neue Haas Grotesk Text Pro;
     font-style: normal;
@@ -18,24 +18,30 @@ body {
     line-height: 142.02%;
 }
 
+/* 
+*::selection,
+*::-moz-selection {
+  background: white;
+  color: black;
+} */
+
 sup {
-    /* color: rgb(238, 24, 95); */
     background-color: black;
     color: white;
     padding: 0.6rem 0;
 }
 
-a {
+/* a {
     text-decoration-style: dotted;
-}
+} */
 
-a:hover {
-    /* color: pink; */
+/* a:hover {
+    color: pink;
     font-family: IBM Plex Mono;
     font-style: italic;
     font-weight: 100;
     text-decoration: none;
-}
+} */
 
 h1,
 h2,

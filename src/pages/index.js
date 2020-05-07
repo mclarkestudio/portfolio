@@ -50,18 +50,20 @@ const IndexPage = () => {
     <Layout>
       <div>
         <div className="title sticky">
-          <Type inLine className="title">
+          <Type title inLine>
             Matthew Clarke,&nbsp;
           </Type>
-          <Type inLine className="title">
+          <Type title inLine>
             <a href='/#about'>About</a>,&nbsp;
           </Type>
-          <Type inLine className="title">
+          <Type title inLine>
             <a href='/#contact'>Contact</a>.
           </Type>
-          <Type className="title">
+          <br />
+          <Type title inLine>
             Product Design. Web Development. 
           </Type>
+          <br />
           <br />
           {ProjectCopy.map(i => (
             <NavItem 
