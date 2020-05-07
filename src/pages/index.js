@@ -14,19 +14,16 @@ import { WebCopy, ProjectCopy } from '../copy/webCopy'
 
 const NavItem = ({i}) => {
 
-  // State for NavItems
+  // State and toggle action for NavItem Hover
   const [hovered, setHovered] = useState(false);
-
   function toggleHover(i) {
     setHovered(!hovered);
   }
-  
+
   return (
-    <Type 
-      key='id' 
-      className="title"
-    >
+    <Type title>
       <a
+        key='id' 
         href={`/#${i.id}`}
         onMouseEnter={() => toggleHover()}
         onMouseLeave={() => toggleHover()}
@@ -43,36 +40,34 @@ const NavItem = ({i}) => {
   )
 }
 
+const PageTitle = () => {
+  return (
+    <Type title>
+      Matthew Clarke,&nbsp;
+      <a href='/#about'>About</a>,&nbsp;
+      <a href='/#contact'>Contact</a>.
+      <br />
+      Product Design. Web Development.
+      <br />
+        <br />
+        {ProjectCopy.map(i => (
+          <NavItem 
+            key={i.id}
+            i={i}
+          />
+        ))}
+    </Type>
+  )
+}
+
 const IndexPage = () => {
   return (
   <>
     <SEO title="Home" />
     <Layout>
       <div>
-        <div className="title sticky">
-          <Type title inLine>
-            Matthew Clarke,&nbsp;
-          </Type>
-          <Type title inLine>
-            <a href='/#about'>About</a>,&nbsp;
-          </Type>
-          <Type title inLine>
-            <a href='/#contact'>Contact</a>.
-          </Type>
-          <br />
-          <Type title inLine>
-            Product Design. Web Development. 
-          </Type>
-          <br />
-          <br />
-          {ProjectCopy.map(i => (
-            <NavItem 
-              key={i.id}
-              i={i}
-            />
-          ))}
+        <PageTitle />
         <br />
-        </div>
         <Image />
       </div>
       {WebCopy.map(i => (

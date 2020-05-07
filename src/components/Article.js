@@ -10,7 +10,7 @@ import Image from './image'
 // import { LayoutContainer } from './PageLayout';
 // import { device } from './Device';
 // import Layout from './layout'
-import Sticky from './Sticky'
+// import Sticky from './Sticky'
 
 // const HeadingType = styled(Type)`
 //     margin: 0;
@@ -32,27 +32,18 @@ import Sticky from './Sticky'
 
 const Article = ({i, ...props}) => {
 
-    const TitleTag = () => (
-        <>
-            <a name={i.id}></a>
-            <a href={`/#${i.id}`}>
-                <sup>{i.id}</sup>
-            </a>
-            <br/>
-        </>
-    )
-
     const StickyHeader = () => (
-        <Sticky>
-            <TitleTag />
-            <Type title>
-                {i.heading}
-            </Type>
-            <Type title>
-                {i.role}
-            </Type>
+        <Type title>
+            <a name={i.id}></a>
+                <a href={`/#${i.id}`}>
+                    <sup>{i.id}</sup>
+                </a>
+            <br/>
+            {i.heading}
+            <br />
+            {i.role}
             {/* <p className='title'>{i.resp}</p> */}
-        </Sticky>
+        </Type>
     )
 
     return (
