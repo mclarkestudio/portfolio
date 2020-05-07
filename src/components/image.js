@@ -4,52 +4,62 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import { device } from './Device';
 import { transitionTime } from './Transition';
-import LayoutContainer from "./PageLayout";
 
-const ImageCard = styled.div`
-  max-width: 300px;
+export const ImageCard = styled.div`
+  max-width: 400px;
   margin: auto;
-  padding: 100px 20%;
+  padding: 80px 10%;
+  /* margin-bottom: 1rem; */
   z-index: 4;
   transition: max-width ${transitionTime};
   
   @media ${device.tablet} { 
-    max-width: 300px;
+    /* max-width: 300px; */
     /* padding: 10% 30%; */
   }
 
   @media ${device.laptop} { 
-    max-width: 320px;
+    /* max-width: 320px; */
     /* padding: 10% 30%; */
   }
 
   @media ${device.laptopL} { 
-    max-width: 400px;
+    /* max-width: 400px; */
     /* padding: 10% 30%; */
   }
 `;
 
-const Image = () => {
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 2000) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
+
+const Image = (props) => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "iphone.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+      placeholderImage: file(relativePath: { eq: "hero6.png" }) {
+        ...fluidImage
+      }
+      iphoneImage: file(relativePath: { eq: "iphone.png" }) {
+        ...fluidImage
       }
     }
   `)
 
+  // Props to image path
+  const placeholderPath = data.placeholderImage.childImageSharp.fluid;
+  const iphonePath = data.iphoneImage.childImageSharp.fluid;
+
+  const imagePath = props.iphone ? iphonePath : placeholderPath;
+
   return (
-    <LayoutContainer bgcolor='black'>
-      <ImageCard>
-        <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-      </ImageCard> 
-    </LayoutContainer>
+    <Img fluid={imagePath} />
   )
 }
-
 
 export default Image

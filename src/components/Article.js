@@ -1,59 +1,153 @@
-import React, { useState } from 'react'
-// import { useStaticQuery, graphql } from 'gatsby';
+import React from 'react'
 import PropTypes from "prop-types"
-// import styled from 'styled-components'
-// import { motion, AnimatePresence } from "framer-motion"
-// import { device } from './Device';
+import styled from 'styled-components'
+
 import Type from '../components/Type'
-import Image from './image'
-// import { transitionTime } from './Transition'
-// import { LayoutContainer } from './PageLayout';
-// import { device } from './Device';
-// import Layout from './layout'
-// import Sticky from './Sticky'
+import Image, { ImageCard } from './image';
+import { device } from './Device';
+import LayoutContainer from './PageLayout'
+import Header from './header';
+import Hero from './Hero';
 
-// const HeadingType = styled(Type)`
-//     margin: 0;
-// `;
+const Row = styled.div`
+    display: flex;
+    flex-direction: row;
 
-// const StyledSvg = styled.svg`
-//     width: 1rem;
-//     margin: 0rem 0 0 2rem;
-// `;
+    /* @media ${device.tablet} {
+        flex-direction: column;
+    } */
+`
 
-// const Flex = styled.div`
-//     display: flex;
-//     flex-direction: column;
+const FlexContainer = styled.div`
+    display: flex;
+    flex-direction: column;
 
-//     @media ${device.tablet} {
-//         flex-direction: row;
-//     }
-// `;
+    @media ${device.tablet} {
+        flex-direction: column;
+    }
+`
+
+const Item = styled.div`
+    margin-bottom: 2rem;
+    max-width: ${props => props.small ? '400px' : null};
+`
+
+// const Paragraph = (props) => {
+//     return (
+//         <Type p>
+//             {props.children}
+//         </Type>
+//     )
+// }
+
+// const Heading = (props) => {
+//     return (
+//         <Type p bold>
+//             {props.children}
+//         </Type>
+//     )
+// }
+
+const BackHomeButton = () => {
+    const RightButton = styled.div`
+        margin-left: auto;
+        margin-right: 1rem;
+        margin-top: 0.5rem;
+        /* filter: blur(); */
+        
+        a {
+            text-decoration: none;
+            /* opacity: 0.2; */
+        }
+
+        a:hover {
+            opacity: 1;
+            font-style: normal;
+        }
+        /* transform: rotate(180deg); */
+    `
+    return (
+        <RightButton>
+            <a href='/#home' title='Back to top'>
+            <sup>⤴</sup>
+            </a>
+        </RightButton>
+    )
+}
+
+const MobileBackground = styled.div`
+    background-color: yellow;
+`
 
 const Article = ({i, ...props}) => {
 
     const StickyHeader = () => (
-        <Type title>
-            <a name={i.id}></a>
-                <a href={`/#${i.id}`}>
-                    <sup>{i.id}</sup>
-                </a>
-            <br/>
-            {i.heading}
-            <br />
-            {i.role}
-            {/* <p className='title'>{i.resp}</p> */}
-        </Type>
+        
+            <Type title>
+                <FlexContainer>
+                    <Item>
+                        <Item>
+                            <Row>
+                                <a href={`/#${i.id}`} title='To top of article'>
+                                    <sup>{i.id}</sup>
+                                </a>
+                                <BackHomeButton />
+                            </Row>
+                            <div>
+                                {i.heading}
+                            </div>
+                            <br />
+
+                            {/* <div>
+                                {i.role}
+                            </div> */}
+                        </Item>
+                        {/* <Item small>
+                            {i.slug}
+                        </Item> */}
+                    </Item>
+                </FlexContainer>
+            </Type>
+        
+    )
+
+    const Images = () => (
+        <LayoutContainer>
+            {/* <Type p centered>
+                {i.slug}
+                <br />
+                {i.role}
+            </Type>  */}
+            <Item>
+                <Type>
+                    {i.slug}
+                </Type>
+            </Item>
+            <Item>
+                <Hero />
+            </Item>
+            {/* <Item>
+                <Type centered style={{color: 'lightgray', fontSize: '1rem'}}>
+                    Image caption goes here.
+                </Type>
+            </Item> */}
+
+            <ImageCard>
+                <Image iphone/>
+            </ImageCard>
+            {/* <Image /> */}
+            <ImageCard>
+                <Image iphone/>
+            </ImageCard>
+        </LayoutContainer>
     )
 
     return (
         <article>
             <StickyHeader />
+            <a name={i.id} />
             <br />
-            <Image />
-            <Image />
-            <Image />
-            <Image />
+            <Images />
         </article>
     )
 }

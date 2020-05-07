@@ -3,18 +3,28 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { device } from './Device'
 import { transitionTime } from './Transition';
+
 const BaseType = styled.div`
-    /* BASE */
+    /* BASE TYPEFACE */
     color: black;
     font-family: Neue Haas Grotesk Text Pro;
     font-style: normal;
-    font-weight: 400;
+    font-weight: ${props => props.bold ? 600 : 400 };
     line-height: 142.02%;
+    text-align: ${props => props.centered ? 'center' : null };
 
-    /* LARGE/OPINIONATED BASE */
+    /* LARGE OPINIONATED BASE */
     font-size: 1.5rem;
     transition: font-size ${transitionTime};
     display: ${props => props.inLine ? 'inline' : null };
+
+    @media ${device.tablet} {
+        font-size: 2rem;
+    }
+
+    @media ${device.laptop} {
+        font-size: 2.3rem;
+    }
 
     /* 🔗 LINKS */
     a {
@@ -28,13 +38,18 @@ const BaseType = styled.div`
         font-weight: 100;
         text-decoration: none;
     }
+`
+
+const Paragraph = styled(BaseType)`
+    font-size: 1rem;
+    max-width: 20em;
 
     @media ${device.tablet} {
-        font-size: 2rem;
+        font-size: 1.125rem;
     }
 
     @media ${device.laptop} {
-        font-size: 2.3rem;
+        font-size: 1.3rem;
     }
 `
 
@@ -47,7 +62,7 @@ const StickyDiv = styled(BaseType)`
     top: 0px;
 `
 
-const TitleType = styled(StickyDiv)`
+const StickyTitle = styled(StickyDiv)`
     mix-blend-mode: difference;
     color: white;
     z-index: 3;
@@ -56,36 +71,38 @@ const TitleType = styled(StickyDiv)`
         color: white;
     }
 
-    /* *::selection,
+    ::selection,
+    ::-moz-selection,
+    *::selection,
     *::-moz-selection {
     background: white;
     color: black;
-    } */
+    }
 `
 
 const Type = (props) => {
 
+    if (props.p) {
+        return (
+            <Paragraph {...props}>
+                {props.children}
+            </Paragraph>
+        )
+    }
+
     if (props.title) {
         return (
-            <TitleType {...props}>
+            <StickyTitle {...props}>
                 {props.children}
-            </TitleType>
+            </StickyTitle>
         )
     }
 
-    if (props.variant === 'h1') { 
-        return (
-            <BaseType {...props}> 
-                {props.children} 
-            </BaseType>
-        ) 
-    }
-
-        return (
-            <BaseType {...props}>
-                {props.children}
-            </BaseType>
-        )
+    return (
+        <BaseType {...props}>
+            {props.children}
+        </BaseType>
+    )
 }
 
 Type.propTypes = {

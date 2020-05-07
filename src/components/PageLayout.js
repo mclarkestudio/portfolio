@@ -4,8 +4,8 @@ import { transitionTime } from './Transition';
 import { device } from './Device';
 
 export const LayoutContainer = styled.div`
-  margin-left: auto;
-  width: 100%;
+  margin: auto;
+  max-width: 1440px;
   background-color: ${props => props.bgcolor || 'none'};
   transition: width ${transitionTime}, margin-left ${transitionTime};
 
@@ -14,11 +14,11 @@ export const LayoutContainer = styled.div`
   }
 
   @media ${device.laptop} {
-    width: 70%;
+    /* width: 70%; */
   }
   
   @media ${device.laptopL} {
-    width: 50%;
+    /* width: 50%; */
   }
 `;
 

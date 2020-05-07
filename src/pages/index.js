@@ -1,16 +1,15 @@
 import React, { useState } from "react"
-// import { Link } from "gatsby"
-
-import "../components/styles.css"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+import Image, { ImageCard } from '../components/image';
 import SEO from "../components/seo"
 import Article from '../components/Article'
 import Type from "../components/Type"
-import { LayoutContainer  } from '../components/PageLayout'
 
 import { WebCopy, ProjectCopy } from '../copy/webCopy'
+import LayoutContainer from "../components/PageLayout"
+import Hero from '../components/Hero';
+
 
 const NavItem = ({i}) => {
 
@@ -21,7 +20,7 @@ const NavItem = ({i}) => {
   }
 
   return (
-    <Type title>
+    <div>
       <a
         key='id' 
         href={`/#${i.id}`}
@@ -29,33 +28,31 @@ const NavItem = ({i}) => {
         onMouseLeave={() => toggleHover()}
       >
         {i.id}
-      </a>&nbsp;
+      </a>
+      &nbsp;
       {hovered && (
-        <>
           <span className="title">{i.heading}</span>
-          {/* <span className="title">{i.slug}</span> */}
-        </>
       )}
-    </Type>
+    </div>
   )
 }
 
-const PageTitle = () => {
+const StickyPageTitle = () => {
   return (
     <Type title>
       Matthew Clarke,&nbsp;
       <a href='/#about'>About</a>,&nbsp;
       <a href='/#contact'>Contact</a>.
       <br />
-      Product Design. Web Development.
+      Product Design. Web Development. Design Lead.
       <br />
-        <br />
-        {ProjectCopy.map(i => (
-          <NavItem 
-            key={i.id}
-            i={i}
-          />
-        ))}
+      <br />
+      {ProjectCopy.map(i => (
+        <NavItem 
+          key={i.id}
+          i={i}
+        />
+      ))}
     </Type>
   )
 }
@@ -63,12 +60,18 @@ const PageTitle = () => {
 const IndexPage = () => {
   return (
   <>
-    <SEO title="Home" />
+    <SEO title=" " />
+    
     <Layout>
       <div>
-        <PageTitle />
+        <a name="home" />
+        <StickyPageTitle />
         <br />
-        <Image />
+        <div style={{ maxWidth: '800px', marginLeft: 'auto' }}>
+          {/* <Hero /> */}
+          <Image />
+        </div>
+        {/* <hr /> */}
       </div>
       {WebCopy.map(i => (
         <>
@@ -78,6 +81,7 @@ const IndexPage = () => {
             key={i.id}
             i={i}
           />
+          {/* <hr /> */}
         </>
       ))}
       {/* <hr /> */}
@@ -114,14 +118,6 @@ const IndexPage = () => {
             Product Design. Service Design. Team Lead.
         </Type>
       </div> */}
-      
-      <LayoutContainer>
-        {/* <Type>About</Type> */}
-        <p></p>
-      </LayoutContainer>
-      {/* <LayoutContainer bgcolor='beige'>
-        <Type> Contact</Type>
-      </LayoutContainer> */}
     </Layout>
   </>
   )
