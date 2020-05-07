@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 
 import "../components/styles.css"
 
@@ -29,7 +29,7 @@ const NavItem = ({i}) => {
       <a
         href={`/#${i.id}`}
         onMouseEnter={() => toggleHover()}
-        onMouseOut={() => toggleHover()}
+        onMouseLeave={() => toggleHover()}
       >
         {i.id}
       </a>&nbsp;
@@ -76,10 +76,14 @@ const IndexPage = () => {
         <Image />
       </div>
       {WebCopy.map(i => (
-        <Article
-          key={i.id}
-          i={i}
-        />
+        <>
+          <br />
+          <br />
+          <Article
+            key={i.id}
+            i={i}
+          />
+        </>
       ))}
       {/* <hr /> */}
       {/* <div className='footer'>

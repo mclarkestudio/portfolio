@@ -1,101 +1,69 @@
 import React, { useState } from 'react'
 // import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from "prop-types"
-import styled from 'styled-components'
+// import styled from 'styled-components'
 // import { motion, AnimatePresence } from "framer-motion"
 // import { device } from './Device';
 import Type from '../components/Type'
 import Image from './image'
-import { transitionTime } from './Transition'
-import { LayoutContainer } from './PageLayout';
-import { device } from './Device';
-import Layout from './layout'
+// import { transitionTime } from './Transition'
+// import { LayoutContainer } from './PageLayout';
+// import { device } from './Device';
+// import Layout from './layout'
+import Sticky from './Sticky'
 
-const HeadingType = styled(Type)`
-    margin: 0;
-`;
+// const HeadingType = styled(Type)`
+//     margin: 0;
+// `;
 
-const IdType = styled(HeadingType)`
-    margin-left: auto;
-    color: black;
-    font-weight: 100;
-    font-family: IBM Plex Mono;
-    font-style: italic;
-`;
+// const StyledSvg = styled.svg`
+//     width: 1rem;
+//     margin: 0rem 0 0 2rem;
+// `;
 
-const StyledSvg = styled.svg`
-    width: 1rem;
-    margin: 0rem 0 0 2rem;
-`;
+// const Flex = styled.div`
+//     display: flex;
+//     flex-direction: column;
 
-const CardHeader = styled.div`
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding: 2rem 0 1rem 0;
-    transition: background-color ${transitionTime};
-`;
-
-const ArticleContent = styled.div`
-    width: 420px;
-    /* margin: 0 auto auto auto; */
-`;
-
-const Flex = styled.div`
-    display: flex;
-    flex-direction: column;
-
-    @media ${device.tablet} {
-        flex-direction: row;
-    }
-`;
-
-const FlexItem = styled.div`
-    /* flex: 50% 1 0; */
-    width: 33.33%;
-    padding-right: 1rem;
-`;
-
-const Placeholder = styled.div`
-    /* flex: 50% 1 0; */
-    width: 100%;
-    height: 100%;
-    background-color: lightgray;
-`;
+//     @media ${device.tablet} {
+//         flex-direction: row;
+//     }
+// `;
 
 const Article = ({i, ...props}) => {
 
-    // const [dashArray, setDashArray] = useState("1 7");
-    const [expanded, setExpanded] = useState(0);
-    const isOpen = i === expanded
+    const TitleTag = () => (
+        <>
+            <a name={i.id}></a>
+            <a href={`/#${i.id}`}>
+                <sup>{i.id}</sup>
+            </a>
+            <br/>
+        </>
+    )
+
+    const StickyHeader = () => (
+        <Sticky>
+            <TitleTag />
+            <Type title>
+                {i.heading}
+            </Type>
+            <Type title>
+                {i.role}
+            </Type>
+            {/* <p className='title'>{i.resp}</p> */}
+        </Sticky>
+    )
 
     return (
-        <>
+        <article>
+            <StickyHeader />
             <br />
-            <br />
-            <article>
-                <Type title className="sticky">
-                    <a name={i.id}></a>
-                        <a href={`/#${i.id}`}>
-                            <sup>{i.id}</sup>
-                        </a>
-                    <br/>
-                    <Type title>
-                        {i.heading}
-                    </Type>
-                    <Type title>{i.role}</Type>
-                    <p className='title'>{i.resp}</p>
-                </Type >
-                <br />
-                <Image />
-                <Image />
-                <Image />
-                <Image />
-            </article>
-            <Flex>
-                -
-            </Flex>
-        </>
+            <Image />
+            <Image />
+            <Image />
+            <Image />
+        </article>
     )
 }
 
@@ -107,10 +75,10 @@ Article.propTypes = {
 }
 
 Article.defaultProps = {
-    heading: 'Liminal',
-    slug: 'A personal media library for the web.',
-    date: '2020–On-going.',
-    para: 'Liminal helps you collect web links, build feeds, and keep track of your interests. Liminal helps you collect web links, build feeds, and keep track of your interests. Liminal helps you collect web links, build feeds, and keep track of your interests. Liminal helps you collect web links, build feeds, and keep track of your interests. '
+    // heading: 'Liminal',
+    // slug: 'A personal media library for the web.',
+    // date: '2020–On-going.',
+    // para: 'Liminal helps you collect web links, build feeds, and keep track of your interests. Liminal helps you collect web links, build feeds, and keep track of your interests. Liminal helps you collect web links, build feeds, and keep track of your interests. Liminal helps you collect web links, build feeds, and keep track of your interests. '
 }
 
 export default Article;
