@@ -37,7 +37,7 @@ const CardHeader = styled.div`
 `;
 
 const ArticleContent = styled.div`
-    width: 440px;
+    width: 420px;
     /* margin: 0 auto auto auto; */
 `;
 
@@ -76,66 +76,17 @@ const Article = ({i, ...props}) => {
             <article
                 className="centered"
             >
-                <a name={props.id}></a>
+                <a name={i.id}></a>
 
                 <Type className='sticky title' >
-                    <a href={`/#${props.id}`}>
-                        <sup>{props.id}</sup>
+                    <a href={`/#${i.id}`}>
+                        <sup>{i.id}</sup>
                     </a>&nbsp; <br/>
                     <Type className='title'>
-                        {props.heading}
+                        {i.heading}
                     </Type>
-                    {/* <Type>
-                        {props.slug}&nbsp;
-                    </Type> */}
+                    <Type className='title'>{i.role}</Type>
                 </Type>
-                <Flex>
-                    <FlexItem>
-
-
-                        {/* <Placeholder /> */}
-                    </FlexItem>
-                    <Flex>
-                        <ArticleContent>
-                            <h1>{props.slug}</h1>
-                            <p>
-                                {props.para}
-                            </p>
-                            <strong>Role</strong>
-                            <br />
-                            Principal Designer, Founder
-                            <br />
-                            <br />
-                            <strong>Responsibilities</strong>
-                            <br />
-                            Product concept through development.
-                            <br /> 
-                            <br />
-                            <br />
-                        </ArticleContent>
-                    </Flex>
-                </Flex>
-                {/* <LayoutContainer>
-                    <ArticleContent>
-                        <br />
-                        <br />
-                        <h1>{props.slug}</h1>
-                        <p>
-                            {props.para}
-                        </p>
-                        <strong>Role</strong>
-                        <br />
-                        Principal Designer, Founder
-                        <br />
-                        <br />
-                        <strong>Responsibilities</strong>
-                        <br />
-                        Product concept through development.
-                        <br /> 
-                        <br />
-                        <br />
-                    </ArticleContent>
-                </LayoutContainer> */}
                 <Image />
             </article>
             <Flex>

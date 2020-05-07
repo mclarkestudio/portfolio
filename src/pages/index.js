@@ -8,9 +8,9 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import Article from '../components/Article'
 import Type from "../components/Type"
-import { LayoutContainer } from '../components/PageLayout'
+import { LayoutContainer  } from '../components/PageLayout'
 
-import { ArticleCopy } from '../copy/ArticleCopy'
+import { WebCopy, ProjectCopy } from '../copy/webCopy'
 
 const NavItem = ({i}) => {
 
@@ -43,7 +43,6 @@ const NavItem = ({i}) => {
   )
 }
 
-
 const IndexPage = () => {
   return (
   <>
@@ -61,30 +60,23 @@ const IndexPage = () => {
             <a href='/#contact'>Contact</a>.
           </Type>
           <Type className="title">
-            Product Design. Service Design. Team Lead.
+            Product Design. Web Development. 
           </Type>
           <br />
-          {ArticleCopy.map(i => (
+          {ProjectCopy.map(i => (
             <NavItem 
               key={i.id}
               i={i}
-              // hovered={hovered}
-              // setHovered={setHovered}
             />
           ))}
         <br />
         </div>
         <Image />
       </div>
-
-      {ArticleCopy.map(i => (
+      {WebCopy.map(i => (
         <Article
           key={i.id}
           i={i}
-          heading={i.heading}
-          slug={i.slug}
-          date={i.date}
-          id={i.id}
         />
       ))}
       {/* <hr /> */}

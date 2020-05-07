@@ -14,17 +14,17 @@ const ImageCard = styled.div`
   transition: max-width ${transitionTime};
   
   @media ${device.tablet} { 
-    max-width: 350px;
+    max-width: 300px;
     /* padding: 10% 30%; */
   }
 
   @media ${device.laptop} { 
-    max-width: 400px;
+    max-width: 320px;
     /* padding: 10% 30%; */
   }
 
   @media ${device.laptopL} { 
-    max-width: 450px;
+    max-width: 400px;
     /* padding: 10% 30%; */
   }
 `;
