@@ -40,13 +40,6 @@ const NavItem = ({i}) => {
 const StickyPageTitle = () => {
   return (
     <Type title>
-      Matthew Clarke,&nbsp;
-      <a href='/#about'>About</a>,&nbsp;
-      <a href='/#contact'>Contact</a>.
-      <br />
-      Product Design. Web Development. Design Lead.
-      <br />
-      <br />
       {ProjectCopy.map(i => (
         <NavItem 
           key={i.id}
@@ -61,11 +54,11 @@ const IndexPage = () => {
   return (
   <>
     <SEO title=" " />
-    
+    <StickyPageTitle />
     <Layout>
       <div>
         <a name="home" />
-        <StickyPageTitle />
+        {/* STICKYPAGE TITLE */}
         <br />
         <div style={{ maxWidth: '800px', marginLeft: 'auto' }}>
           {/* <Hero /> */}
@@ -77,6 +70,7 @@ const IndexPage = () => {
         <>
           <br />
           <br />
+          <hr />
           <Article
             key={i.id}
             i={i}

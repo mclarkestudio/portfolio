@@ -13,6 +13,8 @@ const Row = styled.div`
     display: flex;
     flex-direction: row;
 
+    margin-left: -200px;
+
     /* @media ${device.tablet} {
         flex-direction: column;
     } */
@@ -93,7 +95,7 @@ const Article = ({i, ...props}) => {
                                 </a>
                                 <BackHomeButton />
                             </Row>
-                            <div>
+                            <div style={{marginLeft: '-200px'}}>
                                 {i.heading}
                             </div>
                             <br />
@@ -132,18 +134,20 @@ const Article = ({i, ...props}) => {
                 </Type>
             </Item> */}
 
-            <ImageCard>
+            {/* <ImageCard>
                 <Image iphone/>
             </ImageCard>
-            {/* <Image /> */}
+            <Image />
             <ImageCard>
                 <Image iphone/>
-            </ImageCard>
+            </ImageCard> */}
         </LayoutContainer>
     )
 
     return (
+        
         <article>
+            
             <StickyHeader />
             <a name={i.id} />
             <br />

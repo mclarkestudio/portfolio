@@ -7,6 +7,7 @@ import { transitionTime } from './Transition';
 const BaseType = styled.div`
     /* BASE TYPEFACE */
     color: black;
+    /* font-family: Neue Haas Grotesk Text Pro; */
     font-family: Neue Haas Grotesk Text Pro;
     font-style: normal;
     font-weight: ${props => props.bold ? 600 : 400 };
