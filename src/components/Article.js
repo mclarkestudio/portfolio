@@ -8,6 +8,8 @@ import { device } from './Device';
 import LayoutContainer from './PageLayout'
 import Header from './header';
 import Hero from './Hero';
+import Layout from './layout';
+import DevPageRenderer from '../../.cache/public-page-renderer-dev';
 
 const Row = styled.div`
     display: flex;
@@ -28,25 +30,30 @@ const FlexContainer = styled.div`
 `
 
 const Item = styled.div`
-    margin-bottom: 2rem;
-    max-width: ${props => props.small ? '400px' : null};
+    flex: 1 1 auto; 
+    /* margin-bottom: 1rem; */
+    max-width: ${props => props.small ? '700px' : null};
 `
 
-// const Paragraph = (props) => {
-//     return (
-//         <Type p>
-//             {props.children}
-//         </Type>
-//     )
-// }
+const Paragraph = (props) => {
+    return (
+        <Type p>
+            {props.children}
+        </Type>
+    )
+}
 
-// const Heading = (props) => {
-//     return (
-//         <Type p bold>
-//             {props.children}
-//         </Type>
-//     )
-// }
+const Heading = (props) => {
+    return (
+        <>
+        {/* <hr style={{ borderColor: '#aeaeae' }} /> */}
+        <Type p bold>
+            {/* <hr /> */}
+            {props.children}
+        </Type>
+        </>
+    )
+}
 
 const BackHomeButton = () => {
     const RightButton = styled.div`
@@ -69,7 +76,7 @@ const BackHomeButton = () => {
     return (
         <RightButton>
             <a href='/#home' title='Back to top'>
-            <sup>⤴</sup>
+                <sup>⤴</sup>
             </a>
         </RightButton>
     )
@@ -82,33 +89,18 @@ const MobileBackground = styled.div`
 const Article = ({i, ...props}) => {
 
     const StickyHeader = () => (
-        
-            <Type title>
-                <FlexContainer>
-                    <Item>
-                        <Item>
+        <Type stickyTitle>
+            <LayoutContainer>
+                    <FlexContainer>
                             <Row>
                                 <a href={`/#${i.id}`} title='To top of article'>
                                     <sup>{i.id}</sup>
                                 </a>
                                 <BackHomeButton />
                             </Row>
-                            <div>
-                                {i.heading}
-                            </div>
-                            <br />
-
-                            {/* <div>
-                                {i.role}
-                            </div> */}
-                        </Item>
-                        {/* <Item small>
-                            {i.slug}
-                        </Item> */}
-                    </Item>
-                </FlexContainer>
-            </Type>
-        
+                    </FlexContainer>
+            </LayoutContainer>
+        </Type>
     )
 
     const Images = () => (
@@ -118,24 +110,44 @@ const Article = ({i, ...props}) => {
                 <br />
                 {i.role}
             </Type>  */}
-            <Item>
-                <Type>
-                    {i.slug}
-                </Type>
-            </Item>
+            <Type>
+                {i.heading}
+            </Type>
+            <Item />
+            <Item />
+            <Item />
+            <Item />
+            <br />
+            <br />
+                <Item small>
+                    <br />
+                    <Paragraph>
+                        {i.para}
+                    </Paragraph>
+                    <br />
+                </Item>
+                <Item small>
+                    <Item>
+                        <Heading>
+                            Role
+                        </Heading>
+                        <Paragraph>
+                            {i.role}
+                        </Paragraph>
+                    </Item>
+                    <Heading>
+                        Responsibilities
+                    </Heading>
+                    <Paragraph>
+                        {i.resp}
+                    </Paragraph>
+                </Item>
+                <br />
+                <br />
+        {/* <LayoutContainer> */}
             <Item>
                 <Hero />
             </Item>
-            {/* <Item>
-                <Type centered style={{color: 'lightgray', fontSize: '1rem'}}>
-                    Image caption goes here.
-                </Type>
-            </Item> */}
-
-            <ImageCard>
-                <Image iphone/>
-            </ImageCard>
-            {/* <Image /> */}
             <ImageCard>
                 <Image iphone/>
             </ImageCard>
@@ -144,9 +156,8 @@ const Article = ({i, ...props}) => {
 
     return (
         <article>
-            <StickyHeader />
             <a name={i.id} />
-            <br />
+            <StickyHeader />
             <Images />
         </article>
     )

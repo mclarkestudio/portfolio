@@ -5,13 +5,13 @@ import { device } from './Device';
 
 export const LayoutContainer = styled.div`
   margin: auto;
-  max-width: 1440px;
+  max-width: 1280px;
   background-color: ${props => props.bgcolor || 'none'};
   transition: width ${transitionTime}, margin-left ${transitionTime};
 
-  a {
+  /* a {
     color: pink;
-  }
+  } */
 
   @media ${device.laptop} {
     /* width: 70%; */

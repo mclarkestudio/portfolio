@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import "./styles.css"
+import "../static/Inter Web/inter.css"
 
 const Layout = ({ children }) => {
 
@@ -8,12 +9,12 @@ const Layout = ({ children }) => {
     <>
       <div
         style={{
-          margin: `1rem`,
-          maxWidth: '1280px'
+          margin: `1.5rem`,
+          // maxWidth: '1280px'
         }}
       >
         <main>
-          {children}
+        {children}
         </main>
       </div>
     </>

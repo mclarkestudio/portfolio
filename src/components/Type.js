@@ -7,7 +7,8 @@ import { transitionTime } from './Transition';
 const BaseType = styled.div`
     /* BASE TYPEFACE */
     color: black;
-    font-family: Neue Haas Grotesk Text Pro;
+    font-family: Inter;
+    /* font-family: Neue Haas Grotesk Text Pro; */
     font-style: normal;
     font-weight: ${props => props.bold ? 600 : 400 };
     line-height: 142.02%;
@@ -42,7 +43,10 @@ const BaseType = styled.div`
 
 const Paragraph = styled(BaseType)`
     font-size: 1rem;
-    max-width: 20em;
+    max-width: 40em;
+    margin-bottom: 0.5rem;
+    /* margin-right: 2rem; */
+    /* margin: auto; */
 
     @media ${device.tablet} {
         font-size: 1.125rem;
@@ -60,15 +64,20 @@ const StickyDiv = styled(BaseType)`
     position: -o-sticky;
     position: sticky;
     top: 0px;
+
+    background-color: #ffffff;
+    /* backdrop-filter: blur(5px); */
+    z-index: 9;
+    /* opacity: 0.5; */
 `
 
 const StickyTitle = styled(StickyDiv)`
-    mix-blend-mode: difference;
-    color: white;
+    /* mix-blend-mode: difference; */
+    /* color: white; */
     z-index: 3;
 
     *, a {
-        color: white;
+        /* color: white; */
     }
 
     ::selection,
@@ -90,7 +99,7 @@ const Type = (props) => {
         )
     }
 
-    if (props.title) {
+    if (props.stickyTitle) {
         return (
             <StickyTitle {...props}>
                 {props.children}
@@ -107,10 +116,11 @@ const Type = (props) => {
 
 Type.propTypes = {
     variant: PropTypes.oneOf(['h1', 'h2', 'p']).isRequired,
+    stickyTitle: PropTypes.bool,
 }
 
 Type.defaultProps = {
-    variant: 'h1',
+    // variant: 'h1',
 }
 
 export default Type;

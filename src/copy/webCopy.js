@@ -7,7 +7,7 @@ export const WebCopy = [
         slug: 'A personal media library for the web.',
         role: 'Principal Design',
         resp: 'Concept development, user interface design, and cross-platform full-stack development.',
-        para: 'Liminal is a cross-platform web ',
+        para: 'This is an intro paragraph that explains the project. This is an intro paragraph that explains the project. This is an intro paragraph that explains the project. This is an intro paragraph that explains the project. ',
         date: '2020+',
     },
     {

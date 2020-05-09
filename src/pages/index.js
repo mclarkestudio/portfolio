@@ -39,12 +39,12 @@ const NavItem = ({i}) => {
 
 const StickyPageTitle = () => {
   return (
-    <Type title>
+    <Type>
       Matthew Clarke,&nbsp;
       <a href='/#about'>About</a>,&nbsp;
       <a href='/#contact'>Contact</a>.
       <br />
-      Product Design. Web Development. Design Lead.
+      Design Lead. Product Design and Development.
       <br />
       <br />
       {ProjectCopy.map(i => (
@@ -67,9 +67,11 @@ const IndexPage = () => {
         <a name="home" />
         <StickyPageTitle />
         <br />
-        <div style={{ maxWidth: '800px', marginLeft: 'auto' }}>
+        <div style={{ maxWidth: '70%', marginLeft: 'auto' }}>
           {/* <Hero /> */}
-          <Image />
+          {/* <LayoutContainer> */}
+            <Image />
+          {/* </LayoutContainer> */}
         </div>
         {/* <hr /> */}
       </div>

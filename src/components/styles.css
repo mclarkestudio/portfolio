@@ -20,6 +20,11 @@ p {
 }
 
 hr {
+    border-color: lightgray;
+    color: lightgray;
+    background-color: lightgray;
+    column-rule-color: lightgray;
+    /* opacity: 0.3; */
     border-bottom: none;
     margin-top: 2rem;
 }
