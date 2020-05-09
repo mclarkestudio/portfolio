@@ -163,12 +163,12 @@ const Article = ({i, ...props}) => {
     )
 }
 
-Article.propTypes = {
-    heading: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    para: PropTypes.string.isRequired,
-}
+// Article.propTypes = {
+//     heading: PropTypes.string.isRequired,
+//     slug: PropTypes.string.isRequired,
+//     date: PropTypes.string.isRequired,
+//     para: PropTypes.string.isRequired,
+// }
 
 Article.defaultProps = {
     // heading: 'Liminal',
