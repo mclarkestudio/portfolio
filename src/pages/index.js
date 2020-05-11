@@ -1,14 +1,14 @@
 import React, { useState } from "react"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
+import Layout from "../components/Layout"
+import Image from "../components/Image"
 import SEO from "../components/seo"
 import Article from "../components/Article"
-import Type from "../components/Type"
+import Type from "../components/Typeface"
 
 import { WebCopy, ProjectCopy } from "../copy/webCopy"
-import LayoutContainer from "../components/PageLayout"
-import Hero from "../components/Hero"
+// import LayoutContainer from "../components/Layout"
+// import Hero from "../components/Hero"
 
 const NavItem = ({ i }) => {
   // NavItem hover toggle
@@ -54,7 +54,6 @@ const IndexPage = () => {
   return (
     <>
       <SEO title=" " />
-
       <Layout>
         <div>
           <a name="home" />
@@ -69,6 +68,10 @@ const IndexPage = () => {
             <Article key={i.id} i={i} />
           </>
         ))}
+        <Type>
+          <a name="about" />
+          About
+        </Type>
       </Layout>
     </>
   )

@@ -1,14 +1,12 @@
 import React from "react"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import styled from "styled-components"
 
-import Type from "../components/Type"
-import Image, { ImageCard } from "./image"
+import Type from "./Typeface"
+import Image, { ImageCard } from "./Image"
 import { device } from "./Device"
-import LayoutContainer from "./PageLayout"
-import Header from "./header"
+import { LayoutContainer } from "./Layout"
 import Hero from "./Hero"
-import Layout from "./layout"
 
 const Row = styled.div`
     display: flex;
@@ -30,7 +28,6 @@ const FlexContainer = styled.div`
 
 const Item = styled.div`
   flex: 1 1 auto;
-  /* margin-bottom: 1rem; */
   max-width: ${props => (props.small ? "700px" : null)};
 `
 
@@ -90,11 +87,6 @@ const Article = ({ i, ...props }) => {
 
   const Images = () => (
     <LayoutContainer>
-      {/* <Type p centered>
-                {i.slug}
-                <br />
-                {i.role}
-            </Type>  */}
       <Type>{i.heading}</Type>
       <Item />
       <Item />
@@ -102,6 +94,11 @@ const Article = ({ i, ...props }) => {
       <Item />
       <br />
       <br />
+      <Item>
+        <Paragraph>
+          {i.slug}
+        </Paragraph>
+      </Item>
       <Item small>
         <br />
         <Paragraph>{i.para}</Paragraph>
@@ -112,12 +109,12 @@ const Article = ({ i, ...props }) => {
           <Heading>Role</Heading>
           <Paragraph>{i.role}</Paragraph>
         </Item>
+        <Item></Item>
         <Heading>Responsibilities</Heading>
         <Paragraph>{i.resp}</Paragraph>
       </Item>
       <br />
       <br />
-      {/* <LayoutContainer> */}
       <Item>
         <Hero />
       </Item>

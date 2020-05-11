@@ -8,8 +8,9 @@ export const WebCopy = [
     resp:
       "Concept development, user interface design, and cross-platform full-stack development (WIP).",
     para:
-      "Personal computers allow people to collect a wide range of digital media. However, in the age of cloud services our media consumption is split across web services and user identities per company. So how do we collect and store our interests? For many creatives, consuming media isnt a one off experience. Its something that should be saved for ever. Liminal is a personal media library built for the web. It allows users to build media feeds, save collections, and integrate their activity into a single timeline.",
+      "In an age of cloud services, our media consumption is split across a range of products and services. Liminal was designed for creatives, researchers, and curious people to combat this frankenstack of media applications. It allows you to build feeds, save links, and integrate your activity into a single digital timeline.",
     date: "2020+",
+    images: [],
   },
   {
     id: "D-2020",
@@ -37,14 +38,6 @@ export const WebCopy = [
     role: "Publications Coordinator",
     slug: "Behind the scences acces to modern and contemporary art practices.",
     date: "2015–2017",
-  },
-  {
-    id: "about",
-    heading: "About",
-  },
-  {
-    id: "contact",
-    heading: "mclarkestudio@gmail.com",
   },
 ]
 

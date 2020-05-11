@@ -49,11 +49,11 @@ const Paragraph = styled(BaseType)`
   /* margin: auto; */
 
   @media ${device.tablet} {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   @media ${device.laptop} {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 `
 
