@@ -4,7 +4,6 @@ import "./styles.css"
 import "../static/Inter Web/inter.css"
 
 const Layout = ({ children }) => {
-
   return (
     <>
       <div
@@ -13,9 +12,7 @@ const Layout = ({ children }) => {
           // maxWidth: '1280px'
         }}
       >
-        <main>
-        {children}
-        </main>
+        <main>{children}</main>
       </div>
     </>
   )

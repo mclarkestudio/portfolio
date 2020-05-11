@@ -1,28 +1,26 @@
 import React, { useState } from "react"
 
 import Layout from "../components/layout"
-import Image, { ImageCard } from '../components/image';
+import Image from "../components/image"
 import SEO from "../components/seo"
-import Article from '../components/Article'
+import Article from "../components/Article"
 import Type from "../components/Type"
 
-import { WebCopy, ProjectCopy } from '../copy/webCopy'
+import { WebCopy, ProjectCopy } from "../copy/webCopy"
 import LayoutContainer from "../components/PageLayout"
-import Hero from '../components/Hero';
+import Hero from "../components/Hero"
 
-
-const NavItem = ({i}) => {
-
-  // State and toggle action for NavItem Hover
-  const [hovered, setHovered] = useState(false);
+const NavItem = ({ i }) => {
+  // NavItem hover toggle
+  const [hovered, setHovered] = useState(false)
   function toggleHover(i) {
-    setHovered(!hovered);
+    setHovered(!hovered)
   }
 
   return (
     <div>
       <a
-        key='id' 
+        key="id"
         href={`/#${i.id}`}
         onMouseEnter={() => toggleHover()}
         onMouseLeave={() => toggleHover()}
@@ -30,9 +28,7 @@ const NavItem = ({i}) => {
         {i.id}
       </a>
       &nbsp;
-      {hovered && (
-          <span className="title">{i.heading}</span>
-      )}
+      {hovered && <span className="title">{i.heading}</span>}
     </div>
   )
 }
@@ -41,17 +37,14 @@ const StickyPageTitle = () => {
   return (
     <Type>
       Matthew Clarke,&nbsp;
-      <a href='/#about'>About</a>,&nbsp;
-      <a href='/#contact'>Contact</a>.
+      <a href="/#about">About</a>,&nbsp;
+      <a href="/#contact">Contact</a>.
       <br />
       Design Lead. Product Design and Development.
       <br />
       <br />
       {ProjectCopy.map(i => (
-        <NavItem 
-          key={i.id}
-          i={i}
-        />
+        <NavItem key={i.id} i={i} />
       ))}
     </Type>
   )
@@ -59,70 +52,26 @@ const StickyPageTitle = () => {
 
 const IndexPage = () => {
   return (
-  <>
-    <SEO title=" " />
-    
-    <Layout>
-      <div>
-        <a name="home" />
-        <StickyPageTitle />
-        <br />
-        <div style={{ maxWidth: '70%', marginLeft: 'auto' }}>
-          {/* <Hero /> */}
-          {/* <LayoutContainer> */}
+    <>
+      <SEO title=" " />
+
+      <Layout>
+        <div>
+          <a name="home" />
+          <StickyPageTitle />
+          <br />
+          <div style={{ maxWidth: "70%", marginLeft: "auto" }}>
             <Image />
-          {/* </LayoutContainer> */}
+          </div>
         </div>
-        {/* <hr /> */}
-      </div>
-      {WebCopy.map(i => (
-        <>
-          <br />
-          <br />
-          <Article
-            key={i.id}
-            i={i}
-          />
-          {/* <hr /> */}
-        </>
-      ))}
-      {/* <hr /> */}
-      {/* <div className='footer'>
-        <Type>
-            <a name='about' />
-          </Type>
-          <Type inLine>
-          Matthew is a product designer, developer,
-          and team lead based in New York City.
-          He has spent 5 years designing and improving user experience within agile product teams. 
-          As a design lead, Matthew works across a range of diciplines in order to define customer 
-          problems, prioritize work, and build products and services that work.
-          </Type>
-          <Type inLine>
-            <Link href='/#contact'>Contact</Link>.
-          </Type>
-          <Type>
-            Product Design. Service Design. Team Lead.
-        </Type>
-      </div>
-      <div className='footer'>
-        <Type inLine className="title">
-            <a name='contact' />
-            Contact,&nbsp;
-          </Type>
-          <Type inLine className="title">
-            <Link href='/'>mclarkestudio@gmail.com</Link>,&nbsp;
-          </Type>
-          <Type inLine className="title">
-            <Link href='/#contact'>Contact</Link>.
-          </Type>
-          <Type className="title">
-            Product Design. Service Design. Team Lead.
-        </Type>
-      </div> */}
-    </Layout>
-  </>
+        {WebCopy.map(i => (
+          <>
+            <Article key={i.id} i={i} />
+          </>
+        ))}
+      </Layout>
+    </>
   )
-};
+}
 
 export default IndexPage

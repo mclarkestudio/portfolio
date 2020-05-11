@@ -1,1 +1,1 @@
-export const transitionTime = '0.25s';
+export const transitionTime = "0.25s"

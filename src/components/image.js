@@ -2,32 +2,32 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import { device } from './Device';
-import { transitionTime } from './Transition';
+import { device } from "./Device"
+import { transitionTime } from "./Transition"
 
 export const ImageCard = styled.div`
   max-width: 400px;
   margin: auto;
   padding: 80px 10%;
-  /* margin-bottom: 1rem; */
   z-index: 4;
   transition: max-width ${transitionTime};
   
-  @media ${device.tablet} { 
-    /* max-width: 300px; */
-    /* padding: 10% 30%; */
+  /* Responsive code for offset containers */
+  /* @media ${device.tablet} { 
+    max-width: 300px;
+    padding: 10% 30%;
   }
 
   @media ${device.laptop} { 
-    /* max-width: 320px; */
-    /* padding: 10% 30%; */
+    max-width: 320px;
+    padding: 10% 30%;
   }
 
   @media ${device.laptopL} { 
-    /* max-width: 400px; */
-    /* padding: 10% 30%; */
-  }
-`;
+    max-width: 400px;
+    padding: 10% 30%;
+  } */
+`
 
 export const fluidImage = graphql`
   fragment fluidImage on File {
@@ -39,7 +39,7 @@ export const fluidImage = graphql`
   }
 `
 
-const Image = (props) => {
+const Image = props => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "hero8.png" }) {
@@ -52,14 +52,13 @@ const Image = (props) => {
   `)
 
   // Props to image path
-  const placeholderPath = data.placeholderImage.childImageSharp.fluid;
-  const iphonePath = data.iphoneImage.childImageSharp.fluid;
+  // @TODO: change way images are queried for articles
+  const placeholderPath = data.placeholderImage.childImageSharp.fluid
+  const iphonePath = data.iphoneImage.childImageSharp.fluid
 
-  const imagePath = props.iphone ? iphonePath : placeholderPath;
+  const imagePath = props.iphone ? iphonePath : placeholderPath
 
-  return (
-    <Img fluid={imagePath} />
-  )
+  return <Img fluid={imagePath} />
 }
 
 export default Image
