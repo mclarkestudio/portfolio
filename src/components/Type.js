@@ -2,14 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { device } from "./Device"
-import { transitionTime } from "./Transition"
 
 import "../static/Inter Web/inter.css"
 
 const BaseType = styled.div`
   /* BASE TYPEFACE */
   color: black;
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   /* font-family: Neue Haas Grotesk Text Pro; */
   font-style: normal;
   font-weight: ${props => (props.bold ? 600 : 400)};
@@ -18,7 +17,6 @@ const BaseType = styled.div`
 
   /* LARGE OPINIONATED BASE */
   font-size: 1.5rem;
-  transition: font-size ${transitionTime};
   display: ${props => (props.inLine ? "inline" : null)};
 
   @media ${device.tablet} {
