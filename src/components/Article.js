@@ -6,7 +6,7 @@ import Type from "./Typeface"
 import Image, { ImageCard } from "./Image"
 import { device } from "./Device"
 import { LayoutContainer } from "./Layout"
-import Hero from "./Hero"
+import LiminalHeroSvg from "./Hero"
 
 const Row = styled.div`
     display: flex;
@@ -105,22 +105,94 @@ const Article = ({ i, ...props }) => {
         <br />
       </Item>
       <Item small>
-        <Item>
-          <Heading>Role</Heading>
-          <Paragraph>{i.role}</Paragraph>
-        </Item>
-        <Item></Item>
-        <Heading>Responsibilities</Heading>
-        <Paragraph>{i.resp}</Paragraph>
+        {i.role && <Item>
+            <Heading>Role</Heading>
+            <Paragraph>{i.role}</Paragraph>
+            <br />
+          </Item>
+        }
+        {i.resp && <Item>
+            <Heading>Responsibilities</Heading>
+            <Paragraph>{i.resp}</Paragraph>
+            <br />
+          </Item>
+        }
       </Item>
-      <br />
-      <br />
-      <Item>
-        <Hero />
-      </Item>
-      <ImageCard>
-        <Image iphone />
-      </ImageCard>
+      {/* --- LIMINAL --- */}
+      {i.id === 'L-2020+' &&
+        <>
+          <Item>
+            <LiminalHeroSvg />
+          </Item>
+          <Item>
+            <Paragraph>
+            [problem image] <br />
+            [collection: link, feed diagram image] <br />
+            [design system image] <br />
+            [mobile img] <br />
+            </Paragraph>
+          </Item>
+          {/* <ImageCard>
+            <Image iphone />
+          </ImageCard> */}
+        </>
+      }
+      {/* --- DATAVORE --- */}
+      {i.id === 'D-2020' &&
+        <>
+          <Item>
+            {/* <LiminalHeroSvg /> */}
+            [Hero image]
+          </Item>
+          <Item>
+            [problem image] <br />
+            [collection: link, feed diagram image] <br />
+            [design system image] <br />
+            [mobile img] <br />
+          </Item>
+          {/* <ImageCard>
+            <Image iphone />
+          </ImageCard> */}
+        </>
+      }
+      {/* --- SPLASHLIGHT --- */}
+      {i.id === 'S-2019' &&
+        <>
+          <Item>
+            <LiminalHeroSvg />
+          </Item>
+          <Item>
+            <Paragraph>
+            [problem image] <br />
+            [collection: link, feed diagram image] <br />
+            [design system image] <br />
+            [mobile img] <br />
+            </Paragraph>
+          </Item>
+          {/* <ImageCard>
+            <Image iphone />
+          </ImageCard> */}
+        </>
+      }
+      {/* --- GAGOSIAN --- */}
+      {i.id === 'G-2017' &&
+        <>
+          <Item>
+            <LiminalHeroSvg />
+          </Item>
+          <Item>
+            <Paragraph>
+            [problem image] <br />
+            [collection: link, feed diagram image] <br />
+            [design system image] <br />
+            [mobile img] <br />
+            </Paragraph>
+          </Item>
+          {/* <ImageCard>
+            <Image iphone />
+          </ImageCard> */}
+        </>
+      }
     </LayoutContainer>
   )
 
