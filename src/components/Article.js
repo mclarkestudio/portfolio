@@ -94,11 +94,11 @@ const Article = ({ i, ...props }) => {
       <Item />
       <br />
       <br />
-      <Item>
+      {/* <Item>
         <Paragraph>
           {i.slug}
         </Paragraph>
-      </Item>
+      </Item> */}
       <Item small>
         <br />
         <Paragraph>{i.para}</Paragraph>
@@ -126,71 +126,52 @@ const Article = ({ i, ...props }) => {
           </Item>
           <Item>
             <Paragraph>
-            [problem image] <br />
-            [collection: link, feed diagram image] <br />
-            [design system image] <br />
-            [mobile img] <br />
+              [@todo: collection: link, feed diagram image] <br />
+            <Paragraph>
+              [@todo: Closing paragraph]
+            </Paragraph>
+              [@todo: design system image] <br />
+              [@todo: mobile img/video stretch] <br />
             </Paragraph>
           </Item>
-          {/* <ImageCard>
-            <Image iphone />
-          </ImageCard> */}
         </>
       }
       {/* --- DATAVORE --- */}
       {i.id === 'D-2020' &&
-        <>
+        <>  
           <Item>
-            {/* <LiminalHeroSvg /> */}
-            [Hero image]
+            <Paragraph>
+              [@todo: any hero] <br />
+              [@todo: before / circle callout images] <br />
+              [@todo: any images] <br />
+            </Paragraph>
           </Item>
-          <Item>
-            [problem image] <br />
-            [collection: link, feed diagram image] <br />
-            [design system image] <br />
-            [mobile img] <br />
-          </Item>
-          {/* <ImageCard>
-            <Image iphone />
-          </ImageCard> */}
         </>
       }
       {/* --- SPLASHLIGHT --- */}
       {i.id === 'S-2019' &&
         <>
           <Item>
-            <LiminalHeroSvg />
-          </Item>
-          <Item>
             <Paragraph>
-            [problem image] <br />
-            [collection: link, feed diagram image] <br />
-            [design system image] <br />
-            [mobile img] <br />
+              [@todo hero] <br />
+              [@todo: service map] <br />
+              [@todo: technical image] <br />
+              [@todo: any splashtag image] <br />
+              [@todo: any website image] <br />
             </Paragraph>
           </Item>
-          {/* <ImageCard>
-            <Image iphone />
-          </ImageCard> */}
         </>
       }
       {/* --- GAGOSIAN --- */}
       {i.id === 'G-2017' &&
         <>
           <Item>
-            <LiminalHeroSvg />
-          </Item>
-          <Item>
             <Paragraph>
-            [problem image] <br />
-            [collection: link, feed diagram image] <br />
-            [design system image] <br />
-            [mobile img] <br />
+              [@todo: hero] <br />
+              [@todo: print publication] <br />
+              [@todo: website] <br />
             </Paragraph>
           </Item>
-          {/* <ImageCard>
-            <Image iphone />
-          </ImageCard> */}
         </>
       }
     </LayoutContainer>

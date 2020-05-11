@@ -4,9 +4,9 @@ export const WebCopy = [
     id: "L-2020+",
     heading: "Liminal",
     slug: "A personal media library for the web.",
-    role: "Principal Design",
+    role: "Principal Designer, Developer",
     resp:
-      "Concept development, user interface design, and cross-platform full-stack development (WIP).",
+      "Product concept, user interface design, and cross-platform full-stack development (WIP).",
     para:
       "In an age of cloud services, our media consumption is split across a range of products and services. Liminal was designed for creatives, researchers, and curious people to combat this frankenstack of media applications. It allows you to build feeds, save links, and integrate your activity into a single digital timeline.",
     date: "2020+",
@@ -18,7 +18,7 @@ export const WebCopy = [
     role: "Design Lead",
     resp:
       "Product design, user interface design, design system development, and cross-application front-end development.",
-    // para: 'Liminal is a cross-platform web ',
+    para: '[@todo: i.para]',
     slug: "The code-free tool for advanced time-series analysis.",
     date: "2019–2020",
   },
@@ -28,16 +28,18 @@ export const WebCopy = [
     role: "UX Manager",
     resp:
       "Service design, design operations, user experience design, and information architecture.",
-    // para: 'Liminal is a cross-platform web ',
+    para: '[@todo: i.para]',
     slug: "The highest standards in e-commerce photography and video.",
     date: "2017–2019",
   },
   {
     id: "G-2017",
-    heading: "Gagosian Gallery",
+    heading: "Gagosian Quarterly",
     role: "Publications Coordinator",
+    resp: "Print production, image proofing, copy editing, project management, and quality assurance.",
     slug: "Behind the scences acces to modern and contemporary art practices.",
     date: "2015–2017",
+    para: '@todo: i.para',
   },
 ]
 
