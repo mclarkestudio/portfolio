@@ -45,32 +45,18 @@ const Image = props => {
       placeholderImage: file(relativePath: { eq: "hero8.png" }) {
         ...fluidImage
       }
-      iphoneImage: file(relativePath: { eq: "l-ui.png" }) {
-        ...fluidImage
-      }
-      l1: file(relativePath: { eq: "l1.png" }) {
-        ...fluidImage
-      }
-      l2: file(relativePath: { eq: "l2.png" }) {
-        ...fluidImage
-      }
-      l3: file(relativePath: { eq: "l3.png" }) {
+      iphoneImage: file(relativePath: { eq: "/liminal/lim1.png" }) {
         ...fluidImage
       }
     }
   `)
 
-  // const ref = 
-  // const iphonePath = 'data.' + ref '.childImageSharp.fluid';
-
-  // Props to image path
-  // @TODO: change way images are queried for articles
   const placeholderPath = data.placeholderImage.childImageSharp.fluid
-  const iphonePath = data.iphoneImage.childImageSharp.fluid
+  // const iphonePath = data.iphoneImage.childImageSharp.fluid
 
-  const imagePath = props.iphone ? iphonePath : placeholderPath
+  // const imagePath = props.iphone ? iphonePath : placeholderPath
 
-  return <Img fluid={imagePath} />
+  return <Img fluid={placeholderPath} />
 }
 
 export default Image

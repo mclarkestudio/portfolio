@@ -8,6 +8,7 @@ import { device } from "./Device"
 import { LayoutContainer } from "./Layout"
 import LiminalHeroSvg from "./Hero"
 import LiminalSVG from "./liminalSVG"
+import { ImageGallery } from './ImageGallery';
 
 const Row = styled.div`
     display: flex;
@@ -128,7 +129,7 @@ const Article = ({ i, ...props }) => {
             <LiminalHeroSvg />
           </Item>
           <Item>
-            <Image iphone/>
+            <ImageGallery dir='liminal' />
             {/* <LiminalSVG /> */}
           </Item>
           <Item>
