@@ -32,7 +32,7 @@ export const ImageCard = styled.div`
 export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
-      fluid(maxWidth: 2000) {
+      fluid(maxWidth: 2000, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -45,11 +45,23 @@ const Image = props => {
       placeholderImage: file(relativePath: { eq: "hero8.png" }) {
         ...fluidImage
       }
-      iphoneImage: file(relativePath: { eq: "iphone.png" }) {
+      iphoneImage: file(relativePath: { eq: "l-ui.png" }) {
+        ...fluidImage
+      }
+      l1: file(relativePath: { eq: "l1.png" }) {
+        ...fluidImage
+      }
+      l2: file(relativePath: { eq: "l2.png" }) {
+        ...fluidImage
+      }
+      l3: file(relativePath: { eq: "l3.png" }) {
         ...fluidImage
       }
     }
   `)
+
+  // const ref = 
+  // const iphonePath = 'data.' + ref '.childImageSharp.fluid';
 
   // Props to image path
   // @TODO: change way images are queried for articles

@@ -7,6 +7,7 @@ import Image, { ImageCard } from "./Image"
 import { device } from "./Device"
 import { LayoutContainer } from "./Layout"
 import LiminalHeroSvg from "./Hero"
+import LiminalSVG from "./liminalSVG"
 
 const Row = styled.div`
     display: flex;
@@ -125,6 +126,10 @@ const Article = ({ i, ...props }) => {
         <>
           <Item>
             <LiminalHeroSvg />
+          </Item>
+          <Item>
+            <Image iphone/>
+            {/* <LiminalSVG /> */}
           </Item>
           <Item>
             <Paragraph>

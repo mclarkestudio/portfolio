@@ -8,7 +8,7 @@ export const WebCopy = [
     resp:
       "Product concept, mobile interface design, desktop interface design, and cross-platform full-stack development.",
     para:
-      "In an age of cloud computing, personal media consumption is split throughout a range of products and services. Liminal is a personal media library for the web––designed for creatives, researchers, and curious people to combat our daily frankenstack of media sources. It allows you to build feeds, save links, and integrate your activity into a single digital timeline.",
+      "Liminal is a personal media library for the web––designed for creatives and researchers, and curious people to collect our daily frankenstack of media sources. It allows you to build feeds, save links, and integrate your activity into a single digital timeline.",
     date: "2020+",
     images: [],
   },
@@ -19,7 +19,7 @@ export const WebCopy = [
     resp:
       "Product design, user interface design, design system development, and cross-application front-end development.",
     para:
-      "Big data, wide data, desperate data, and everything in-between, businesses are teaming up to make core business decisions from all types of live time-series data. Datavore bridges the gap between analysts and data scientists by offering a light-weight search and analysis tool for your teams data. From 2019–2020, we extended the product to include granular tagging, which allows analysts to create cohorts from billions of transactional data without accessing the raw data itself.",
+      "Datavore bridges the gap between analysts and data scientists by offering a light-weight search and analysis tool for your teams data. From 2019–2020, we extended the product to include granular tagging, which allows analysts to create cohorts from billions of transactional data without accessing the raw data itself.",
     slug: "The code-free tool for advanced time-series analysis.",
     team:
       "Sanjay Venkat, CTO; JP, Systems Architecture; Dante F, Full-stack Tech Lead; Dan Entrup, CEO; Phil Fogel, COO;",
