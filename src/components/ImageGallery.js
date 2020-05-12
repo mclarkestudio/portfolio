@@ -2,17 +2,6 @@ import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import * as R from 'ramda'
-// import styled from "styled-components"
-// import { device } from "./Device"
-// import { transitionTime } from "./Transition"
-
-// export const ImageCard = styled.div`
-//   max-width: 400px;
-//   margin: auto;
-//   padding: 80px 10%;
-//   z-index: 4;
-//   transition: max-width ${transitionTime};
-// `
 
 export const highQualityFluidImage = graphql`
   fragment highQualityFluidImage on File {
@@ -24,7 +13,7 @@ export const highQualityFluidImage = graphql`
   }
 `
 
-export const LiminalImageGallery = () => {
+export const ImageGallery = (props) => {
 
     // Get all images in /images/ANY_DIRECTORY
     const data = useStaticQuery(graphql`
@@ -49,13 +38,21 @@ export const LiminalImageGallery = () => {
     const groupedNodes = fn(dataEdges)
     console.info(groupedNodes, 'Image Nodes Grouped By Directory')
 
+    // Return directory based on props
+    function getDirData(dir) {
+        return (dir === 'liminal' ? groupedNodes.liminal : dataEdges)
+      }
+    
+    // Render data to image component
+    const renderData = getDirData(props.dir)
+
     return (
         <>
-            {data.allFile.edges.map(i => (
+            {renderData.map(i => (
                 <Img key={i.node.id} fluid={i.node.childImageSharp.fluid} />
             ))}
         </>
     )
 }
 
-export default LiminalImageGallery;
+export default ImageGallery;

@@ -1,14 +1,14 @@
 import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import { LiminalImageGallery } from '../components/ImageGallery';
+import { ImageGallery } from '../components/ImageGallery';
 
 const IndexPage = () => {
   return (
     <>
       <SEO title="test" />
       <Layout>
-        <LiminalImageGallery />
+        <ImageGallery dir='liminal'/>
       </Layout>
     </>
   )
