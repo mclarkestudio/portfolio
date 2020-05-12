@@ -8,7 +8,8 @@ const IndexPage = () => {
     <>
       <SEO title="test" />
       <Layout>
-        <ImageGallery dir='liminal'/>
+        <ImageGallery dir='liminal' />
+        <ImageGallery dir='datavore' />
       </Layout>
     </>
   )
