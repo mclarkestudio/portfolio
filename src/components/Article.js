@@ -105,21 +105,23 @@ const Article = ({ i, ...props }) => {
         <br />
       </Item>
       <Item small>
-        {i.role && <Item>
+        {i.role && (
+          <Item>
             <Heading>Role</Heading>
             <Paragraph>{i.role}</Paragraph>
             <br />
           </Item>
-        }
-        {i.resp && <Item>
+        )}
+        {i.resp && (
+          <Item>
             <Heading>Responsibilities</Heading>
             <Paragraph>{i.resp}</Paragraph>
             <br />
           </Item>
-        }
+        )}
       </Item>
       {/* --- LIMINAL --- */}
-      {i.id === 'L-2020+' &&
+      {i.id === "L-2020+" && (
         <>
           <Item>
             <LiminalHeroSvg />
@@ -127,18 +129,16 @@ const Article = ({ i, ...props }) => {
           <Item>
             <Paragraph>
               [@todo: collection: link, feed diagram image] <br />
-            <Paragraph>
-              [@todo: Closing paragraph]
-            </Paragraph>
+              <Paragraph>[@todo: Closing paragraph]</Paragraph>
               [@todo: design system image] <br />
               [@todo: mobile img/video stretch] <br />
             </Paragraph>
           </Item>
         </>
-      }
+      )}
       {/* --- DATAVORE --- */}
-      {i.id === 'D-2020' &&
-        <>  
+      {i.id === "D-2020" && (
+        <>
           <Item>
             <Paragraph>
               [@todo: any hero] <br />
@@ -147,9 +147,9 @@ const Article = ({ i, ...props }) => {
             </Paragraph>
           </Item>
         </>
-      }
+      )}
       {/* --- SPLASHLIGHT --- */}
-      {i.id === 'S-2019' &&
+      {i.id === "S-2019" && (
         <>
           <Item>
             <Paragraph>
@@ -161,9 +161,9 @@ const Article = ({ i, ...props }) => {
             </Paragraph>
           </Item>
         </>
-      }
+      )}
       {/* --- GAGOSIAN --- */}
-      {i.id === 'G-2017' &&
+      {i.id === "G-2017" && (
         <>
           <Item>
             <Paragraph>
@@ -173,7 +173,7 @@ const Article = ({ i, ...props }) => {
             </Paragraph>
           </Item>
         </>
-      }
+      )}
     </LayoutContainer>
   )
 
