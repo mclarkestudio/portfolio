@@ -3,11 +3,11 @@ import React from "react"
 import styled from "styled-components"
 
 import Type from "./Typeface"
-import Image, { ImageCard } from "./Image"
+// import Image, { ImageCard } from "./Image"
 import { device } from "./Device"
 import { LayoutContainer } from "./Layout"
 import LiminalHeroSvg from "./Hero"
-import LiminalSVG from "./liminalSVG"
+// import LiminalSVG from "./liminalSVG"
 import { ImageGallery } from './ImageGallery';
 
 const Row = styled.div`
@@ -125,18 +125,17 @@ const Article = ({ i, ...props }) => {
       {/* --- LIMINAL --- */}
       {i.id === "L-2020+" && (
         <>
-          <Item>
+          {/* <Item>
             <LiminalHeroSvg />
-          </Item>
+          </Item> */}
           <Item>
             <ImageGallery dir='liminal' />
-            {/* <LiminalSVG /> */}
           </Item>
           <Item>
             <Paragraph>
               [@todo: collection: link, feed diagram image] <br />
               <Paragraph>[@todo: Closing paragraph]</Paragraph>
-              [@todo: design system image] <br />
+              {/* [@todo: design system image] <br /> */}
               [@todo: mobile img/video stretch] <br />
             </Paragraph>
           </Item>
@@ -146,6 +145,7 @@ const Article = ({ i, ...props }) => {
       {i.id === "D-2020" && (
         <>
           <Item>
+            <ImageGallery dir='datavore' />
             <Paragraph>
               [@todo: any hero] <br />
               [@todo: before / circle callout images] <br />
@@ -158,6 +158,7 @@ const Article = ({ i, ...props }) => {
       {i.id === "S-2019" && (
         <>
           <Item>
+            {/* <ImageGallery dir='splashlight' /> */}
             <Paragraph>
               [@todo hero] <br />
               [@todo: service map] <br />
@@ -172,6 +173,7 @@ const Article = ({ i, ...props }) => {
       {i.id === "G-2017" && (
         <>
           <Item>
+            {/* <ImageGallery dir='gagosian' /> */}
             <Paragraph>
               [@todo: hero] <br />
               [@todo: print publication] <br />

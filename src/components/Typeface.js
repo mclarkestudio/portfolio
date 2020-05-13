@@ -103,7 +103,7 @@ const Type = props => {
 }
 
 Type.propTypes = {
-  variant: PropTypes.oneOf(["h1", "h2", "p"]).isRequired,
+  p: PropTypes.bool,
   stickyTitle: PropTypes.bool,
 }
 

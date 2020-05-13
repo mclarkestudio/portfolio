@@ -20,7 +20,7 @@ const NavItem = ({ i }) => {
   return (
     <div>
       <a
-        key="id"
+        // key={i.id}
         href={`/#${i.id}`}
         onMouseEnter={() => toggleHover()}
         onMouseLeave={() => toggleHover()}
