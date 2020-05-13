@@ -8,7 +8,7 @@ import { device } from "./Device"
 import { LayoutContainer } from "./Layout"
 import LiminalHeroSvg from "./Hero"
 // import LiminalSVG from "./liminalSVG"
-import { ImageGallery } from './ImageGallery';
+import { ImageGallery } from "./ImageGallery"
 
 const Row = styled.div`
     display: flex;
@@ -129,7 +129,7 @@ const Article = ({ i, ...props }) => {
             <LiminalHeroSvg />
           </Item> */}
           <Item>
-            <ImageGallery dir='liminal' />
+            <ImageGallery dir="liminal" />
           </Item>
           <Item>
             <Paragraph>
@@ -145,7 +145,7 @@ const Article = ({ i, ...props }) => {
       {i.id === "D-2020" && (
         <>
           <Item>
-            <ImageGallery dir='datavore' />
+            <ImageGallery dir="datavore" />
             <Paragraph>
               [@todo: any hero] <br />
               [@todo: before / circle callout images] <br />
@@ -158,13 +158,13 @@ const Article = ({ i, ...props }) => {
       {i.id === "S-2019" && (
         <>
           <Item>
-            {/* <ImageGallery dir='splashlight' /> */}
+            <ImageGallery dir="splashlight" />
             <Paragraph>
               [@todo hero] <br />
               [@todo: service map] <br />
               [@todo: technical image] <br />
               [@todo: any splashtag image] <br />
-              [@todo: any website image] <br />
+              {/* [@todo: any website image] <br /> */}
             </Paragraph>
           </Item>
         </>

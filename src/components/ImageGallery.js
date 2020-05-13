@@ -4,6 +4,9 @@ import Img from "gatsby-image"
 import PropTypes from "prop-types"
 import * as R from "ramda"
 import styled from "styled-components"
+import Swiper from "react-id-swiper"
+import "swiper/css/swiper.css"
+
 import { device } from "./Device"
 
 const ImageWrapper = styled.div`
@@ -76,7 +79,7 @@ export const ImageGallery = ({ dir }) => {
   const renderData = getDirData(dir)
 
   return (
-    <>
+    <Swiper>
       {renderData.map(i => (
         <ImageWrapper>
           <Img
@@ -86,7 +89,7 @@ export const ImageGallery = ({ dir }) => {
           />
         </ImageWrapper>
       ))}
-    </>
+    </Swiper>
   )
 }
 
