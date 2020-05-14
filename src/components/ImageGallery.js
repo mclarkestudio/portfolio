@@ -1,13 +1,13 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import PropTypes from "prop-types"
 import * as R from "ramda"
 import styled from "styled-components"
-import Swiper from "react-id-swiper"
-import "swiper/css/swiper.css"
+// import Swiper from "react-id-swiper"
+import "./imagegallery.css"
 
-import { device } from "./Device"
+import { device } from "./devices"
 
 const ImageWrapper = styled.div`
   padding-bottom: 16px;
@@ -50,12 +50,10 @@ export const ImageGallery = ({ dir }) => {
 
   // The array of nodes from graphql
   const dataEdges = data.allFile.edges
-
   // Group image nodes into directories
   const fn = R.groupBy(R.path(["node", "relativeDirectory"]))
   const groupedNodes = fn(dataEdges)
   // console.info(groupedNodes, 'Image Nodes Grouped By Directory')
-
   // Return directory based on props
   function getDirData(dir) {
     switch (dir) {
@@ -74,12 +72,93 @@ export const ImageGallery = ({ dir }) => {
         return null
     }
   }
-
   // Render data to image component
   const renderData = getDirData(dir)
 
+  // SWIPER -------------------------------------------------------
+  const [gallerySwiper, getGallerySwiper] = useState(null)
+  const [thumbnailSwiper, getThumbnailSwiper] = useState(null)
+  const gallerySwiperParams = {
+    // Swiper,
+    // modules: [Controller],
+    themeColor: "black",
+    getSwiper: getGallerySwiper,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next swiper-button-black gallery-next",
+      prevEl: ".swiper-button-prev swiper-button-black gallery-prev",
+      clickable: true,
+    },
+    // slideToClickedSlide: true,s
+    // grabCursor: true,
+    autoplay: {
+      delay: 3500,
+    },
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      hide: true,
+    },
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   type: "progressbar",
+    // },
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   clickable: true,
+    //   dynamicBullets: true,
+    // },
+  }
+
+  const thumbnailSwiperParams = {
+    // modules: [Controller],
+    getSwiper: getThumbnailSwiper,
+    spaceBetween: 10,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    touchRatio: 0.2,
+    slideToClickedSlide: true,
+    // allowTouchMove: false,
+    // noSwiping: true,
+    slideActiveClass: "gallery-thumbs--item__active",
+    wrapperClass: "swiper-wrapper",
+    a11y: {
+      prevSlideMessage: "Previous slide",
+      nextSlideMessage: "Next slide",
+    },
+    mousewheel: true,
+  }
+
+  useEffect(() => {
+    if (
+      gallerySwiper !== null &&
+      gallerySwiper.controller &&
+      thumbnailSwiper !== null &&
+      thumbnailSwiper.controller
+    ) {
+      gallerySwiper.controller.control = thumbnailSwiper
+      thumbnailSwiper.controller.control = gallerySwiper
+    }
+  }, [gallerySwiper, thumbnailSwiper])
+
+  console.log(gallerySwiper, "Gallery Swiper")
+  console.log(thumbnailSwiper, "Thumbnail Swiper")
+
   return (
-    <Swiper>
+    <div>
+      {/* Gallery thumbs cannot fix left */}
+      {/* <div className="gallery-thumbs">
+        <Swiper {...thumbnailSwiperParams}>
+          {renderData.map(i => (
+            <div key={i.node.id} className="gallery-thumbs--item">
+              <Img
+                fluid={i.node.childImageSharp.fluid}
+                alt={i.node.childImageSharp.fluid}
+              />
+            </div>
+          ))}
+        </Swiper>
+      </div> */}
+      {/* <Swiper {...gallerySwiperParams}> */}
       {renderData.map(i => (
         <ImageWrapper>
           <Img
@@ -89,7 +168,8 @@ export const ImageGallery = ({ dir }) => {
           />
         </ImageWrapper>
       ))}
-    </Swiper>
+      {/* </Swiper> */}
+    </div>
   )
 }
 

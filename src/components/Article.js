@@ -1,12 +1,12 @@
 import React from "react"
-// import PropTypes from "prop-types"
+import PropTypes from "prop-types"
 import styled from "styled-components"
 
-import Type from "./Typeface"
+import Type from "./Type"
 // import Image, { ImageCard } from "./Image"
-import { device } from "./Device"
+import { device } from "./devices"
 import { LayoutContainer } from "./Layout"
-import LiminalHeroSvg from "./Hero"
+// import LiminalHeroSvg from "./Hero"
 // import LiminalSVG from "./liminalSVG"
 import { ImageGallery } from "./ImageGallery"
 
@@ -87,6 +87,10 @@ const Article = ({ i, ...props }) => {
     </Type>
   )
 
+  function createMarkup() {
+    return { __html: i.para }
+  }
+
   const Images = () => (
     <LayoutContainer>
       <Type>{i.heading}</Type>
@@ -103,7 +107,13 @@ const Article = ({ i, ...props }) => {
       </Item> */}
       <Item small>
         <br />
-        <Paragraph>{i.para}</Paragraph>
+        <Paragraph>
+          <span dangerouslySetInnerHTML={createMarkup()}></span>
+        </Paragraph>
+        <br />
+      </Item>
+      <Item small>
+        <Paragraph>{i.para2}</Paragraph>
         <br />
       </Item>
       <Item small>
@@ -122,84 +132,37 @@ const Article = ({ i, ...props }) => {
           </Item>
         )}
       </Item>
-      {/* --- LIMINAL --- */}
-      {i.id === "L-2020+" && (
-        <>
-          {/* <Item>
-            <LiminalHeroSvg />
-          </Item> */}
-          <Item>
-            <ImageGallery dir="liminal" />
-          </Item>
-          <Item>
-            <Paragraph>
-              [@todo: collection: link, feed diagram image] <br />
-              <Paragraph>[@todo: Closing paragraph]</Paragraph>
-              {/* [@todo: design system image] <br /> */}
-              [@todo: mobile img/video stretch] <br />
-            </Paragraph>
-          </Item>
-        </>
-      )}
-      {/* --- DATAVORE --- */}
-      {i.id === "D-2020" && (
-        <>
-          <Item>
-            <ImageGallery dir="datavore" />
-            <Paragraph>
-              [@todo: any hero] <br />
-              [@todo: before / circle callout images] <br />
-              [@todo: any images] <br />
-            </Paragraph>
-          </Item>
-        </>
-      )}
-      {/* --- SPLASHLIGHT --- */}
-      {i.id === "S-2019" && (
-        <>
-          <Item>
-            <ImageGallery dir="splashlight" />
-            <Paragraph>
-              [@todo hero] <br />
-              [@todo: service map] <br />
-              [@todo: technical image] <br />
-              [@todo: any splashtag image] <br />
-              {/* [@todo: any website image] <br /> */}
-            </Paragraph>
-          </Item>
-        </>
-      )}
-      {/* --- GAGOSIAN --- */}
-      {i.id === "G-2017" && (
-        <>
-          <Item>
-            {/* <ImageGallery dir='gagosian' /> */}
-            <Paragraph>
-              [@todo: hero] <br />
-              [@todo: print publication] <br />
-              [@todo: website] <br />
-            </Paragraph>
-          </Item>
-        </>
-      )}
+      <Item>
+        {/* --- LIMINAL --- */}
+        {i.id === "L-2020+" && <ImageGallery dir="liminal" />}
+        {/* --- DATAVORE --- */}
+        {i.id === "D-2020" && <ImageGallery dir="datavore" />}
+        {/* --- SPLASHLIGHT --- */}
+        {i.id === "S-2019" && <ImageGallery dir="splashlight" />}
+        {/* --- GAGOSIAN --- */}
+        {i.id === "G-2017" && <></>}
+      </Item>
     </LayoutContainer>
   )
 
   return (
-    <article>
-      <a name={i.id} />
-      <StickyHeader />
-      <Images />
-    </article>
+    <>
+      <article>
+        <a name={i.id} />
+        <StickyHeader />
+        <Images />
+      </article>
+    </>
   )
 }
 
-// Article.propTypes = {
-//     heading: PropTypes.string.isRequired,
-//     slug: PropTypes.string.isRequired,
-//     date: PropTypes.string.isRequired,
-//     para: PropTypes.string.isRequired,
-// }
+Article.propTypes = {
+  heading: PropTypes.string.isRequired,
+  // slug: PropTypes.string.isRequired,
+  // date: PropTypes.string.isRequired,
+  para: PropTypes.string.isRequired,
+  para2: PropTypes.string.isRequired,
+}
 
 Article.defaultProps = {
   // heading: 'Liminal',

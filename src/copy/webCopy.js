@@ -9,7 +9,8 @@ export const WebCopy = [
       "Product concept, mobile interface design, desktop interface design, and cross-platform full-stack development.",
     para:
       "Liminal is a personal media library for the web––designed for creatives and researchers, and curious people to collect our daily frankenstack of media sources. It allows you to build feeds, save links, and integrate your activity into a single digital timeline.",
-    date: "2020+",
+    para2:
+      "Liminal is currently in development. First platforms will include web, macOS, iPhone, and Android.",
     images: [],
   },
   {
@@ -18,8 +19,9 @@ export const WebCopy = [
     role: "Design Lead",
     resp:
       "Product design, user interface design, design system development, and cross-application front-end development.",
-    para:
-      "Datavore bridges the gap between analysts and data scientists by offering a light-weight search and analysis tool for your teams data. From 2019–2020, we extended the product to include granular tagging, which allows analysts to create cohorts from billions of transactional data without accessing the raw data itself.",
+    para: "The code-free tool for advanced time series anaysis.",
+    para2:
+      "From 2019–2020, we extended the core Datavore product to include granular tagging––allowing analysts to segment transactions from large data sets without directly accessing the raw data itself. From consumer brands to data marketplaces, businesses can exhange data per usage without the need to open the raw data (which may be prone to identity tracing). We merged this extensive, new feature into Datavore's core product and provided a seamless experience between the two systems.",
     slug: "The code-free tool for advanced time-series analysis.",
     team:
       "Sanjay Venkat, CTO; JP, Systems Architecture; Dante F, Full-stack Tech Lead; Dan Entrup, CEO; Phil Fogel, COO;",
@@ -32,7 +34,9 @@ export const WebCopy = [
     resp:
       "Service design, design operations, user experience design, and information architecture.",
     para:
-      "Splashlights Intelligent Imagery Platform is an end-to-end content management platform, which simplifies the complex omni-channel content creation process, enabling brands to focus on their customer journey. With the I² Platform, you can create and deliver uncompromising images at the unforgiving pace of modern #ecommerce.",
+      "Splashlights Intelligent Imagery Platform is an end-to-end content management platform, which simplifies the complex omni-channel content creation process, enabling brands to focus on their customer journey. ",
+    para2:
+      "From 2017–2019, we launched the pilot program for Splashtag, a web analytics and experimentation tool that allows for content teams to examine the reach, location, and trends acrross their creative decisions.",
     slug: "The highest standards in e-commerce photography and video.",
     team:
       "Robyn Dutra, VP of Creative; Thomas Brodin, Design Director; Vivian Zhang, Designer; Say Lim, Designer; Ted Washburne, VP of Research & Analytics; Mohammad Bashir, Tech Lead",

@@ -4,9 +4,10 @@ import Layout from "../components/Layout"
 import Image from "../components/Image"
 import SEO from "../components/seo"
 import Article from "../components/Article"
-import Type from "../components/Typeface"
+import Type from "../components/Type"
 
 import { WebCopy, ProjectCopy } from "../copy/webCopy"
+import About from "../components/About"
 // import LayoutContainer from "../components/Layout"
 // import Hero from "../components/Hero"
 
@@ -68,10 +69,7 @@ const IndexPage = () => {
             <Article key={i.id} i={i} />
           </>
         ))}
-        <Type>
-          <a name="about" />
-          About
-        </Type>
+        <About />
       </Layout>
     </>
   )

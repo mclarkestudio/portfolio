@@ -1,0 +1,46 @@
+/* IMAGEGALLERY Swiper Size */
+.swiper-container {
+  max-width: 1280px;
+  max-height: 800px;
+}
+
+.swiper-pagination-progressbar-fill {
+  background: yellow !important;
+}
+
+.swiper-pagination-bullet {
+  height: 12px;
+  width: 12px;
+  background: orangered;
+  mix-blend-mode: difference;
+}
+
+.swiper-pagination-bullet-active {
+  background: orangered !important;
+  mix-blend-mode: difference;
+}
+
+/* .gallery-next::after,
+.gallery-pre::after {
+  padding: 50vh;
+} */
+
+.gallery-thumbs {
+  height: 3rem !important;
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-thumbs--item {
+  width: 25%;
+  height: 5rem !important;
+  cursor: pointer;
+  z-index: 3;
+  opacity: 0.5;
+  transition: opacity 0.4s;
+}
+
+.gallery-thumbs--item:hover,
+.gallery-thumbs--item__active {
+  opacity: 1;
+}

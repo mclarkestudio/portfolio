@@ -1,9 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { device } from "./Device"
-
-import "../static/Inter Web/inter.css"
+import { device } from "./devices"
 
 const BaseType = styled.div`
   /* BASE TYPEFACE */
@@ -90,25 +88,21 @@ const StickyTitle = styled(StickyDiv)`
   }
 `
 
-const Type = props => {
-  if (props.p) {
-    return <Paragraph {...props}>{props.children}</Paragraph>
+const Type = ({ p, stickyTitle, children, props }) => {
+  if (p) {
+    return <Paragraph>{children}</Paragraph>
   }
 
-  if (props.stickyTitle) {
-    return <StickyTitle {...props}>{props.children}</StickyTitle>
+  if (stickyTitle) {
+    return <StickyTitle>{children}</StickyTitle>
   }
 
-  return <BaseType {...props}>{props.children}</BaseType>
+  return <BaseType>{children}</BaseType>
 }
 
 Type.propTypes = {
   p: PropTypes.bool,
   stickyTitle: PropTypes.bool,
-}
-
-Type.defaultProps = {
-  // variant: 'h1',
 }
 
 export default Type
