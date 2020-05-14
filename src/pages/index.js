@@ -8,6 +8,7 @@ import Type from "../components/Type"
 
 import { WebCopy, ProjectCopy } from "../copy/webCopy"
 import About from "../components/About"
+import { motion } from "framer-motion"
 // import LayoutContainer from "../components/Layout"
 // import Hero from "../components/Hero"
 
@@ -60,7 +61,7 @@ const IndexPage = () => {
           <a name="home" />
           <StickyPageTitle />
           <br />
-          <div style={{ maxWidth: "70%", marginLeft: "auto" }}>
+          <div style={{ width: "70%", maxWidth: "1300px", marginLeft: "auto" }}>
             <Image />
           </div>
         </div>

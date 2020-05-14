@@ -2,33 +2,10 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
+import { TextBlock, ContentContainer, Row, Item } from "./layout"
 import Type, { Paragraph } from "./Type"
-import device from "./devices"
-import { LayoutContainer, ContentContainer } from "./layout"
 import { ImageGallery } from "./ImageGallery"
 import { motion, AnimatePresence } from "framer-motion"
-
-const Row = styled.div`
-    display: flex;
-    flex-direction: row;
-
-    /* @media ${device.tablet} {
-        flex-direction: column;
-    } */
-`
-
-const FlexContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  @media ${device.tablet} {
-    flex-direction: column;
-  }
-`
-
-const Item = styled.div`
-  flex: 1 1 auto;
-`
 
 const BackHomeButton = () => {
   const RightButton = styled.div`
@@ -57,17 +34,15 @@ const BackHomeButton = () => {
 const Article = ({ i, ...props }) => {
   const StickyHeader = () => (
     <Type stickyTitle>
-      <FlexContainer>
-        <Row>
-          <Item>
-            <a href={`/#${i.id}`} title="To top of article">
-              <sup>{i.id}</sup>
-            </a>
-            <Type bold>{i.heading}</Type>
-          </Item>
-          <BackHomeButton />
-        </Row>
-      </FlexContainer>
+      <Row>
+        <Item>
+          <a href={`/#${i.id}`} title="To top of article">
+            <sup>{i.id}</sup>
+          </a>
+          <Type bold>{i.heading}</Type>
+        </Item>
+        <BackHomeButton />
+      </Row>
     </Type>
   )
 
@@ -78,6 +53,9 @@ const Article = ({ i, ...props }) => {
   const DynamicImageGallery = () => {
     return (
       <Item>
+        <br />
+        <br />
+        <br />
         {/* --- LIMINAL --- */}
         {i.id === "L-2020+" && <ImageGallery dir="liminal" />}
         {/* --- DATAVORE --- */}
@@ -92,30 +70,36 @@ const Article = ({ i, ...props }) => {
 
   const DynamicContent = () => (
     <ContentContainer>
-      <Item small>
+      <TextBlock>
         <br />
         <br />
         <Paragraph>
           <span dangerouslySetInnerHTML={createMarkup()}></span>
         </Paragraph>
         <Paragraph>{i.para2}</Paragraph>
-        <Row>
-          {i.role && (
-            <Item>
-              <Paragraph bold>Role</Paragraph>
-              <Paragraph>{i.role}</Paragraph>
-              <br />
-            </Item>
-          )}
-          {i.resp && (
-            <Item>
-              <Paragraph bold>Responsibilities</Paragraph>
-              <Paragraph>{i.resp}</Paragraph>
-              <br />
-            </Item>
-          )}
-        </Row>
-      </Item>
+        {i.role && (
+          <Item>
+            <Paragraph bold>Role</Paragraph>
+            <Paragraph>{i.role}</Paragraph>
+          </Item>
+        )}
+        {i.resp && (
+          <Item>
+            <Paragraph bold>Responsibilities</Paragraph>
+            <Paragraph>{i.resp}</Paragraph>
+          </Item>
+        )}
+        {i.team && (
+          <Item>
+            <Paragraph bold>Team</Paragraph>
+            <Paragraph>{i.team}</Paragraph>
+          </Item>
+        )}
+      </TextBlock>
+      <br />
+      <br />
+      <br />
+      <br />
     </ContentContainer>
   )
 

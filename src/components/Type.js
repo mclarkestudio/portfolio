@@ -47,7 +47,7 @@ const BaseType = styled.div`
 export const Paragraph = styled(BaseType)`
   font-size: 1rem;
   max-width: 40em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   /* margin-right: 2rem; */
   /* margin: auto; */
 

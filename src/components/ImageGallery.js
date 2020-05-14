@@ -4,11 +4,10 @@ import Img from "gatsby-image"
 import PropTypes from "prop-types"
 import * as R from "ramda"
 import styled from "styled-components"
-// import Swiper from "react-id-swiper"
-import "./imagegallery.css"
+import Swiper from "react-id-swiper"
 
+import "./imagegallery.css"
 import device from "./devices"
-import { ContentContainer } from "./layout"
 
 const ImageWrapper = styled.div`
   padding-bottom: 16px;
@@ -33,7 +32,8 @@ export const highQualityFluidImage = graphql`
 `
 
 export const ImageGallery = ({ dir }) => {
-  // Get all images in /images/ANY_DIRECTORY
+  // Get all images in each /dir in /images/
+  // Add an image to /images/liminal/, etc
   const data = useStaticQuery(graphql`
     query {
       allFile(
@@ -84,8 +84,6 @@ export const ImageGallery = ({ dir }) => {
   const [gallerySwiper, getGallerySwiper] = useState(null)
   const [thumbnailSwiper, getThumbnailSwiper] = useState(null)
   const gallerySwiperParams = {
-    // Swiper,
-    // modules: [Controller],
     themeColor: "black",
     getSwiper: getGallerySwiper,
     spaceBetween: 10,
@@ -94,8 +92,6 @@ export const ImageGallery = ({ dir }) => {
       prevEl: ".swiper-button-prev swiper-button-black gallery-prev",
       clickable: true,
     },
-    // slideToClickedSlide: true,s
-    // grabCursor: true,
     autoplay: {
       delay: 3500,
     },
@@ -103,27 +99,15 @@ export const ImageGallery = ({ dir }) => {
       el: ".swiper-scrollbar",
       hide: true,
     },
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   type: "progressbar",
-    // },
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   clickable: true,
-    //   dynamicBullets: true,
-    // },
   }
 
   const thumbnailSwiperParams = {
-    // modules: [Controller],
     getSwiper: getThumbnailSwiper,
     spaceBetween: 10,
     centeredSlides: true,
     slidesPerView: "auto",
     touchRatio: 0.2,
     slideToClickedSlide: true,
-    // allowTouchMove: false,
-    // noSwiping: true,
     slideActiveClass: "gallery-thumbs--item__active",
     wrapperClass: "swiper-wrapper",
     a11y: {
@@ -150,7 +134,6 @@ export const ImageGallery = ({ dir }) => {
 
   return (
     <div>
-      {/* Gallery thumbs cannot fix left */}
       {/* <div className="gallery-thumbs">
         <Swiper {...thumbnailSwiperParams}>
           {renderData.map(i => (
@@ -163,17 +146,17 @@ export const ImageGallery = ({ dir }) => {
           ))}
         </Swiper>
       </div> */}
-      {/* <Swiper {...gallerySwiperParams}> */}
-      {renderData.map(i => (
-        <ImageWrapper>
-          <Img
-            key={i.node.id}
-            fluid={i.node.childImageSharp.fluid}
-            alt={i.node.childImageSharp.fluid}
-          />
-        </ImageWrapper>
-      ))}
-      {/* </Swiper> */}
+      <Swiper {...gallerySwiperParams}>
+        {renderData.map(i => (
+          <ImageWrapper>
+            <Img
+              key={i.node.id}
+              fluid={i.node.childImageSharp.fluid}
+              alt={i.node.childImageSharp.fluid}
+            />
+          </ImageWrapper>
+        ))}
+      </Swiper>
     </div>
   )
 }
