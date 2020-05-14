@@ -60,9 +60,9 @@ const IndexPage = () => {
           <a name="home" />
           <StickyPageTitle />
           <br />
-          {/* <div style={{ maxWidth: "70%", marginLeft: "auto" }}>
+          <div style={{ maxWidth: "70%", marginLeft: "auto" }}>
             <Image />
-          </div> */}
+          </div>
         </div>
         {WebCopy.map(i => (
           <>

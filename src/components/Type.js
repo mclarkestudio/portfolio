@@ -71,10 +71,11 @@ const StickyDiv = styled(BaseType)`
   /* background-color: white; */
   background: linear-gradient(
     to top,
-    rgba(255, 0, 0, 0),
+    rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 1)
   );
-  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
   z-index: 9;
   /* opacity: 0.5; */
 `

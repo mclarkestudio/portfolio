@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
@@ -6,6 +6,7 @@ import Type, { Paragraph } from "./Type"
 import device from "./devices"
 import { LayoutContainer, ContentContainer } from "./layout"
 import { ImageGallery } from "./ImageGallery"
+import { motion, AnimatePresence } from "framer-motion"
 
 const Row = styled.div`
     display: flex;
@@ -118,17 +119,40 @@ const Article = ({ i, ...props }) => {
     </ContentContainer>
   )
 
+  const [expanded, setExpanded] = useState(0)
+  const isOpen = i === expanded
+
   return (
     <>
       <article>
         <hr />
-        <a name={i.id} />
-        <StickyHeader />
-        <br />
-        <br />
-        <br />
-        <DynamicImageGallery />
-        <DynamicContent />
+        <motion.header
+          initial={false}
+          // animate={{ backgroundColor: isOpen ? "lightorange" : "lightyellow" }}
+          onClick={() => setExpanded(isOpen ? false : i)}
+          style={{ cursor: "pointer" }}
+        >
+          <a name={i.id} />
+          <StickyHeader />
+        </motion.header>
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.section
+              key="content"
+              initial="collapsed"
+              animate="open"
+              exit="collapsed"
+              variants={{
+                open: { opacity: 1, height: "auto" },
+                collapsed: { opacity: 0, height: 0 },
+              }}
+              transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+            >
+              <DynamicImageGallery />
+              <DynamicContent />
+            </motion.section>
+          )}
+        </AnimatePresence>
       </article>
     </>
   )
