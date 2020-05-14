@@ -165,15 +165,13 @@ export const ImageGallery = ({ dir }) => {
       </div> */}
       {/* <Swiper {...gallerySwiperParams}> */}
       {renderData.map(i => (
-        <ContentContainer>
-          <ImageWrapper>
-            <Img
-              key={i.node.id}
-              fluid={i.node.childImageSharp.fluid}
-              alt={i.node.childImageSharp.fluid}
-            />
-          </ImageWrapper>
-        </ContentContainer>
+        <ImageWrapper>
+          <Img
+            key={i.node.id}
+            fluid={i.node.childImageSharp.fluid}
+            alt={i.node.childImageSharp.fluid}
+          />
+        </ImageWrapper>
       ))}
       {/* </Swiper> */}
     </div>
