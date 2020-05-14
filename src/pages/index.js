@@ -1,39 +1,14 @@
-import React, { useState } from "react"
+import React from "react"
 
-import Layout from "../components/layout"
+import Layout, { ContentContainer } from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import Article from "../components/Article"
 import Type from "../components/Type"
+import Contact from "../components/Contact"
 
 import { WebCopy, ProjectCopy } from "../copy/webCopy"
-import About from "../components/About"
-import { motion } from "framer-motion"
-// import LayoutContainer from "../components/Layout"
-// import Hero from "../components/Hero"
-
-const NavItem = ({ i }) => {
-  // NavItem hover toggle
-  const [hovered, setHovered] = useState(false)
-  function toggleHover(i) {
-    setHovered(!hovered)
-  }
-
-  return (
-    <div>
-      <a
-        // key={i.id}
-        href={`/#${i.id}`}
-        onMouseEnter={() => toggleHover()}
-        onMouseLeave={() => toggleHover()}
-      >
-        {i.id}
-      </a>
-      &nbsp;
-      {hovered && <span className="title">{i.heading}</span>}
-    </div>
-  )
-}
+import HoverLink from "../components/hoverLink"
 
 const StickyPageTitle = () => {
   return (
@@ -46,7 +21,7 @@ const StickyPageTitle = () => {
       <br />
       <br />
       {ProjectCopy.map(i => (
-        <NavItem key={i.id} i={i} />
+        <HoverLink key={i.id} linkContent={i.id} hoverContent={i.heading} />
       ))}
     </Type>
   )
@@ -70,7 +45,7 @@ const IndexPage = () => {
             <Article key={i.id} i={i} />
           </>
         ))}
-        <About />
+        <Contact />
       </Layout>
     </>
   )
