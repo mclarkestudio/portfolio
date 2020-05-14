@@ -98,20 +98,22 @@ const Article = ({ i, ...props }) => {
           <span dangerouslySetInnerHTML={createMarkup()}></span>
         </Paragraph>
         <Paragraph>{i.para2}</Paragraph>
-        {i.role && (
-          <Item>
-            <Paragraph bold>Role</Paragraph>
-            <Paragraph>{i.role}</Paragraph>
-            <br />
-          </Item>
-        )}
-        {i.resp && (
-          <Item>
-            <Paragraph bold>Responsibilities</Paragraph>
-            <Paragraph>{i.resp}</Paragraph>
-            <br />
-          </Item>
-        )}
+        <Row>
+          {i.role && (
+            <Item>
+              <Paragraph bold>Role</Paragraph>
+              <Paragraph>{i.role}</Paragraph>
+              <br />
+            </Item>
+          )}
+          {i.resp && (
+            <Item>
+              <Paragraph bold>Responsibilities</Paragraph>
+              <Paragraph>{i.resp}</Paragraph>
+              <br />
+            </Item>
+          )}
+        </Row>
       </Item>
     </ContentContainer>
   )
