@@ -1,5 +1,5 @@
 import React from "react"
-import Type from "./Type"
+import Type, { Paragraph } from "./Type"
 
 const About = () => {
   return (
@@ -7,9 +7,16 @@ const About = () => {
       <Type>
         <a name="about" />
         About
-        <Type>
-          <a href="/static/MC-Resume-2020-v2.1.pdf">Resume</a>
-        </Type>
+      </Type>
+      <Paragraph>About</Paragraph>
+      <Type>
+        <a href="/MC-Resume-2020-v2.1.pdf">Resume</a>
+      </Type>
+      <Type>
+        <a href="/static/MC-Resume-2020-v2.1.pdf">Resume</a>
+      </Type>
+      <Type>
+        <a href="/static/MC-Resume-2020-v2.1.pdf">Resume</a>
       </Type>
     </>
   )

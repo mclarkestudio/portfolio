@@ -2,12 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-import Type from "./Type"
-// import Image, { ImageCard } from "./Image"
+import Type, { Paragraph } from "./Type"
 import device from "./devices"
-import { LayoutContainer } from "./layout"
-// import LiminalHeroSvg from "./Hero"
-// import LiminalSVG from "./liminalSVG"
+import { LayoutContainer, ContentContainer } from "./layout"
 import { ImageGallery } from "./ImageGallery"
 
 const Row = styled.div`
@@ -30,22 +27,7 @@ const FlexContainer = styled.div`
 
 const Item = styled.div`
   flex: 1 1 auto;
-  max-width: ${props => (props.small ? "700px" : null)};
 `
-
-const Paragraph = props => {
-  return <Type p>{props.children}</Type>
-}
-
-const Heading = props => {
-  return (
-    <>
-      <Type p bold>
-        {props.children}
-      </Type>
-    </>
-  )
-}
 
 const BackHomeButton = () => {
   const RightButton = styled.div`
@@ -74,16 +56,17 @@ const BackHomeButton = () => {
 const Article = ({ i, ...props }) => {
   const StickyHeader = () => (
     <Type stickyTitle>
-      <LayoutContainer>
-        <FlexContainer>
-          <Row>
+      <FlexContainer>
+        <Row>
+          <Item>
             <a href={`/#${i.id}`} title="To top of article">
               <sup>{i.id}</sup>
             </a>
-            <BackHomeButton />
-          </Row>
-        </FlexContainer>
-      </LayoutContainer>
+            <Type bold>{i.heading}</Type>
+          </Item>
+          <BackHomeButton />
+        </Row>
+      </FlexContainer>
     </Type>
   )
 
@@ -91,47 +74,8 @@ const Article = ({ i, ...props }) => {
     return { __html: i.para }
   }
 
-  const Images = () => (
-    <LayoutContainer>
-      <Type>{i.heading}</Type>
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <br />
-      <br />
-      {/* <Item>
-        <Paragraph>
-          {i.slug}
-        </Paragraph>
-      </Item> */}
-      <Item small>
-        <br />
-        <Paragraph>
-          <span dangerouslySetInnerHTML={createMarkup()}></span>
-        </Paragraph>
-        <br />
-      </Item>
-      <Item small>
-        <Paragraph>{i.para2}</Paragraph>
-        <br />
-      </Item>
-      <Item small>
-        {i.role && (
-          <Item>
-            <Heading>Role</Heading>
-            <Paragraph>{i.role}</Paragraph>
-            <br />
-          </Item>
-        )}
-        {i.resp && (
-          <Item>
-            <Heading>Responsibilities</Heading>
-            <Paragraph>{i.resp}</Paragraph>
-            <br />
-          </Item>
-        )}
-      </Item>
+  const DynamicImageGallery = () => {
+    return (
       <Item>
         {/* --- LIMINAL --- */}
         {i.id === "L-2020+" && <ImageGallery dir="liminal" />}
@@ -142,15 +86,47 @@ const Article = ({ i, ...props }) => {
         {/* --- GAGOSIAN --- */}
         {i.id === "G-2017" && <></>}
       </Item>
-    </LayoutContainer>
+    )
+  }
+
+  const DynamicContent = () => (
+    <ContentContainer>
+      <Item small>
+        <br />
+        <br />
+        <Paragraph>
+          <span dangerouslySetInnerHTML={createMarkup()}></span>
+        </Paragraph>
+        <Paragraph>{i.para2}</Paragraph>
+        {i.role && (
+          <Item>
+            <Paragraph bold>Role</Paragraph>
+            <Paragraph>{i.role}</Paragraph>
+            <br />
+          </Item>
+        )}
+        {i.resp && (
+          <Item>
+            <Paragraph bold>Responsibilities</Paragraph>
+            <Paragraph>{i.resp}</Paragraph>
+            <br />
+          </Item>
+        )}
+      </Item>
+    </ContentContainer>
   )
 
   return (
     <>
       <article>
+        <hr />
         <a name={i.id} />
         <StickyHeader />
-        <Images />
+        <br />
+        <br />
+        <br />
+        <DynamicImageGallery />
+        <DynamicContent />
       </article>
     </>
   )

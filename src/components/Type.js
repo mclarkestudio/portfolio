@@ -18,6 +18,8 @@ const BaseType = styled.div`
 
   /* LARGE OPINIONATED BASE */
   font-size: 1.5rem;
+  /* LARGE OPINIONATED BASE */
+
   display: ${props => (props.inLine ? "inline" : null)};
 
   @media ${device.tablet} {
@@ -42,7 +44,7 @@ const BaseType = styled.div`
   }
 `
 
-const Paragraph = styled(BaseType)`
+export const Paragraph = styled(BaseType)`
   font-size: 1rem;
   max-width: 40em;
   margin-bottom: 0.5rem;
@@ -66,8 +68,13 @@ const StickyDiv = styled(BaseType)`
   position: sticky;
   top: 0px;
 
-  background-color: #ffffff;
-  /* backdrop-filter: blur(5px); */
+  /* background-color: white; */
+  background: linear-gradient(
+    to top,
+    rgba(255, 0, 0, 0),
+    rgba(255, 255, 255, 1)
+  );
+  backdrop-filter: blur(1px);
   z-index: 9;
   /* opacity: 0.5; */
 `
@@ -82,20 +89,16 @@ const StickyTitle = styled(StickyDiv)`
     /* color: white; */
   }
 
-  ::selection,
+  /* ::selection,
   ::-moz-selection,
   *::selection,
   *::-moz-selection {
     background: white;
     color: black;
-  }
+  } */
 `
 
 const Type = ({ p, stickyTitle, children, props }) => {
-  if (p) {
-    return <Paragraph>{children}</Paragraph>
-  }
-
   if (stickyTitle) {
     return <StickyTitle>{children}</StickyTitle>
   }

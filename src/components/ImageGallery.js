@@ -8,9 +8,14 @@ import styled from "styled-components"
 import "./imagegallery.css"
 
 import device from "./devices"
+import { ContentContainer } from "./layout"
 
 const ImageWrapper = styled.div`
   padding-bottom: 16px;
+
+  /* -webkit-box-shadow: 4px 15px 81px -15px rgba(255, 0, 0, 0.37);
+  -moz-box-shadow: 4px 15px 81px -15px rgba(0, 0, 0, 0.37);
+  box-shadow: 4px 15px 81px -15px rgba(0, 0, 0, 0.37); */
 
   @media ${device.tablet} {
     padding-bottom: 32px;
@@ -67,7 +72,7 @@ export const ImageGallery = ({ dir }) => {
       default:
         console.error(
           dir,
-          "Missing dir prop in ImageGallery. Rendering all images to component"
+          "Missing dir prop in ImageGallery. Rendering all images to component."
         )
         return null
     }
@@ -160,13 +165,15 @@ export const ImageGallery = ({ dir }) => {
       </div> */}
       {/* <Swiper {...gallerySwiperParams}> */}
       {renderData.map(i => (
-        <ImageWrapper>
-          <Img
-            key={i.node.id}
-            fluid={i.node.childImageSharp.fluid}
-            alt={i.node.childImageSharp.fluid}
-          />
-        </ImageWrapper>
+        <ContentContainer>
+          <ImageWrapper>
+            <Img
+              key={i.node.id}
+              fluid={i.node.childImageSharp.fluid}
+              alt={i.node.childImageSharp.fluid}
+            />
+          </ImageWrapper>
+        </ContentContainer>
       ))}
       {/* </Swiper> */}
     </div>
