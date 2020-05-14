@@ -7,7 +7,7 @@ import styled from "styled-components"
 // import Swiper from "react-id-swiper"
 import "./imagegallery.css"
 
-import { device } from "./devices"
+import device from "./devices"
 
 const ImageWrapper = styled.div`
   padding-bottom: 16px;

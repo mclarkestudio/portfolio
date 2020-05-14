@@ -1,7 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { device } from "./devices"
+import device from "./devices"
+
+import "./styles.css"
+import "../static/fonts/inter.css"
 
 const BaseType = styled.div`
   /* BASE TYPEFACE */

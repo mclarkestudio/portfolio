@@ -5,8 +5,6 @@ import { transitionTime } from "./Transition"
 
 // Base, custom normalizations
 // Dont import other styles here
-import "./styles.css"
-import "../static/fonts/inter.css"
 
 export const LayoutContainer = styled.div`
   margin: auto;

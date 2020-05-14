@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 import Type from "./Type"
 // import Image, { ImageCard } from "./Image"
-import { device } from "./devices"
+import device from "./devices"
 import { LayoutContainer } from "./Layout"
 // import LiminalHeroSvg from "./Hero"
 // import LiminalSVG from "./liminalSVG"
