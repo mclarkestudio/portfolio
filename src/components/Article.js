@@ -6,6 +6,12 @@ import { motion, AnimatePresence } from "framer-motion"
 import { TextBlock, Row, Item, ImageBlock } from "./layout"
 import Type, { Paragraph } from "./Type"
 import { ImageGallery } from "./ImageGallery"
+import { WebCopy } from "../copy/webCopy"
+
+const firstArticleId = WebCopy[0].id
+const secondArticleId = WebCopy[1].id
+const thirdArticleId = WebCopy[2].id
+const fourthArticleId = WebCopy[3].id
 
 const BackHomeButton = () => {
   const RightButton = styled.div`
@@ -59,13 +65,13 @@ const Article = ({ i, ...props }) => {
     return (
       <ImageBlock>
         {/* --- LIMINAL --- */}
-        {i.id === "L-2020+" && <ImageGallery dir="liminal" />}
+        {i.id === firstArticleId && <ImageGallery dir="liminal" />}
         {/* --- DATAVORE --- */}
-        {i.id === "D-2020" && <ImageGallery dir="datavore" />}
+        {i.id === secondArticleId && <ImageGallery dir="datavore" />}
         {/* --- SPLASHLIGHT --- */}
-        {i.id === "S-2019" && <ImageGallery dir="splashlight" />}
+        {i.id === thirdArticleId && <ImageGallery dir="splashlight" />}
         {/* --- GAGOSIAN --- */}
-        {i.id === "G-2017" && <></>}
+        {i.id === fourthArticleId && <></>}
       </ImageBlock>
     )
   }
@@ -116,7 +122,7 @@ const Article = ({ i, ...props }) => {
   )
 
   // Motion accordian state
-  const [expanded, setExpanded] = useState(i.id === "L-2020+" ? i : null)
+  const [expanded, setExpanded] = useState(i.id === firstArticleId ? i : null)
   const isOpen = i === expanded
 
   const HeaderMask = styled.div`
