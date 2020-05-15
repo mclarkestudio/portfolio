@@ -116,7 +116,7 @@ const Article = ({ i, ...props }) => {
   )
 
   // Motion accordian state
-  const [expanded, setExpanded] = useState(0)
+  const [expanded, setExpanded] = useState(i.id === "L-2020+" ? i : null)
   const isOpen = i === expanded
 
   const HeaderMask = styled.div`
@@ -139,6 +139,7 @@ const Article = ({ i, ...props }) => {
           initial={false}
           // animate={{ backgroundColor: isOpen ? "lightorange" : "lightyellow" }}
           onClick={() => setExpanded(isOpen ? false : i)}
+          // 'display: contents' so that sicky header css is disolved into the section below
           style={{ cursor: "pointer", display: "contents" }}
         >
           <a name={i.id} />
@@ -156,7 +157,6 @@ const Article = ({ i, ...props }) => {
                 collapsed: { opacity: 0, height: 0 },
               }}
               transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-              // style={{ display: "contents" }}
             >
               <DynamicImageGallery />
               <DynamicContent />
