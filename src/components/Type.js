@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import device from "./devices"
 
-const BaseType = styled.div`
+export const Type = styled.div`
   /* BASE TYPEFACE */
   color: black;
   font-family: Inter, sans-serif;
@@ -36,7 +36,7 @@ const BaseType = styled.div`
   }
 `
 
-export const Paragraph = styled(BaseType)`
+export const Paragraph = styled(Type)`
   margin-bottom: 1rem;
   font-size: 1rem;
 
@@ -49,7 +49,7 @@ export const Paragraph = styled(BaseType)`
   }
 `
 
-const StickyDiv = styled(BaseType)`
+const StickyDiv = styled(Type)`
   position: -webkit-sticky;
   position: -moz-sticky;
   position: -ms-sticky;
@@ -69,9 +69,10 @@ const StickyDiv = styled(BaseType)`
   /* opacity: 0.5; */
 `
 
-const StickyTitle = styled(StickyDiv)`
+export const StickyTitle = styled(StickyDiv)`
   /* mix-blend-mode: difference; */
   /* color: white; */
+  padding-bottom: 4rem;
   z-index: 3;
 
   *,
@@ -87,18 +88,5 @@ const StickyTitle = styled(StickyDiv)`
     color: black;
   } */
 `
-
-const Type = ({ p, stickyTitle, children, props }) => {
-  if (stickyTitle) {
-    return <StickyTitle>{children}</StickyTitle>
-  }
-
-  return <BaseType {...props}>{children}</BaseType>
-}
-
-Type.propTypes = {
-  p: PropTypes.bool,
-  stickyTitle: PropTypes.bool,
-}
 
 export default Type

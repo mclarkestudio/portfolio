@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { motion, AnimatePresence } from "framer-motion"
 
 import { TextBlock, Row, Item, ImageBlock } from "./layout"
-import Type, { Paragraph } from "./Type"
+import { Type, Paragraph, StickyTitle } from "./Type"
 import { ImageGallery } from "./ImageGallery"
 import { WebCopy } from "../copy/webCopy"
 
@@ -42,19 +42,19 @@ const Article = ({ i, ...props }) => {
   const bodyEl = `#${i.id}-body`
 
   const StickyHeader = () => (
-    <Type stickyTitle>
+    <StickyTitle>
       <Row>
         <Item>
           <a href={`/#${i.id}`} title="To top of article">
             <sup>{i.id}</sup>
           </a>
-          <Type bold>
+          <Type>
             <span id={i.id}>{i.heading}</span>
           </Type>
         </Item>
         <BackHomeButton />
       </Row>
-    </Type>
+    </StickyTitle>
   )
 
   function createMarkup() {
@@ -63,7 +63,7 @@ const Article = ({ i, ...props }) => {
 
   const DynamicImageGallery = () => {
     return (
-      <ImageBlock>
+      <>
         {/* --- LIMINAL --- */}
         {i.id === firstArticleId && <ImageGallery dir="liminal" />}
         {/* --- DATAVORE --- */}
@@ -72,16 +72,14 @@ const Article = ({ i, ...props }) => {
         {i.id === thirdArticleId && <ImageGallery dir="splashlight" />}
         {/* --- GAGOSIAN --- */}
         {i.id === fourthArticleId && <></>}
-      </ImageBlock>
+      </>
     )
   }
 
   const DynamicContent = () => (
     <>
-      <br />
-      <br />
-      <span id={`${i.id}-body`}></span>
       <Row>
+        <span id={`${i.id}-body`}></span>
         <Item>
           <TextBlock>
             <Paragraph>
@@ -113,11 +111,6 @@ const Article = ({ i, ...props }) => {
           </TextBlock>
         </Item>
       </Row>
-
-      <br />
-      <br />
-      <br />
-      <br />
     </>
   )
 
@@ -138,8 +131,6 @@ const Article = ({ i, ...props }) => {
   return (
     <>
       <article>
-        <br />
-        <br />
         <hr />
         <motion.header
           initial={false}
@@ -162,7 +153,7 @@ const Article = ({ i, ...props }) => {
                 open: { opacity: 1, height: "auto" },
                 collapsed: { opacity: 0, height: 0 },
               }}
-              transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+              transition={{ duration: 0.7, ease: [0.04, 0.62, 0.23, 0.98] }}
             >
               <DynamicImageGallery />
               <DynamicContent />

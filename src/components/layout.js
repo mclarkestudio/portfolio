@@ -16,7 +16,7 @@ export const TextBlock = styled.div`
 `
 
 export const ImageBlock = styled.div`
-  margin: 4rem 0rem 0rem 0rem;
+  margin: 0rem 0rem 0rem 0rem;
 `
 
 export const Row = styled.div`
