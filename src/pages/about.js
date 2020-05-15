@@ -16,11 +16,19 @@ const IndexPage = ({ location }) => {
     <>
       <SEO title="Home" />
       <Layout location={location}>
-        {WebCopy.map(i => (
-          <>
-            <Article key={i.id} i={i} />
-          </>
-        ))}
+        <Type>
+          <a name="about" />
+        </Type>
+        <Type>
+          <div style={{ maxWidth: "800px" }}>
+            Matthew is a product designer, developer, and team lead based in New
+            York City. He has spent 5 years designing and improving user
+            experience within agile product teams. As a design lead, Matthew
+            works across a range of diciplines in order to define customer
+            problems, prioritize work, and build products and services that
+            work.
+          </div>
+        </Type>
       </Layout>
     </>
   )

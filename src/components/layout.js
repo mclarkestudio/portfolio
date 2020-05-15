@@ -1,8 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { transitionTime } from "./Transition"
 import device from "./devices"
+import PageHeader from "./PageHeader"
+import Contact from "./Contact"
 
 // Normalizations
 import "./styles.css"
@@ -15,24 +16,25 @@ export const TextBlock = styled.div`
   max-width: 800px;
 `
 
-export const ImageBlock = styled.div`
-  margin: 0rem 0rem 0rem 0rem;
-`
-
 export const Row = styled.div`
   display: flex;
-  flex-direction: row;
-/* 
+  flex-direction: ${props => (props.mobileRow ? "row" : "column")};
+  max-width: 1920px;
+  justify-content: space-between;
+  /* margin: auto; */
+
   @media ${device.tablet} {
-    flex-direction: column;
-  } */
+    flex-direction: row;
+  }
 `
 
-export const Item = styled.div`
+export const RowItem = styled.div`
   flex: 1 1 auto;
+  padding: 1rem 4rem 1rem 0;
+  /* max-width: 800px; */
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   return (
     <>
       <div
@@ -40,7 +42,13 @@ const Layout = ({ children }) => {
           margin: `1.5rem`,
         }}
       >
-        <main>{children}</main>
+        <main>
+          <PageHeader location={location} />
+          {children}
+          <footer>
+            <Contact />
+          </footer>
+        </main>
       </div>
     </>
   )

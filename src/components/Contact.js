@@ -19,24 +19,9 @@ const StyledSection = styled.div`
 const Contact = () => {
   return (
     <>
-      <Type>
-        <a name="about" />
-        <hr />
-      </Type>
-      <br />
-      <br />
-      <Type>
-        <div style={{ maxWidth: "800px" }}>
-          Matthew is a product designer, developer, and team lead based in New
-          York City. He has spent 5 years designing and improving user
-          experience within agile product teams. As a design lead, Matthew works
-          across a range of diciplines in order to define customer problems,
-          prioritize work, and build products and services that work.
-        </div>
-      </Type>
       <StyledSection>
         <Type>
-          <a name="Contact" />
+          <a name="contact" />
           Contact
         </Type>
         <br />

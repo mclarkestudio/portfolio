@@ -129,8 +129,8 @@ export const ImageGallery = ({ dir }) => {
     }
   }, [gallerySwiper, thumbnailSwiper])
 
-  console.log(gallerySwiper, "Gallery Swiper")
-  console.log(thumbnailSwiper, "Thumbnail Swiper")
+  // console.log(gallerySwiper, "Gallery Swiper")
+  // console.log(thumbnailSwiper, "Thumbnail Swiper")
 
   return (
     <div>

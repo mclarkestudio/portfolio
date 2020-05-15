@@ -3,31 +3,50 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { motion, AnimatePresence } from "framer-motion"
 
-import { TextBlock, Row, Item, ImageBlock } from "./layout"
+import { TextBlock, Row, RowItem } from "./layout"
 import { Type, Paragraph, StickyTitle } from "./Type"
 import { ImageGallery } from "./ImageGallery"
 import { WebCopy } from "../copy/webCopy"
+
+import Hero2 from "../images/hero2.svg"
 
 const firstArticleId = WebCopy[0].id
 const secondArticleId = WebCopy[1].id
 const thirdArticleId = WebCopy[2].id
 const fourthArticleId = WebCopy[3].id
 
+const HeaderMask = styled.div`
+  max-height: 100px;
+`
+
+const StyledArticle = styled.article`
+  background-color: white;
+  /* position: relative;
+z-index: 5; */
+`
+
+const SvgWrapper = styled.div`
+  width: 100%;
+  /* position: relative;
+z-index: 5; */
+`
+
+const RightButton = styled.div`
+  margin-left: auto;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    opacity: 1;
+    font-style: normal;
+  }
+`
+
 const BackHomeButton = () => {
-  const RightButton = styled.div`
-    margin-left: auto;
-    margin-right: 1rem;
-    margin-top: 0.5rem;
-
-    a {
-      text-decoration: none;
-    }
-
-    a:hover {
-      opacity: 1;
-      font-style: normal;
-    }
-  `
   return (
     <RightButton>
       <a href="/#home" title="Back to top">
@@ -43,15 +62,15 @@ const Article = ({ i, ...props }) => {
 
   const StickyHeader = () => (
     <StickyTitle>
-      <Row>
-        <Item>
+      <Row mobileRow>
+        <RowItem>
           <a href={`/#${i.id}`} title="To top of article">
             <sup>{i.id}</sup>
           </a>
           <Type>
             <span id={i.id}>{i.heading}</span>
           </Type>
-        </Item>
+        </RowItem>
         <BackHomeButton />
       </Row>
     </StickyTitle>
@@ -80,36 +99,36 @@ const Article = ({ i, ...props }) => {
     <>
       <Row>
         <span id={`${i.id}-body`}></span>
-        <Item>
+        <RowItem>
           <TextBlock>
             <Paragraph>
               <span dangerouslySetInnerHTML={createMarkup()}></span>
             </Paragraph>
             <Paragraph>{i.para2}</Paragraph>
           </TextBlock>
-        </Item>
-        <Item>
+        </RowItem>
+        <RowItem>
           <TextBlock>
             {i.role && (
-              <Item>
+              <RowItem>
                 <Paragraph bold>Role</Paragraph>
                 <Paragraph>{i.role}</Paragraph>
-              </Item>
+              </RowItem>
             )}
             {i.resp && (
-              <Item>
+              <RowItem>
                 <Paragraph bold>Responsibilities</Paragraph>
                 <Paragraph>{i.resp}</Paragraph>
-              </Item>
+              </RowItem>
             )}
             {i.team && (
-              <Item>
+              <RowItem>
                 <Paragraph bold>Team</Paragraph>
                 <Paragraph>{i.team}</Paragraph>
-              </Item>
+              </RowItem>
             )}
           </TextBlock>
-        </Item>
+        </RowItem>
       </Row>
     </>
   )
@@ -117,16 +136,6 @@ const Article = ({ i, ...props }) => {
   // Motion accordian state
   const [expanded, setExpanded] = useState(i.id === firstArticleId ? i : null)
   const isOpen = i === expanded
-
-  const HeaderMask = styled.div`
-    max-height: 100px;
-  `
-
-  const StyledArticle = styled.article`
-    background-color: white;
-    /* position: relative;
-    z-index: 5; */
-  `
 
   return (
     <>
@@ -155,7 +164,9 @@ const Article = ({ i, ...props }) => {
               }}
               transition={{ duration: 0.7, ease: [0.04, 0.62, 0.23, 0.98] }}
             >
-              <DynamicImageGallery />
+              {/* <DynamicImageGallery />
+               */}
+
               <DynamicContent />
             </motion.section>
           )}
