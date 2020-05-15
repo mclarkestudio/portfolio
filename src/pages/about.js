@@ -2,13 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Image from "../components/image"
-import Article from "../components/Article"
-import Type from "../components/Type"
-import PageHeader from "../components/PageHeader"
-import Contact from "../components/Contact"
-
-import { WebCopy } from "../copy/webCopy"
+import { Type, Paragraph } from "../components/Type"
 
 const IndexPage = ({ location }) => {
   // Route location is provided by gatsby per page component
@@ -20,6 +14,7 @@ const IndexPage = ({ location }) => {
           <a name="about" />
         </Type>
         <Type>
+          <br />
           <div style={{ maxWidth: "800px" }}>
             Matthew is a product designer, developer, and team lead based in New
             York City. He has spent 5 years designing and improving user
@@ -28,6 +23,9 @@ const IndexPage = ({ location }) => {
             problems, prioritize work, and build products and services that
             work.
           </div>
+          <br />
+          <br />
+          <br />
         </Type>
       </Layout>
     </>

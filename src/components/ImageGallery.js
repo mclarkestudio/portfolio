@@ -152,7 +152,7 @@ export const ImageGallery = ({ dir }) => {
             <Img
               key={i.node.id}
               fluid={i.node.childImageSharp.fluid}
-              alt={i.node.childImageSharp.fluid}
+              alt={i.node.name}
             />
           </ImageWrapper>
         ))}

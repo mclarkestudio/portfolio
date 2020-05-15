@@ -3,18 +3,15 @@ import Type from "./Type"
 import { Link } from "gatsby"
 
 const PageHeader = ({ location }) => {
-  var route = location
-  console.log(location)
-
-  var isAbout = location.pathname === "/about"
-  var isProjects = location.pathname === "/"
+  var isAbout = location.pathname === "/about" ? true : false
+  var isProjects = location.pathname === "/" ? true : false
 
   return (
     <div>
       <a name="home" />
       <Type>
         Matthew Clarke,&nbsp;
-        {isAbout && <Link to="/">Projects</Link>}
+        {isAbout && <Link to="/">← Projects</Link>}
         {isProjects && <Link to="about">About</Link>}
         ,&nbsp;
         <a href="/#contact">Contact</a>.

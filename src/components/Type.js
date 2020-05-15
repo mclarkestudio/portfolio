@@ -33,6 +33,8 @@ export const Type = styled.div`
 
   a:hover {
     font-family: IBM Plex Mono;
+    /* Line hieght offsets virticle jump */
+    line-height: 140%;
     font-style: italic;
     font-weight: 100;
     text-decoration: none;

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { motion, AnimatePresence } from "framer-motion"
@@ -58,8 +58,10 @@ const BackHomeButton = () => {
 }
 
 const Article = ({ i, ...props }) => {
-  const titleEl = `#${i.id}`
-  const bodyEl = `#${i.id}-body`
+  // Init references in function component
+  // to be declared in JSX ref={}
+  const titleRef = useRef(null)
+  const bodyRef = useRef(null)
 
   const StickyHeader = () => (
     <StickyTitle>
@@ -68,7 +70,7 @@ const Article = ({ i, ...props }) => {
           <a href={`/#${i.id}`} title="To top of article">
             <sup>{i.id}</sup>
           </a>
-          <Type>
+          <Type ref={titleRef}>
             <span id={i.id}>{i.heading}</span>
           </Type>
         </RowItem>
@@ -98,8 +100,7 @@ const Article = ({ i, ...props }) => {
 
   const DynamicContent = () => (
     <>
-      <Row>
-        <span id={`${i.id}-body`}></span>
+      <Row ref={bodyRef}>
         <RowItem>
           <TextBlock>
             <Paragraph>

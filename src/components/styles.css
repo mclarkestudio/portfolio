@@ -22,3 +22,8 @@ p {
 strong {
   font-weight: 600;
 }
+
+hr {
+  border: transparent 1px solid;
+  border-bottom: black 1px solid;
+}
