@@ -5,6 +5,7 @@ module.exports = {
     author: `Matthew Clarke`,
   },
   plugins: [
+    "gatsby-plugin-optimize-svgs",
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
@@ -32,7 +33,8 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /images/, // See below to configure properly
+          include: /images\/.*\.svg/,
+          // omitKeys: ["height", "width"],
         },
       },
     },

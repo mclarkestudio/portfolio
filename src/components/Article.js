@@ -7,8 +7,9 @@ import { TextBlock, Row, RowItem } from "./layout"
 import { Type, Paragraph, StickyTitle } from "./Type"
 import { ImageGallery } from "./ImageGallery"
 import { WebCopy } from "../copy/webCopy"
+import LiminalSVG from "./liminalSVG"
 
-import Hero2 from "../images/hero2.svg"
+// import Hero2 from "../images/hero2.svg"
 
 const firstArticleId = WebCopy[0].id
 const secondArticleId = WebCopy[1].id
@@ -164,9 +165,9 @@ const Article = ({ i, ...props }) => {
               }}
               transition={{ duration: 0.7, ease: [0.04, 0.62, 0.23, 0.98] }}
             >
-              {/* <DynamicImageGallery />
-               */}
-
+              <DynamicImageGallery />
+              {/* <Hero2 width="auto" height="auto" /> */}
+              {/* <LiminalSVG /> */}
               <DynamicContent />
             </motion.section>
           )}

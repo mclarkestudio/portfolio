@@ -39,9 +39,9 @@ const IndexPage = () => {
   return (
     <>
       <SEO title="test" />
-      <Layout>
-        <SimpleSwiper />
-      </Layout>
+      {/* <Layout> */}
+      <SimpleSwiper />
+      {/* </Layout> */}
     </>
   )
 }
