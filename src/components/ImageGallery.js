@@ -88,8 +88,8 @@ export const ImageGallery = ({ dir }) => {
     getSwiper: getGallerySwiper,
     spaceBetween: 10,
     navigation: {
-      nextEl: ".swiper-button-next swiper-button-black gallery-next",
-      prevEl: ".swiper-button-prev swiper-button-black gallery-prev",
+      // nextEl: ".swiper-button-next swiper-button-black gallery-next",
+      // prevEl: ".swiper-button-prev swiper-button-black gallery-prev",
       clickable: true,
     },
     autoplay: {

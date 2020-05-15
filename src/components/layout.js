@@ -4,15 +4,19 @@ import styled from "styled-components"
 import { transitionTime } from "./Transition"
 import device from "./devices"
 
-export const ContentContainer = styled.div`
-  max-width: 1080px;
-  margin: auto;
-`
+// Normalizations
+import "./styles.css"
+// Fonts
+import "../static/fonts/inter.css"
 
 export const TextBlock = styled.div`
   flex: 1 1 auto;
-  margin: 1rem auto;
+  /* margin: 1rem auto; */
   max-width: 800px;
+`
+
+export const ImageBlock = styled.div`
+  margin: 4rem 0rem 0rem 0rem;
 `
 
 export const Row = styled.div`

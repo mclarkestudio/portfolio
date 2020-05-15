@@ -1,7 +1,7 @@
 import React from "react"
 import Type, { Paragraph } from "./Type"
 import styled from "styled-components"
-import { TextBlock, ContentContainer } from "./layout"
+import { TextBlock } from "./layout"
 import HoverLink from "./hoverLink"
 
 const StyledSection = styled.div`
@@ -26,11 +26,13 @@ const Contact = () => {
       <br />
       <br />
       <Type>
-        Matthew is a product designer, developer, and team lead based in New
-        York City. He has spent 5 years designing and improving user experience
-        within agile product teams. As a design lead, Matthew works across a
-        range of diciplines in order to define customer problems, prioritize
-        work, and build products and services that work.
+        <div style={{ maxWidth: "800px" }}>
+          Matthew is a product designer, developer, and team lead based in New
+          York City. He has spent 5 years designing and improving user
+          experience within agile product teams. As a design lead, Matthew works
+          across a range of diciplines in order to define customer problems,
+          prioritize work, and build products and services that work.
+        </div>
       </Type>
       <StyledSection>
         <Type>

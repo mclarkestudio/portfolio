@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { motion, AnimatePresence } from "framer-motion"
 
-import { TextBlock, ContentContainer, Row, Item } from "./layout"
+import { TextBlock, Row, Item, ImageBlock } from "./layout"
 import Type, { Paragraph } from "./Type"
 import { ImageGallery } from "./ImageGallery"
-import { motion, AnimatePresence } from "framer-motion"
 
 const BackHomeButton = () => {
   const RightButton = styled.div`
@@ -32,6 +32,9 @@ const BackHomeButton = () => {
 }
 
 const Article = ({ i, ...props }) => {
+  const titleEl = `#${i.id}`
+  const bodyEl = `#${i.id}-body`
+
   const StickyHeader = () => (
     <Type stickyTitle>
       <Row>
@@ -39,7 +42,9 @@ const Article = ({ i, ...props }) => {
           <a href={`/#${i.id}`} title="To top of article">
             <sup>{i.id}</sup>
           </a>
-          <Type bold>{i.heading}</Type>
+          <Type bold>
+            <span id={i.id}>{i.heading}</span>
+          </Type>
         </Item>
         <BackHomeButton />
       </Row>
@@ -52,10 +57,7 @@ const Article = ({ i, ...props }) => {
 
   const DynamicImageGallery = () => {
     return (
-      <Item>
-        <br />
-        <br />
-        <br />
+      <ImageBlock>
         {/* --- LIMINAL --- */}
         {i.id === "L-2020+" && <ImageGallery dir="liminal" />}
         {/* --- DATAVORE --- */}
@@ -64,57 +66,80 @@ const Article = ({ i, ...props }) => {
         {i.id === "S-2019" && <ImageGallery dir="splashlight" />}
         {/* --- GAGOSIAN --- */}
         {i.id === "G-2017" && <></>}
-      </Item>
+      </ImageBlock>
     )
   }
 
   const DynamicContent = () => (
-    <ContentContainer>
-      <TextBlock>
-        <br />
-        <br />
-        <Paragraph>
-          <span dangerouslySetInnerHTML={createMarkup()}></span>
-        </Paragraph>
-        <Paragraph>{i.para2}</Paragraph>
-        {i.role && (
-          <Item>
-            <Paragraph bold>Role</Paragraph>
-            <Paragraph>{i.role}</Paragraph>
-          </Item>
-        )}
-        {i.resp && (
-          <Item>
-            <Paragraph bold>Responsibilities</Paragraph>
-            <Paragraph>{i.resp}</Paragraph>
-          </Item>
-        )}
-        {i.team && (
-          <Item>
-            <Paragraph bold>Team</Paragraph>
-            <Paragraph>{i.team}</Paragraph>
-          </Item>
-        )}
-      </TextBlock>
+    <>
+      <br />
+      <br />
+      <span id={`${i.id}-body`}></span>
+      <Row>
+        <Item>
+          <TextBlock>
+            <Paragraph>
+              <span dangerouslySetInnerHTML={createMarkup()}></span>
+            </Paragraph>
+            <Paragraph>{i.para2}</Paragraph>
+          </TextBlock>
+        </Item>
+        <Item>
+          <TextBlock>
+            {i.role && (
+              <Item>
+                <Paragraph bold>Role</Paragraph>
+                <Paragraph>{i.role}</Paragraph>
+              </Item>
+            )}
+            {i.resp && (
+              <Item>
+                <Paragraph bold>Responsibilities</Paragraph>
+                <Paragraph>{i.resp}</Paragraph>
+              </Item>
+            )}
+            {i.team && (
+              <Item>
+                <Paragraph bold>Team</Paragraph>
+                <Paragraph>{i.team}</Paragraph>
+              </Item>
+            )}
+          </TextBlock>
+        </Item>
+      </Row>
+
       <br />
       <br />
       <br />
       <br />
-    </ContentContainer>
+    </>
   )
 
+  // Motion accordian state
   const [expanded, setExpanded] = useState(0)
   const isOpen = i === expanded
+
+  const HeaderMask = styled.div`
+    max-height: 100px;
+  `
+
+  const StyledArticle = styled.article`
+    background-color: white;
+    /* position: relative;
+    z-index: 5; */
+  `
 
   return (
     <>
       <article>
+        <br />
+        <br />
         <hr />
         <motion.header
           initial={false}
           // animate={{ backgroundColor: isOpen ? "lightorange" : "lightyellow" }}
           onClick={() => setExpanded(isOpen ? false : i)}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", display: "contents" }}
         >
           <a name={i.id} />
           <StickyHeader />
@@ -131,6 +156,7 @@ const Article = ({ i, ...props }) => {
                 collapsed: { opacity: 0, height: 0 },
               }}
               transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+              // style={{ display: "contents" }}
             >
               <DynamicImageGallery />
               <DynamicContent />

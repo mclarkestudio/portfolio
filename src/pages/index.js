@@ -1,14 +1,14 @@
 import React from "react"
 
-import Layout, { ContentContainer } from "../components/layout"
-import Image from "../components/image"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Image from "../components/image"
 import Article from "../components/Article"
 import Type from "../components/Type"
 import Contact from "../components/Contact"
+import HoverLink from "../components/hoverLink"
 
 import { WebCopy, ProjectCopy } from "../copy/webCopy"
-import HoverLink from "../components/hoverLink"
 
 const StickyPageTitle = () => {
   return (
@@ -20,9 +20,9 @@ const StickyPageTitle = () => {
       Design Lead. Product Design and Development.
       <br />
       <br />
-      {ProjectCopy.map(i => (
+      {/* {ProjectCopy.map(i => (
         <HoverLink key={i.id} linkContent={i.id} hoverContent={i.heading} />
-      ))}
+      ))} */}
     </Type>
   )
 }
@@ -36,9 +36,9 @@ const IndexPage = () => {
           <a name="home" />
           <StickyPageTitle />
           <br />
-          <div style={{ width: "70%", maxWidth: "1300px", marginLeft: "auto" }}>
+          {/* <div style={{ width: "70%", maxWidth: "1300px", marginLeft: "auto" }}>
             <Image />
-          </div>
+          </div> */}
         </div>
         {WebCopy.map(i => (
           <>

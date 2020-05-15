@@ -3,22 +3,14 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import device from "./devices"
 
-import "./styles.css"
-import "../static/fonts/inter.css"
-
 const BaseType = styled.div`
   /* BASE TYPEFACE */
   color: black;
   font-family: Inter, sans-serif;
-  /* font-family: Neue Haas Grotesk Text Pro; */
   font-style: normal;
   font-weight: ${props => (props.bold ? 600 : 400)};
   line-height: 142.02%;
   text-align: ${props => (props.centered ? "center" : null)};
-
-  /* LARGE OPINIONATED BASE */
-  font-size: 1.5rem;
-  /* LARGE OPINIONATED BASE */
 
   display: ${props => (props.inLine ? "inline" : null)};
 
@@ -45,18 +37,15 @@ const BaseType = styled.div`
 `
 
 export const Paragraph = styled(BaseType)`
-  font-size: 1rem;
-  max-width: 40em;
   margin-bottom: 1rem;
-  /* margin-right: 2rem; */
-  /* margin: auto; */
+  font-size: 1rem;
 
   @media ${device.tablet} {
     font-size: 1rem;
   }
 
   @media ${device.laptop} {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 `
 
@@ -104,7 +93,7 @@ const Type = ({ p, stickyTitle, children, props }) => {
     return <StickyTitle>{children}</StickyTitle>
   }
 
-  return <BaseType>{children}</BaseType>
+  return <BaseType {...props}>{children}</BaseType>
 }
 
 Type.propTypes = {

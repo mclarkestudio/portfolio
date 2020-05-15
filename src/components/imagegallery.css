@@ -35,7 +35,7 @@
   width: 25%;
   height: 5rem !important;
   cursor: pointer;
-  z-index: 3;
+  /* z-index: 3; */
   opacity: 0.5;
   transition: opacity 0.4s;
 }
