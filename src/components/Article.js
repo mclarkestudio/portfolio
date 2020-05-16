@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import { motion, AnimatePresence } from "framer-motion"
 
-import { TextBlock, Row, RowItem } from "./layout"
+import { ContentBlock, TextBlock, Row, RowItem } from "./layout"
 import { Type, Paragraph, StickyTitle } from "./Type"
 import { ImageGallery } from "./ImageGallery"
 import { WebCopy } from "../copy/webCopy"
@@ -85,46 +85,46 @@ const Article = ({ i, ...props }) => {
         {/* --- SPLASHLIGHT --- */}
         {i.id === thirdArticleId && <ImageGallery dir="splashlight" />}
         {/* --- GAGOSIAN --- */}
-        {i.id === fourthArticleId && <></>}
+        {i.id === fourthArticleId && <ImageGallery dir="gallery" />}
       </>
     )
   }
 
   const DynamicContent = () => (
-    <>
-      <Row ref={bodyRef}>
-        <RowItem>
-          <TextBlock>
-            <Paragraph>
-              <span dangerouslySetInnerHTML={createMarkup()}></span>
-            </Paragraph>
-            <Paragraph>{i.para2}</Paragraph>
-          </TextBlock>
-        </RowItem>
-        <RowItem>
-          <TextBlock>
-            {i.role && (
-              <RowItem>
-                <Paragraph bold>Role</Paragraph>
-                <Paragraph>{i.role}</Paragraph>
-              </RowItem>
-            )}
-            {i.resp && (
-              <RowItem>
-                <Paragraph bold>Responsibilities</Paragraph>
-                <Paragraph>{i.resp}</Paragraph>
-              </RowItem>
-            )}
-            {i.team && (
-              <RowItem>
-                <Paragraph bold>Team</Paragraph>
-                <Paragraph>{i.team}</Paragraph>
-              </RowItem>
-            )}
-          </TextBlock>
-        </RowItem>
-      </Row>
-    </>
+    <ContentBlock>
+      {/* <Row ref={bodyRef}> */}
+      <RowItem>
+        <TextBlock>
+          <Paragraph>
+            <span dangerouslySetInnerHTML={createMarkup()}></span>
+          </Paragraph>
+          <Paragraph>{i.para2}</Paragraph>
+        </TextBlock>
+      </RowItem>
+      <RowItem>
+        <TextBlock>
+          {/* {i.role && (
+            <RowItem>
+              <Paragraph bold>Role</Paragraph>
+              <Paragraph>{i.role}</Paragraph>
+            </RowItem>
+          )} */}
+          {i.resp && (
+            <RowItem>
+              <Paragraph bold>Responsibilities</Paragraph>
+              <Paragraph>{i.resp}</Paragraph>
+            </RowItem>
+          )}
+          {i.team && (
+            <RowItem>
+              <Paragraph bold>Team</Paragraph>
+              <Paragraph>{i.team}</Paragraph>
+            </RowItem>
+          )}
+        </TextBlock>
+      </RowItem>
+      {/* </Row> */}
+    </ContentBlock>
   )
 
   // Motion accordian state
@@ -158,6 +158,8 @@ const Article = ({ i, ...props }) => {
               }}
               transition={{ duration: 0.7, ease: [0.04, 0.62, 0.23, 0.98] }}
             >
+              <Type>{i.role}</Type>
+              <br />
               <DynamicImageGallery />
               {/* <Hero2 width="auto" height="auto" /> */}
               {/* <LiminalSVG /> */}

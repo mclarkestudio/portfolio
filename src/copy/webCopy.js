@@ -44,7 +44,7 @@ export const WebCopy = [
   },
   {
     id: "G-2017",
-    heading: "Gagosian Quarterly",
+    heading: "Previous Work",
     role: "Publications Coordinator",
     resp:
       "Print production, image proofing, copy editing, project management, and quality assurance.",

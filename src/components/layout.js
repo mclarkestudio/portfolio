@@ -17,6 +17,13 @@ export const TextBlock = styled.div`
   max-width: 800px;
 `
 
+export const ContentBlock = styled.div`
+  flex: 1 1 auto;
+  /* margin: 1rem auto; */
+  /* max-width: 800px;
+  margin: auto */
+`
+
 export const Row = styled.div`
   display: flex;
   flex-direction: ${props => (props.mobileRow ? "row" : "column")};
@@ -31,7 +38,11 @@ export const Row = styled.div`
 
 export const RowItem = styled.div`
   flex: 1 1 auto;
-  padding: 1rem 4rem 1rem 0;
+  padding: 1rem 1em 1rem 0rem;
+
+  @media ${device.tablet} {
+    padding: 1rem 4rem 1rem 0;
+  }
   /* max-width: 800px; */
 `
 

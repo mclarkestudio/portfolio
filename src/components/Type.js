@@ -22,7 +22,7 @@ export const Type = styled.div`
   }
 
   @media ${device.laptop} {
-    font-size: 2.3rem;
+    font-size: 2.4rem;
   }
 
   /* 🔗 LINKS */
@@ -49,12 +49,12 @@ export const Paragraph = styled(Type)`
 
   @media ${device.tablet} {
     margin-bottom: 1rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   @media ${device.laptop} {
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 `
 
@@ -81,7 +81,7 @@ const StickyDiv = styled(Type)`
 export const StickyTitle = styled(StickyDiv)`
   /* mix-blend-mode: difference;
   color: white; */
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   z-index: 3;
 
   background-color: white;

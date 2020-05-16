@@ -3,9 +3,10 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Article from "../components/Article"
-import Type from "../components/Type"
+import { Type, Paragraph } from "../components/Type"
 
 import { WebCopy } from "../copy/webCopy"
+import Image from "../components/Image"
 
 const IndexPage = ({ location }) => {
   // Route location is provided by gatsby per page component
@@ -19,6 +20,7 @@ const IndexPage = ({ location }) => {
           <br />
           <br />
           <br />
+          {/* <Paragraph bold>Recent Work</Paragraph> */}
         </Type>
 
         {WebCopy.map(i => (
