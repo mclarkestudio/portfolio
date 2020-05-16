@@ -16,14 +16,11 @@ const IndexPage = ({ location }) => {
         <Type style={{ maxWidth: "800px" }}>
           New York-based designer with 6 years experience building digital user
           interfaces within agile product teams.
+          <br />
+          <br />
+          <br />
         </Type>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+
         {WebCopy.map(i => (
           <>
             <Article key={i.id} i={i} />

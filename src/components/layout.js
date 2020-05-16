@@ -2,13 +2,14 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import device from "./devices"
-import PageHeader from "./PageHeader"
+// import PageHeader from "./PageHeader"
 import Contact from "./Contact"
 
 // Normalizations
 import "./styles.css"
 // Fonts
 import "../static/fonts/inter.css"
+import PageHeader from "./PageHeader"
 
 export const TextBlock = styled.div`
   flex: 1 1 auto;

@@ -30,7 +30,7 @@ export const WebCopy = [
   {
     id: "S-2019",
     heading: "Splashlight x Telmar",
-    role: "UX Manager, Global",
+    role: "UX Manager",
     resp:
       "Service design, design operations, user experience design, and information architecture.",
     para:

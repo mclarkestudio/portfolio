@@ -3,31 +3,34 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Type, Paragraph } from "../components/Type"
+import PageHeader from "../components/PageHeader"
 
-const IndexPage = ({ location }) => {
+const AboutPage = ({ location }) => {
   // Route location is provided by gatsby per page component
+
   return (
     <>
       <SEO title="Home" />
       <Layout location={location}>
         <Type>
           <a name="about" />
-        </Type>
-        <Type>
+          About
           <br />
+          <br />
+        </Type>
+        <Paragraph>
           <div style={{ maxWidth: "800px" }}>
-            Matthew has spent 5 years designing and improving user experience
-            within agile product teams. As a design lead, Matthew works across a
-            range of diciplines in order to define customer problems, prioritize
-            work, and build products and services that work.
+            Aeshetically-driven, systems-level thinker helping teams prioritize
+            work, define human-centered problems, and build unified products and
+            services. Matthew works across a range of diciplines in order to
+            define customer problems, prioritize work, and build products and
+            services that work.
           </div>
           <br />
-          <br />
-          <br />
-        </Type>
+        </Paragraph>
       </Layout>
     </>
   )
 }
 
-export default IndexPage
+export default AboutPage

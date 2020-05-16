@@ -34,7 +34,8 @@ export const Type = styled.div`
   a:hover {
     font-family: IBM Plex Mono;
     /* Line hieght offsets virticle jump */
-    color: #ea0a3e;
+    /* color: #ff0018; */
+    color: ${props => (props.hoverColor ? props.hoverColor : "#ff0018")};
     line-height: 140%;
     font-style: italic;
     font-weight: 100;
