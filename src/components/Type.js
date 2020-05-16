@@ -34,6 +34,7 @@ export const Type = styled.div`
   a:hover {
     font-family: IBM Plex Mono;
     /* Line hieght offsets virticle jump */
+    color: #ea0a3e;
     line-height: 140%;
     font-style: italic;
     font-weight: 100;
@@ -77,10 +78,12 @@ const StickyDiv = styled(Type)`
 `
 
 export const StickyTitle = styled(StickyDiv)`
-  /* mix-blend-mode: difference; */
-  /* color: white; */
-  padding-bottom: 4rem;
+  /* mix-blend-mode: difference;
+  color: white; */
+  margin-bottom: 4rem;
   z-index: 3;
+
+  background-color: white;
 
   *,
   a {

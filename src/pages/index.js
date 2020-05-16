@@ -16,6 +16,7 @@ const IndexPage = ({ location }) => {
     <>
       <SEO title="Home" />
       <Layout location={location}>
+        {/* <Type bold>Products and Services</Type> */}
         {WebCopy.map(i => (
           <>
             <Article key={i.id} i={i} />

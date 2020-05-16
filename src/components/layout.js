@@ -40,6 +40,7 @@ const Layout = ({ children, location }) => {
       <div
         style={{
           margin: `1.5rem`,
+          // maxWidth: "1280px",
         }}
       >
         <main>

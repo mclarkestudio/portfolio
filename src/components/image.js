@@ -42,7 +42,7 @@ export const fluidImage = graphql`
 const Image = props => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "hero.png" }) {
+      placeholderImage: file(relativePath: { eq: "hero3.png" }) {
         ...fluidImage
       }
     }

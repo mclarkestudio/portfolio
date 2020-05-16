@@ -16,22 +16,6 @@ const secondArticleId = WebCopy[1].id
 const thirdArticleId = WebCopy[2].id
 const fourthArticleId = WebCopy[3].id
 
-const HeaderMask = styled.div`
-  max-height: 100px;
-`
-
-const StyledArticle = styled.article`
-  background-color: white;
-  /* position: relative;
-z-index: 5; */
-`
-
-const SvgWrapper = styled.div`
-  width: 100%;
-  /* position: relative;
-z-index: 5; */
-`
-
 const RightButton = styled.div`
   margin-left: auto;
   margin-right: 1rem;
@@ -44,6 +28,14 @@ const RightButton = styled.div`
   a:hover {
     opacity: 1;
     font-style: normal;
+  }
+`
+const StyledArticle = styled.article`
+  /* opacity: 0.2; */
+  /* transition: opacity 0.45s; */
+
+  &:hover {
+    opacity: 1;
   }
 `
 
@@ -67,9 +59,9 @@ const Article = ({ i, ...props }) => {
     <StickyTitle>
       <Row mobileRow>
         <RowItem>
-          <a href={`/#${i.id}`} title="To top of article">
+          {/* <a href={`/#${i.id}`} title="To top of article">
             <sup>{i.id}</sup>
-          </a>
+          </a> */}
           <Type ref={titleRef}>
             <span id={i.id}>{i.heading}</span>
           </Type>
@@ -141,7 +133,7 @@ const Article = ({ i, ...props }) => {
 
   return (
     <>
-      <article>
+      <StyledArticle>
         <hr />
         <motion.header
           initial={false}
@@ -173,7 +165,7 @@ const Article = ({ i, ...props }) => {
             </motion.section>
           )}
         </AnimatePresence>
-      </article>
+      </StyledArticle>
     </>
   )
 }
