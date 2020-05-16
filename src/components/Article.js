@@ -39,12 +39,13 @@ const StyledArticle = styled.article`
   }
 `
 
-const BackHomeButton = () => {
+const BackHomeButton = ({ i }) => {
   return (
     <RightButton>
-      <a href="/#home" title="Back to top">
+      {i.date}
+      {/* <a href="/#home" title="Back to top">
         <sup>⤴</sup>
-      </a>
+      </a> */}
     </RightButton>
   )
 }
@@ -55,7 +56,7 @@ const Article = ({ i, ...props }) => {
   const titleRef = useRef(null)
   const bodyRef = useRef(null)
 
-  const StickyHeader = () => (
+  const StickyHeader = ({ i }) => (
     <StickyTitle>
       <Row mobileRow>
         <RowItem>
@@ -66,7 +67,7 @@ const Article = ({ i, ...props }) => {
             <span id={i.id}>{i.heading}</span>
           </Type>
         </RowItem>
-        <BackHomeButton />
+        <BackHomeButton i={i} />
       </Row>
     </StickyTitle>
   )
@@ -143,7 +144,7 @@ const Article = ({ i, ...props }) => {
           style={{ cursor: "pointer", display: "contents" }}
         >
           <a name={i.id} />
-          <StickyHeader />
+          <StickyHeader i={i} />
         </motion.header>
         <AnimatePresence initial={false}>
           {isOpen && (

@@ -1,8 +1,8 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import Layout, { RowItem } from "../components/layout"
 import SEO from "../components/seo"
-import { Type, Paragraph } from "../components/Type"
+import { Type, Paragraph, StickyTitle } from "../components/Type"
 import PageHeader from "../components/PageHeader"
 
 const AboutPage = ({ location }) => {
@@ -12,13 +12,18 @@ const AboutPage = ({ location }) => {
     <>
       <SEO title="Home" />
       <Layout location={location}>
-        <Type>
+        <hr />
+        <Type style={{ display: "contents" }}>
           <a name="about" />
-          About
+
+          <StickyTitle>
+            <RowItem>About</RowItem>
+          </StickyTitle>
+
           <br />
           <br />
         </Type>
-        <Paragraph>
+        <Type>
           <div style={{ maxWidth: "800px" }}>
             New York-based designer with 6 years experience building digital
             user interfaces within agile product teams.
@@ -30,7 +35,7 @@ const AboutPage = ({ location }) => {
             services that work.
           </div>
           <br />
-        </Paragraph>
+        </Type>
       </Layout>
     </>
   )

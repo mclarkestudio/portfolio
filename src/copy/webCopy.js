@@ -11,7 +11,7 @@ export const WebCopy = [
       "Liminal is a personal media library for the web––designed for creatives and researchers, and curious people to collect our daily frankenstack of media sources. It allows you to build feeds, save links, and integrate your activity into a single digital timeline.",
     para2:
       "Liminal is currently in development. First platforms will include web, macOS, iPhone, and Android.",
-    images: [],
+    date: "2020+",
   },
   {
     id: "D-2020",
