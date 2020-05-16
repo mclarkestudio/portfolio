@@ -18,18 +18,31 @@ const StyledDiv = styled.div`
 const PageHeader = ({ location }) => {
   var isAbout = location.pathname.includes("about") ? true : false
   var isProjects = location.pathname === "/" ? true : false
+  //   var isOther = !isProjects | !isAbout ? true : false
   console.log(location)
 
-  const ProjectsSpan = <Link to="/">← Projects</Link>
-  const AboutSpan = <Link to="about">About</Link>
+  const ProjectsLink = () => <Link to="/">← Projects</Link>
+  const AboutLink = () => <Link to="about">About</Link>
+  const AllLinks = () => (
+    <>
+      <ProjectsLink />
+      ,&nbsp;
+      <AboutLink />
+    </>
+  )
+
+  //   const ProjectsSpan = <Link to="/">← Projects</Link>
+  //   const AboutSpan = <Link to="about">About</Link>
+  //   const otherSpan = ProjectsSpan + ",&nbsp;" + AboutSpan
 
   return (
     <StyledDiv>
       <a name="home" />
       <Type>
         Matthew Clarke,&nbsp;
-        {isAbout && ProjectsSpan}
-        {isProjects && AboutSpan}
+        {isAbout && <ProjectsLink />}
+        {isProjects && <AboutLink />}
+        {!isAbout && !isProjects && <AllLinks />}
         ,&nbsp;
         <a href="#contact">Contact</a>.
         <br />

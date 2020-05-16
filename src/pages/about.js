@@ -15,11 +15,9 @@ const AboutPage = ({ location }) => {
         <hr />
         <Type style={{ display: "contents" }}>
           <a name="about" />
-
           <StickyTitle>
             <RowItem>About</RowItem>
           </StickyTitle>
-
           <br />
           <br />
         </Type>
