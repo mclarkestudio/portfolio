@@ -3,6 +3,7 @@ import Type from "./Type"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import device from "./devices"
+import { Row, RowItem } from "./layout"
 
 const StyledDiv = styled.div`
   /* height: 87vh; */
@@ -38,29 +39,38 @@ const PageHeader = ({ location }) => {
   return (
     <StyledDiv>
       <a name="home" />
-      <Type>
-        Matthew Clarke,&nbsp;
-        {isAbout && <ProjectsLink />}
-        {isProjects && <AboutLink />}
-        {!isAbout && !isProjects && <AllLinks />}
-        ,&nbsp;
-        <a href="#contact">Contact</a>.
-        <br />
-        Design Lead. Product Design and Development.
-        <br />
-        <br />
-        {/* <Type style={{ maxWidth: "800px" }}>
+      <Row>
+        <RowItem>
+          <Type>
+            Matthew Clarke,&nbsp;
+            {isAbout && <ProjectsLink />}
+            {isProjects && <AboutLink />}
+            {!isAbout && !isProjects && <AllLinks />}
+            ,&nbsp;
+            <a href="#contact">Contact</a>.
+            <br />
+            Design Lead. Product Design and Development.
+            <br />
+            <br />
+            {/* <Type style={{ maxWidth: "800px" }}>
           New York-based designer with 6 years experience building digital user
           interfaces within agile product teams.
         </Type> */}
-        {/* {ProjectCopy.map(i => (
+            {/* {ProjectCopy.map(i => (
           <HoverLink key={i.id} linkContent={i.id} hoverContent={i.heading} />
         ))} */}
-      </Type>
-      <br />
-      {/* <div style={{ width: "70%", maxWidth: "1300px", marginLeft: "auto" }}>
+          </Type>
+          <br />
+          {/* <div style={{ width: "70%", maxWidth: "1300px", marginLeft: "auto" }}>
               <Image />
             </div> */}
+        </RowItem>
+        <span style={{ textAlign: "right" }}>
+          <br />
+          <Type>⌖ ❂ New York City</Type>
+          <Type>◭◭∊x ⋰ ⋮⋱⋰⋮ ⋱ ⋯⋮</Type>
+        </span>
+      </Row>
     </StyledDiv>
   )
 }

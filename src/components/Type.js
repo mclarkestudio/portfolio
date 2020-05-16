@@ -74,16 +74,21 @@ const StickyDiv = styled(Type)`
 `
 
 export const StickyTitle = styled(StickyDiv)`
-  /* mix-blend-mode: difference;
-  color: white; */
   margin-bottom: 3rem;
   z-index: 3;
 
   background-color: white;
+  transition: background-color 0.45s;
 
-  *,
-  a {
-    /* color: white; */
+  @media ${device.laptop} {
+    background-color: transparent;
+    mix-blend-mode: difference;
+    color: white;
+
+    *,
+    a {
+      color: white;
+    }
   }
 
   /* ::selection,
