@@ -15,7 +15,7 @@ export const Type = styled.div`
   display: ${props => (props.inLine ? "inline" : null)};
 
   /* BASE Mobile Display */
-  font-size: 1.3rem;
+  font-size: 2rem;
 
   @media ${device.tablet} {
     font-size: 2rem;
@@ -45,16 +45,11 @@ export const Type = styled.div`
 
 export const Paragraph = styled(Type)`
   margin-bottom: 0.5rem;
-  /* font-size: 1rem; */
+  font-size: 1.2rem;
 
   @media ${device.tablet} {
     margin-bottom: 1rem;
-    font-size: 1rem;
-  }
-
-  @media ${device.laptop} {
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 `
 

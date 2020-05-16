@@ -14,15 +14,6 @@ const IndexPage = ({ location }) => {
     <>
       <SEO title="Home" />
       <Layout location={location}>
-        <Type style={{ maxWidth: "800px" }}>
-          New York-based designer with 6 years experience building digital user
-          interfaces within agile product teams.
-          <br />
-          <br />
-          <br />
-          {/* <Paragraph bold>Recent Work</Paragraph> */}
-        </Type>
-
         {WebCopy.map(i => (
           <>
             <Article key={i.id} i={i} />

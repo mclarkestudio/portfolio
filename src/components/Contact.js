@@ -1,14 +1,14 @@
 import React from "react"
 import Type, { Paragraph } from "./Type"
 import styled from "styled-components"
-import { TextBlock } from "./layout"
+// import { TextBlock } from "./layout"
 import HoverLink from "./hoverLink"
 
 const StyledSection = styled.div`
-  background-color: #ff0018;
+  background-color: #000000;
   color: white;
-  margin: 1.5rem -1.5rem -1.5rem -1.5rem;
-  padding: 1.5rem;
+  /* margin: 1.5rem -1.5rem -1.5rem -1.5rem; */
+  padding: 2rem;
 
   *,
   a {

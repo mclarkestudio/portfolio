@@ -1,9 +1,22 @@
 import React from "react"
 import Type from "./Type"
 import { Link } from "gatsby"
+import styled from "styled-components"
+import device from "./devices"
+
+const StyledDiv = styled.div`
+  /* height: 87vh; */
+
+  @media ${device.tablet} {
+    /* height: 85vh; */
+  }
+  @media ${device.laptop} {
+    /* height: 84vh; */
+  }
+`
 
 const PageHeader = ({ location }) => {
-  var isAbout = (location.pathname === "/about") | "/about/" ? true : false
+  var isAbout = location.pathname.includes("about") ? true : false
   var isProjects = location.pathname === "/" ? true : false
   console.log(location)
 
@@ -11,7 +24,7 @@ const PageHeader = ({ location }) => {
   const AboutSpan = <Link to="about">About</Link>
 
   return (
-    <div>
+    <StyledDiv>
       <a name="home" />
       <Type>
         Matthew Clarke,&nbsp;
@@ -23,6 +36,10 @@ const PageHeader = ({ location }) => {
         Design Lead. Product Design and Development.
         <br />
         <br />
+        {/* <Type style={{ maxWidth: "800px" }}>
+          New York-based designer with 6 years experience building digital user
+          interfaces within agile product teams.
+        </Type> */}
         {/* {ProjectCopy.map(i => (
           <HoverLink key={i.id} linkContent={i.id} hoverContent={i.heading} />
         ))} */}
@@ -31,7 +48,7 @@ const PageHeader = ({ location }) => {
       {/* <div style={{ width: "70%", maxWidth: "1300px", marginLeft: "auto" }}>
               <Image />
             </div> */}
-    </div>
+    </StyledDiv>
   )
 }
 

@@ -25,5 +25,5 @@ strong {
 
 hr {
   border: transparent 1px solid;
-  border-bottom: black 1px solid;
+  border-bottom: 2px dotted #000000;
 }

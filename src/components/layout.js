@@ -20,8 +20,8 @@ export const TextBlock = styled.div`
 export const ContentBlock = styled.div`
   flex: 1 1 auto;
   /* margin: 1rem auto; */
-  /* max-width: 800px;
-  margin: auto */
+  max-width: 720px;
+  margin: auto;
 `
 
 export const Row = styled.div`
