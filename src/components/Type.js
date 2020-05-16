@@ -8,7 +8,7 @@ export const Type = styled.div`
   color: black;
   font-family: Inter, sans-serif;
   font-style: normal;
-  font-weight: ${props => (props.bold ? 600 : 400)};
+  font-weight: ${props => (props.bold ? 600 : 300)};
   line-height: 142.02%;
   text-align: ${props => (props.centered ? "center" : null)};
 

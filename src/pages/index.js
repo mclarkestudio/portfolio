@@ -2,11 +2,8 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Image from "../components/image"
 import Article from "../components/Article"
 import Type from "../components/Type"
-import PageHeader from "../components/PageHeader"
-import Contact from "../components/Contact"
 
 import { WebCopy } from "../copy/webCopy"
 
@@ -16,7 +13,17 @@ const IndexPage = ({ location }) => {
     <>
       <SEO title="Home" />
       <Layout location={location}>
-        {/* <Type bold>Products and Services</Type> */}
+        <Type style={{ maxWidth: "800px" }}>
+          New York-based designer with 6 years experience building digital user
+          interfaces within agile product teams.
+        </Type>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         {WebCopy.map(i => (
           <>
             <Article key={i.id} i={i} />
