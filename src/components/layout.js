@@ -46,11 +46,17 @@ export const RowItem = styled.div`
   /* max-width: 800px; */
 `
 
+export const LayoutContainer = styled.div`
+  /* max-width: 1280px;
+  margin: auto; */
+`
+
 const Layout = ({ children, location }) => {
   return (
     <>
       <div
         style={{
+          padding: `0 3rem`,
           margin: `1.5rem auto`,
           maxWidth: "1280px",
         }}

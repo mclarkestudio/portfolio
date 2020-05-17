@@ -29,7 +29,7 @@ export const WebCopy = [
   },
   {
     id: "S-2019",
-    heading: "Splashlight x Telmar",
+    heading: "Splashlight",
     role: "UX Manager",
     resp:
       "Service design, design operations, user experience design, and information architecture.",

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useRef } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { motion, AnimatePresence } from "framer-motion"
@@ -7,7 +7,7 @@ import { ContentBlock, TextBlock, Row, RowItem } from "./layout"
 import { Type, Paragraph, StickyTitle } from "./Type"
 import { ImageGallery } from "./ImageGallery"
 import { WebCopy } from "../copy/webCopy"
-import LiminalSVG from "./liminalSVG"
+import { LayoutContainer } from "./Layout"
 
 // import Hero2 from "../images/hero2.svg"
 
@@ -135,7 +135,6 @@ const Article = ({ i, ...props }) => {
   return (
     <>
       <StyledArticle>
-        <hr />
         <motion.header
           initial={false}
           // animate={{ backgroundColor: isOpen ? "lightorange" : "lightyellow" }}
@@ -143,8 +142,11 @@ const Article = ({ i, ...props }) => {
           // 'display: contents' so that sicky header css is disolved into the section below
           style={{ cursor: "pointer", display: "contents" }}
         >
-          <a name={i.id} />
-          <StickyHeader i={i} />
+          <LayoutContainer>
+            <hr />
+            <a name={i.id} />
+            <StickyHeader i={i} />
+          </LayoutContainer>
         </motion.header>
         <AnimatePresence initial={false}>
           {isOpen && (
@@ -159,12 +161,19 @@ const Article = ({ i, ...props }) => {
               }}
               transition={{ duration: 0.7, ease: [0.04, 0.62, 0.23, 0.98] }}
             >
-              <Type>{i.role}</Type>
-              <br />
+              <LayoutContainer>
+                <Type>{i.role}</Type>
+                <br />
+              </LayoutContainer>
+              {/* No layout container on images */}
               <DynamicImageGallery />
-              {/* <Hero2 width="auto" height="auto" /> */}
-              {/* <LiminalSVG /> */}
-              <DynamicContent />
+              <LayoutContainer>
+                <DynamicContent />
+              </LayoutContainer>
+
+              {/* <Row mobileRow>
+                <RowItem>•</RowItem>•
+              </Row> */}
             </motion.section>
           )}
         </AnimatePresence>

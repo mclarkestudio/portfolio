@@ -2,8 +2,7 @@ import React from "react"
 
 import Layout, { RowItem } from "../components/layout"
 import SEO from "../components/seo"
-import { Type, Paragraph, StickyTitle } from "../components/Type"
-import PageHeader from "../components/PageHeader"
+import { Type, StickyTitle } from "../components/Type"
 
 const AboutPage = ({ location }) => {
   // Route location is provided by gatsby per page component
@@ -14,9 +13,12 @@ const AboutPage = ({ location }) => {
       <Layout location={location}>
         <hr />
         <Type style={{ display: "contents" }}>
-          <a name="about" />
           <StickyTitle>
-            <RowItem>About</RowItem>
+            <RowItem>
+              <a name="about" href="#about">
+                About
+              </a>
+            </RowItem>
           </StickyTitle>
           <br />
           <br />

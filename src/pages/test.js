@@ -3,7 +3,6 @@ import React from "react"
 import Swiper from "react-id-swiper"
 import "swiper/css/swiper.css"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { ImageGallery } from "../components/ImageGallery"
 

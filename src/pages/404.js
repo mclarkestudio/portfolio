@@ -1,10 +1,8 @@
 import React from "react"
 
-import Layout, { RowItem } from "../components/layout"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Type, Paragraph, StickyTitle } from "../components/Type"
-import PageHeader from "../components/PageHeader"
-import styled from "styled-components"
+import { Type } from "../components/Type"
 
 const AboutPage = ({ location }) => {
   // Route location is provided by gatsby per page component
@@ -15,10 +13,13 @@ const AboutPage = ({ location }) => {
       <Layout location={location}>
         <hr />
         <Type style={{ display: "contents" }}>
-          <a name="404" />
           <br />
           <br />
-          <Type>404: Page not found at</Type>
+          <Type>
+            <a name="404" href="#404">
+              404: Page not found{" "}
+            </a>
+          </Type>
           <Type style={{ overflowWrap: "break-word" }}>
             {location.pathname}
           </Type>

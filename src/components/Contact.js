@@ -1,5 +1,5 @@
 import React from "react"
-import Type, { Paragraph } from "./Type"
+import Type from "./Type"
 import styled from "styled-components"
 // import { TextBlock } from "./layout"
 import HoverLink from "./hoverLink"

@@ -1,5 +1,3 @@
-import React from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
 import device from "./devices"
 
@@ -80,7 +78,7 @@ export const StickyTitle = styled(StickyDiv)`
   background-color: white;
   transition: background-color 0.45s;
 
-  @media ${device.laptop} {
+  /* @media ${device.laptop} {
     background-color: transparent;
     mix-blend-mode: difference;
     color: white;
@@ -89,7 +87,7 @@ export const StickyTitle = styled(StickyDiv)`
     a {
       color: white;
     }
-  }
+  } */
 
   /* ::selection,
   ::-moz-selection,
