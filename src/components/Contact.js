@@ -14,6 +14,10 @@ const StyledDiv = styled.div`
   a {
     color: white;
   }
+
+  hr {
+    border-color: white;
+  }
 `
 
 // const Box = styled.div`
@@ -38,9 +42,11 @@ const Contact = () => {
   return (
     <>
       <StyledDiv>
+        <hr />
         <Heading>
           <a name="contact">Contact</a>
         </Heading>
+        <hr />
         <br />
         <br />
         <HoverLink

@@ -109,7 +109,7 @@ export const Heading = styled(Type)`
   font-style: italic;
   font-weight: 100;
   /* color: orangered; */
-  font-size: ${props => (props.fontSize ? props.fontSize : "3rem")};
+  font-size: ${props => (props.fontSize ? props.fontSize : "2rem")};
 
   @media ${device.tablet} {
     font-size: ${props => (props.fontSize ? props.fontSize : "4rem")};

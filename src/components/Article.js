@@ -8,6 +8,7 @@ import { Type, Paragraph, StickyTitle, Heading } from "./Type"
 import { ImageGallery } from "./ImageGallery"
 import { WebCopy } from "../copy/webCopy"
 import { LayoutContainer } from "./layout"
+import device from "./devices"
 
 // import Hero2 from "../images/hero2.svg"
 
@@ -20,6 +21,11 @@ const RightButton = styled.div`
   margin-left: auto;
   margin-right: 1rem;
   margin-top: 0.5rem;
+  font-size: 1.3rem;
+
+  @media ${device.tablet} {
+    font-size: inherit;
+  }
 
   a {
     text-decoration: none;
