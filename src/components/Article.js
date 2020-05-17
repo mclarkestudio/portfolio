@@ -7,7 +7,7 @@ import { ContentBlock, TextBlock, Row, RowItem } from "./layout"
 import { Type, Paragraph, StickyTitle } from "./Type"
 import { ImageGallery } from "./ImageGallery"
 import { WebCopy } from "../copy/webCopy"
-import { LayoutContainer } from "./Layout"
+import { LayoutContainer } from "./layout"
 
 // import Hero2 from "../images/hero2.svg"
 

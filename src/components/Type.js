@@ -4,7 +4,8 @@ import device from "./devices"
 export const Type = styled.div`
   /* BASE TYPEFACE */
   color: black;
-  font-family: Inter, sans-serif;
+  font-family: "Neue Haas Grotesk", sans-serif;
+  /* font-family: Inter, sans-serif; */
   font-style: normal;
   font-weight: ${props => (props.bold ? 600 : 300)};
   line-height: 142.02%;
@@ -96,6 +97,17 @@ export const StickyTitle = styled(StickyDiv)`
     background: white;
     color: black;
   } */
+`
+
+export const Heading = styled(Type)`
+  font-family: "IBM Plex Mono", monospace;
+  font-style: italic;
+  font-weight: 200;
+  /* color: orangered; */
+
+  @media ${device.tablet} {
+    font-size: 6rem;
+  }
 `
 
 export default Type
