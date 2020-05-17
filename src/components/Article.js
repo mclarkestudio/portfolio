@@ -7,7 +7,6 @@ import { ContentBlock, TextBlock, Row, RowItem } from "./layout"
 import { Type, Paragraph, StickyTitle, Heading } from "./Type"
 import { ImageGallery } from "./ImageGallery"
 import { WebCopy } from "../copy/webCopy"
-import { LayoutContainer } from "./layout"
 import device from "./devices"
 
 // import Hero2 from "../images/hero2.svg"
@@ -149,11 +148,9 @@ const Article = ({ i, ...props }) => {
           // 'display: contents' so that sicky header css is disolved into the section below
           style={{ cursor: "pointer", display: "contents" }}
         >
-          <LayoutContainer>
-            <hr />
-            <a name={i.id} />
-            <StickyHeader i={i} />
-          </LayoutContainer>
+          <hr />
+          <a name={i.id} />
+          <StickyHeader i={i} />
         </motion.header>
         <AnimatePresence initial={false}>
           {isOpen && (
@@ -168,19 +165,10 @@ const Article = ({ i, ...props }) => {
               }}
               transition={{ duration: 0.7, ease: [0.04, 0.62, 0.23, 0.98] }}
             >
-              <LayoutContainer>
-                <Type>{i.role}</Type>
-                <br />
-              </LayoutContainer>
-              {/* No layout container on images */}
+              <Type>{i.role}</Type>
+              <br />
               <DynamicImageGallery />
-              <LayoutContainer>
-                <DynamicContent />
-              </LayoutContainer>
-
-              {/* <Row mobileRow>
-                <RowItem>•</RowItem>•
-              </Row> */}
+              <DynamicContent />
             </motion.section>
           )}
         </AnimatePresence>

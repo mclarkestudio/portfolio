@@ -57,52 +57,20 @@ export const Paragraph = styled(Type)`
 `
 
 const StickyDiv = styled(Type)`
-  position: -webkit-sticky;
+  /* Not so sticky for the time being... */
+  /* position: -webkit-sticky;
   position: -moz-sticky;
   position: -ms-sticky;
   position: -o-sticky;
-  position: sticky;
+  position: sticky; */
   top: 0px;
-
-  /* background-color: white; */
-  /* background: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 1)
-  ); */
-  /* -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px); */
   z-index: 9;
-  /* opacity: 0.5; */
 `
 
 export const StickyTitle = styled(StickyDiv)`
   margin-bottom: 3rem;
-
   z-index: 3;
-
-  /* padding: 1rem; */
-  /* background-color: #ebf1f6; */
   transition: background-color 0.45s;
-
-  /* @media ${device.laptop} {
-    background-color: transparent;
-    mix-blend-mode: difference;
-    color: white;
-
-    *,
-    a {
-      color: white;
-    }
-  } */
-
-  /* ::selection,
-  ::-moz-selection,
-  *::selection,
-  *::-moz-selection {
-    background: white;
-    color: black;
-  } */
 `
 
 export const Heading = styled(Type)`

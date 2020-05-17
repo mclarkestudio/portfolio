@@ -3,7 +3,7 @@ import Type from "./Type"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import device from "./devices"
-import { Row, RowItem, LayoutContainer } from "./layout"
+import { Row, RowItem } from "./layout"
 import Clock from "react-live-clock"
 
 const StyledDiv = styled.div`
@@ -38,14 +38,15 @@ const PageHeader = ({ location }) => {
   //   const otherSpan = ProjectsSpan + ",&nbsp;" + AboutSpan
 
   return (
-    <LayoutContainer>
-      {" "}
+    <>
       <StyledDiv>
         <a name="home" />
         <Row>
           <RowItem>
             <Type>
-              Matthew Clarke,&nbsp;
+              <span style={{ whiteSpace: "nowrap" }}>
+                Matthew Clarke,&nbsp;
+              </span>
               {isAbout && <ProjectsLink />}
               {isProjects && <AboutLink />}
               {!isAbout && !isProjects && <AllLinks />}
@@ -80,7 +81,7 @@ const PageHeader = ({ location }) => {
           </span>
         </Row>
       </StyledDiv>
-    </LayoutContainer>
+    </>
   )
 }
 
