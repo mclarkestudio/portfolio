@@ -45,7 +45,7 @@ const PageHeader = ({ location }) => {
         <Row>
           <RowItem>
             <Type>
-              Matthew Clarke Studio,&nbsp;
+              Matthew Clarke,&nbsp;
               {isAbout && <ProjectsLink />}
               {isProjects && <AboutLink />}
               {!isAbout && !isProjects && <AllLinks />}
@@ -70,7 +70,9 @@ const PageHeader = ({ location }) => {
           </RowItem>
           <span>
             <br />
-            <Type textAlign="right">⌖ New York City</Type>
+            <Type textAlign="right" whiteSpace="nowrap">
+              ⌖ New York City
+            </Type>
             {/* <Type>◭◭∊x ⋰ ⋮⋱⋰⋮ ⋮</Type> */}
             <Type textAlign="right">
               ❂ <Clock format="h:mm a" interval={1000} ticking={true} />

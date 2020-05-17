@@ -9,6 +9,7 @@ export const Type = styled.div`
   font-style: normal;
   font-weight: ${props => (props.bold ? 600 : 300)};
   line-height: 142.02%;
+  white-space: ${props => (props.whiteSpace ? props.whiteSpace : null)};
 
   display: ${props => (props.inLine ? "inline" : null)};
 
