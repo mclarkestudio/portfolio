@@ -16,12 +16,12 @@ export const WebCopy = [
   {
     id: "D-2020",
     heading: "Datavore Labs",
-    role: "Design Lead",
+    role: "Lead Product Designer",
     resp:
       "Product design, user interface design, design system development, and cross-application front-end development.",
     para: "The code-free tool for advanced time series anaysis.",
     para2:
-      "From 2019–2020, we extended the core Datavore product to include granular tagging––allowing analysts to segment transactions from large data sets without directly accessing the raw data itself. From consumer brands to data marketplaces, businesses can exhange data per usage without the need to open the raw data (which may be prone to identity tracing). We merged this extensive, new feature into Datavore's core product and provided a seamless experience between the two systems.",
+      "From 2019–2020, we extended the core Datavore product to include granular tagging––allowing analysts to segment transactions from large data sets without directly accessing the raw data itself. I feel fortunate to work on a product that has implications outside of it's own utility. Having a system that can calculate your analysis  From consumer brands to data marketplaces, businesses can exhange data per usage without the need to open the raw data (which may be prone to identity tracing). We merged this extensive, new feature into Datavore's core product and provided a seamless experience between the two systems.",
     slug: "The code-free tool for advanced time-series analysis.",
     team:
       "Sanjay Venkat, CTO; JP, Systems Architecture; Dante F, Full-stack Tech Lead; Dan Entrup, CEO; Phil Fogel, COO;",

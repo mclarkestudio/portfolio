@@ -12,6 +12,7 @@ export const Type = styled.div`
   white-space: ${props => (props.whiteSpace ? props.whiteSpace : null)};
 
   display: ${props => (props.inLine ? "inline" : null)};
+  /* text-decoration-thickness: auto; */
 
   /* BASE Mobile Display */
   font-size: 2rem;

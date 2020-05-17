@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout, { RowItem } from "../components/layout"
 import SEO from "../components/seo"
-import { Type, StickyTitle } from "../components/Type"
+import { Type, StickyTitle, Paragraph } from "../components/Type"
 
 const AboutPage = ({ location }) => {
   // Route location is provided by gatsby per page component
@@ -23,16 +23,34 @@ const AboutPage = ({ location }) => {
         </Type>
         <Type>
           <div style={{ maxWidth: "800px" }}>
-            Matthew is a New York-based designer with 6 years experience
-            building digital user interfaces within agile product teams.
+            I'm Matthew Clarke, a product designer with 6 years experience
+            helping agile teams craft elegant products and services.
             <br />
             <br />
-            Having studied interdiciplinary art and design Aeshetically-driven,
-            systems-level thinker helping teams prioritize work, define
-            human-centered problems, and build unified products and services.
-            Matthew works across a range of diciplines in order to define
-            customer problems, prioritize work, and build products and services
-            that work.
+            <Paragraph>
+              I specialize in launching new information systems that require a
+              designer at every stage of the process. With skills and experience
+              in research, design, and front-end code, I enjoy collaborating
+              with all types of contributors to bring a product or feature to
+              life. I often focus my soft skills on facilitating product
+              discussion, canvassing team members for the next best solution,
+              and honing an iterative design approach geared towards the team,
+              its mission, and roadmap.
+              <br />
+              <br />
+              With a background in art and publishing, I'm both a meticulously
+              editor and aesthetically-driven, curious person. I pride myself in
+              knowing the rules, when to break them, and how to ensure
+              consistency in innovative products. Before working full-time in
+              New York, I recieved a BFA at the School of the Art Institute of
+              Chicago and interned at New Musueum of Contemporary Art and Vice
+              Media.
+              <br />
+              <br />
+              I'm currently open to new projects focused in thoughtful,
+              human-centered design. Have a project in mind? Get in touch,
+              below!
+            </Paragraph>
           </div>
           <br />
         </Type>
