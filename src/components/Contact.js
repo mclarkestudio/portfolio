@@ -39,8 +39,7 @@ const Contact = () => {
     <>
       <StyledDiv>
         <Heading>
-          <a name="contact" />
-          Contact
+          <a name="contact">Contact</a>
         </Heading>
         <br />
         <br />

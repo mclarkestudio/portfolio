@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import device from "./devices"
 import { Row, RowItem, LayoutContainer } from "./layout"
+import Clock from "react-live-clock"
 
 const StyledDiv = styled.div`
   /* height: 87vh; */
@@ -44,7 +45,7 @@ const PageHeader = ({ location }) => {
         <Row>
           <RowItem>
             <Type>
-              Matthew Clarke,&nbsp;
+              Matthew Clarke Studio,&nbsp;
               {isAbout && <ProjectsLink />}
               {isProjects && <AboutLink />}
               {!isAbout && !isProjects && <AllLinks />}
@@ -67,11 +68,13 @@ const PageHeader = ({ location }) => {
             <Image />
           </div> */}
           </RowItem>
-          <span style={{ textAlign: "right" }}>
+          <span>
             <br />
-            <Type>⌖ New York City</Type>
+            <Type textAlign="right">⌖ New York City</Type>
             {/* <Type>◭◭∊x ⋰ ⋮⋱⋰⋮ ⋮</Type> */}
-            <Type>❂ </Type>
+            <Type textAlign="right">
+              ❂ <Clock format="h:mm a" interval={1000} ticking={true} />
+            </Type>
           </span>
         </Row>
       </StyledDiv>

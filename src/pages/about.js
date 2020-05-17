@@ -20,19 +20,19 @@ const AboutPage = ({ location }) => {
               </a>
             </RowItem>
           </StickyTitle>
-          <br />
-          <br />
         </Type>
         <Type>
           <div style={{ maxWidth: "800px" }}>
-            New York-based designer with 6 years experience building digital
-            user interfaces within agile product teams.
+            Matthew is a New York-based designer with 6 years experience
+            building digital user interfaces within agile product teams.
             <br />
-            Aeshetically-driven, systems-level thinker helping teams prioritize
-            work, define human-centered problems, and build unified products and
-            services. Matthew works across a range of diciplines in order to
-            define customer problems, prioritize work, and build products and
-            services that work.
+            <br />
+            Having studied interdiciplinary art and design Aeshetically-driven,
+            systems-level thinker helping teams prioritize work, define
+            human-centered problems, and build unified products and services.
+            Matthew works across a range of diciplines in order to define
+            customer problems, prioritize work, and build products and services
+            that work.
           </div>
           <br />
         </Type>

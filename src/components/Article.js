@@ -129,7 +129,8 @@ const Article = ({ i, ...props }) => {
   )
 
   // Motion accordian state
-  const [expanded, setExpanded] = useState(i.id === firstArticleId ? i : null)
+  // Set first article as open = useState(i.id === firstArticleId ? i : null)
+  const [expanded, setExpanded] = useState(null)
   const isOpen = i === expanded
 
   return (

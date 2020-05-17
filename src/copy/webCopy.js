@@ -25,7 +25,7 @@ export const WebCopy = [
     slug: "The code-free tool for advanced time-series analysis.",
     team:
       "Sanjay Venkat, CTO; JP, Systems Architecture; Dante F, Full-stack Tech Lead; Dan Entrup, CEO; Phil Fogel, COO;",
-    date: "2019–2020",
+    date: "2019–2020+",
   },
   {
     id: "S-2019",
@@ -44,12 +44,20 @@ export const WebCopy = [
   },
   {
     id: "G-2017",
-    heading: "Previous Work",
+    heading: "Gagosian Gallery",
     role: "Publications Coordinator",
     resp:
       "Print production, image proofing, copy editing, project management, and quality assurance.",
     slug: "Behind the scences acces to modern and contemporary art practices.",
     date: "2015–2017",
+    para:
+      "The Gagosian Quarterly, in print and online, offers behind-the-art access and editorial content by leading art world professionals. You can find studio visits, artist profiles, and the most recent Gagosian publications. From 2015–2017, we launched the Gagosian Quarterly website in conjuntion with a brand and web redesign by Graphic Thought Facility.",
+  },
+  {
+    id: "I-2015",
+    heading: "Independent Design",
+    role: "Publications Coordinator",
+    date: "2010–2017",
     para:
       "The Gagosian Quarterly, in print and online, offers behind-the-art access and editorial content by leading art world professionals. You can find studio visits, artist profiles, and the most recent Gagosian publications. From 2015–2017, we launched the Gagosian Quarterly website in conjuntion with a brand and web redesign by Graphic Thought Facility.",
   },

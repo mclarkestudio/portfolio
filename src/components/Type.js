@@ -9,7 +9,6 @@ export const Type = styled.div`
   font-style: normal;
   font-weight: ${props => (props.bold ? 600 : 300)};
   line-height: 142.02%;
-  text-align: ${props => (props.centered ? "center" : null)};
 
   display: ${props => (props.inLine ? "inline" : null)};
 
@@ -18,6 +17,7 @@ export const Type = styled.div`
 
   @media ${device.tablet} {
     font-size: 2rem;
+    text-align: ${props => (props.textAlign ? props.textAlign : null)};
   }
 
   @media ${device.laptop} {
@@ -109,14 +109,14 @@ export const Heading = styled(Type)`
   font-style: italic;
   font-weight: 100;
   /* color: orangered; */
-  font-size: ${props => (props.fontSize ? props.fontSize : null)};
+  font-size: ${props => (props.fontSize ? props.fontSize : "3rem")};
 
   @media ${device.tablet} {
-    font-size: ${props => (props.fontSize ? props.fontSize : "3rem")};
+    font-size: ${props => (props.fontSize ? props.fontSize : "4rem")};
   }
 
   @media ${device.laptop} {
-    font-size: ${props => (props.fontSize ? props.fontSize : "4rem")};
+    font-size: ${props => (props.fontSize ? props.fontSize : "5rem")};
   }
 `
 
