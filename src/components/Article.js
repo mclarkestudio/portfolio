@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { motion, AnimatePresence } from "framer-motion"
 
 import { ContentBlock, TextBlock, Row, RowItem } from "./layout"
-import { Type, Paragraph, StickyTitle } from "./Type"
+import { Type, Paragraph, StickyTitle, Heading } from "./Type"
 import { ImageGallery } from "./ImageGallery"
 import { WebCopy } from "../copy/webCopy"
 import { LayoutContainer } from "./layout"
@@ -64,7 +64,7 @@ const Article = ({ i, ...props }) => {
             <sup>{i.id}</sup>
           </a> */}
           <Type ref={titleRef}>
-            <span id={i.id}>{i.heading}</span>
+            <Heading id={i.id}>{i.heading}</Heading>
           </Type>
         </RowItem>
         <BackHomeButton i={i} />

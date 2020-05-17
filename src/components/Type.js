@@ -32,10 +32,13 @@ export const Type = styled.div`
 
   a:hover {
     font-family: IBM Plex Mono;
+
     /* Line hieght offsets virticle jump */
+    line-height: 120%;
+    /* Line hieght offsets virticle jump */
+
     /* color: #ff0018; */
     color: ${props => (props.hoverColor ? props.hoverColor : "#ff0018")};
-    line-height: 140%;
     font-style: italic;
     font-weight: 100;
     text-decoration: none;
@@ -74,9 +77,11 @@ const StickyDiv = styled(Type)`
 
 export const StickyTitle = styled(StickyDiv)`
   margin-bottom: 3rem;
+
   z-index: 3;
 
-  background-color: white;
+  /* padding: 1rem; */
+  /* background-color: #ebf1f6; */
   transition: background-color 0.45s;
 
   /* @media ${device.laptop} {
@@ -102,11 +107,16 @@ export const StickyTitle = styled(StickyDiv)`
 export const Heading = styled(Type)`
   font-family: "IBM Plex Mono", monospace;
   font-style: italic;
-  font-weight: 200;
+  font-weight: 100;
   /* color: orangered; */
+  font-size: ${props => (props.fontSize ? props.fontSize : null)};
 
   @media ${device.tablet} {
-    font-size: 6rem;
+    font-size: ${props => (props.fontSize ? props.fontSize : "3rem")};
+  }
+
+  @media ${device.laptop} {
+    font-size: ${props => (props.fontSize ? props.fontSize : "4rem")};
   }
 `
 

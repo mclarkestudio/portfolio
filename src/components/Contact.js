@@ -1,5 +1,5 @@
 import React from "react"
-import Type from "./Type"
+import { Heading } from "./Type"
 import styled from "styled-components"
 // import { TextBlock } from "./layout"
 import HoverLink from "./hoverLink"
@@ -16,11 +16,11 @@ const StyledDiv = styled.div`
   }
 `
 
-const Box = styled.div`
-  margin: 1rem;
-  padding: 1rem;
-  border: 5px solid white;
-`
+// const Box = styled.div`
+//   margin: 1rem;
+//   padding: 1rem;
+//   border: 5px solid white;
+// `
 
 // const Box = styled.div`
 //   background-color: #000000;
@@ -38,10 +38,10 @@ const Contact = () => {
   return (
     <>
       <StyledDiv>
-        <Type>
+        <Heading>
           <a name="contact" />
           Contact
-        </Type>
+        </Heading>
         <br />
         <br />
         <HoverLink
