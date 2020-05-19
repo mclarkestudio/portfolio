@@ -4,7 +4,7 @@ import styled from "styled-components"
 // import { TextBlock } from "./layout"
 import HoverLink from "./hoverLink"
 
-const StyledDiv = styled.div`
+const DarkDiv = styled.div`
   background-color: #000000;
   color: white;
   /* margin: 1.5rem -1.5rem -1.5rem -1.5rem; */
@@ -16,7 +16,7 @@ const StyledDiv = styled.div`
   }
 
   hr {
-    border-color: white;
+    border-bottom-color: white;
   }
 `
 
@@ -41,7 +41,7 @@ const StyledDiv = styled.div`
 const Contact = () => {
   return (
     <>
-      <StyledDiv>
+      <DarkDiv>
         <hr />
         <Heading>
           <a name="contact">Contact</a>
@@ -88,7 +88,7 @@ const Contact = () => {
         <br />
         <br />
         <br />
-      </StyledDiv>
+      </DarkDiv>
     </>
   )
 }

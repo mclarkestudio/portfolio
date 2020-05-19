@@ -87,17 +87,29 @@ export const ImageGallery = ({ dir }) => {
     themeColor: "black",
     getSwiper: getGallerySwiper,
     spaceBetween: 10,
+    autoplay: {
+      delay: 3000,
+    },
+    fadeEffect: {
+      crossFade: true,
+    },
     navigation: {
-      // nextEl: ".swiper-button-next swiper-button-black gallery-next",
-      // prevEl: ".swiper-button-prev swiper-button-black gallery-prev",
+      nextEl: ".swiper-button-next swiper-button-black gallery-next",
+      prevEl: ".swiper-button-prev swiper-button-black gallery-prev",
       clickable: true,
     },
-    autoplay: {
-      delay: 3500,
-    },
+    // pagination: {
+    //   el: ".swiper-pagination",
+    //   type: "fraction",
+    // },
     scrollbar: {
       el: ".swiper-scrollbar",
-      hide: true,
+      draggable: true,
+      // hide: true,
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
     },
   }
 

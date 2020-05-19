@@ -27,7 +27,7 @@ export const ContentBlock = styled.div`
 export const Row = styled.div`
   display: flex;
   flex-direction: ${props => (props.mobileRow ? "row" : "column")};
-  max-width: 1920px;
+  /* max-width: 1920px; */
   justify-content: space-between;
   /* margin: auto; */
 
