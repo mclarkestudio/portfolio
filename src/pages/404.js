@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Type } from "../components/Type"
+import { Type, Heading } from "../components/Type"
 
 const AboutPage = ({ location }) => {
   // Route location is provided by gatsby per page component
@@ -15,15 +15,15 @@ const AboutPage = ({ location }) => {
         <Type style={{ display: "contents" }}>
           <br />
           <br />
-          <Type>
-            <a name="404" href="#404">
-              404: Page not found{" "}
-            </a>
-          </Type>
-          <Type style={{ overflowWrap: "break-word" }}>
-            {location.pathname}
-          </Type>
-          <br />
+          <Heading>
+              404: Page not found
+          </Heading>
+          <Heading style={{ overflowWrap: "break-word" }}>
+            <br />
+            {location.pathname === "/404" ? null : location.pathname}
+            <br />
+            <br />
+          </Heading>
           <br />
         </Type>
       </Layout>
