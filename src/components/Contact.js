@@ -46,7 +46,9 @@ const Contact = () => {
       <DarkDiv>
         <hr />
         <Heading>
-          <a name="contact">Contact</a>
+          {/* #contact anchor content */}
+          <a name="contact" style={{ display: 'none' }}>Contact</a>
+          <span>Contact</span>
         </Heading>
         <hr />
         <br />

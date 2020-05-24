@@ -40,7 +40,8 @@ const PageHeader = ({ location }) => {
   return (
     <>
       <StyledDiv>
-        <a name="home" />
+        {/* #home anchor content */}
+        <a name="home" style={{ display: 'none' }}>Home</a>
         <Row>
           <RowItem>
             <Type>

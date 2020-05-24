@@ -33,7 +33,7 @@ export const Type = styled.div`
   }
 
   a:hover {
-    font-family: 'IBM Plex Mono', Menlo, Consolas, Monaco, 'Liberation Mono', Lucida Console, monospace;
+    font-family: 'IBM Plex Mono', Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace;
 
     /* Line hieght offsets virticle jump */
     line-height: 120%;
@@ -42,7 +42,7 @@ export const Type = styled.div`
     /* color: #ff0018; */
     color: ${props => (props.hoverColor ? props.hoverColor : "#ff0018")};
     font-style: italic;
-    font-weight: 100;
+    font-weight: 200;
     text-decoration: none;
   }
 `
@@ -75,9 +75,9 @@ export const StickyTitle = styled(StickyDiv)`
 `
 
 export const Heading = styled(Type)`
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace;
   font-style: italic;
-  font-weight: 100;
+  font-weight: 200;
   /* color: orangered; */
   font-size: ${props => (props.fontSize ? props.fontSize : "1.7rem")};
 
