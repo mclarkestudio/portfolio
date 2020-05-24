@@ -32,7 +32,7 @@ const DesktopLinkContent = styled.span`
   }
 `
 
-const HoverLink = ({ href, linkContent, hoverContent, hoverColor }) => {
+const HoverLink = ({ href, linkContent, hoverContent, hoverColor, props }) => {
 
   const [hovered, setHovered] = useState(false)
   function toggleHover(i) {
@@ -48,6 +48,7 @@ const HoverLink = ({ href, linkContent, hoverContent, hoverColor }) => {
           onMouseEnter={() => toggleHover()}
           onMouseLeave={() => toggleHover()}
           href={href}
+          {...props}
         >
           {linkContent}
         </a>

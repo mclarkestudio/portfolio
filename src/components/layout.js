@@ -8,7 +8,7 @@ import Contact from "./Contact"
 // Normalizations
 import "./styles.css"
 // Fonts
-import "../static/fonts/inter/inter.css"
+import "../static/fonts/Inter/inter.css"
 import "../static/fonts/IBM-Plex/css/ibm-plex.css"
 import PageHeader from "./PageHeader"
 

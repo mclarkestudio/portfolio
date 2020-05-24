@@ -82,6 +82,13 @@ const Contact = () => {
         <br />
         <br />
         <br />
+        <HoverLink
+          href={`Matthew-Clarke-Resume.pdf`}
+          download
+          linkContent="Download Resume"
+          hoverContent=""
+          hoverColor="white"
+        />
         <br />
         <br />
         <br />
