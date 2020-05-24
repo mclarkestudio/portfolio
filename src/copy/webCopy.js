@@ -1,7 +1,7 @@
 // Add '-' in the ID for the section to appear in the left nav
 export const WebCopy = [
   {
-    id: "L-2020+",
+    id: "liminal",
     heading: "Liminal",
     slug: "A personal media library for the web.",
     role: "Principal Designer, Developer",
@@ -14,7 +14,7 @@ export const WebCopy = [
     date: "2020+",
   },
   {
-    id: "D-2020",
+    id: "datavore",
     heading: "Datavore Labs",
     role: "Lead Product Designer",
     resp:
@@ -28,7 +28,7 @@ export const WebCopy = [
     date: "2019–2020+",
   },
   {
-    id: "S-2019",
+    id: "splashlight",
     heading: "Splashlight",
     role: "UX Manager",
     resp:
@@ -43,7 +43,7 @@ export const WebCopy = [
     date: "2017–2019",
   },
   {
-    id: "G-2017",
+    id: "gagosian",
     heading: "Gagosian Gallery",
     role: "Publications Coordinator",
     resp:
@@ -54,8 +54,8 @@ export const WebCopy = [
       "The Gagosian Quarterly, in print and online, offers behind-the-art access and editorial content by leading art world professionals. You can find studio visits, artist profiles, and the most recent Gagosian publications. From 2015–2017, we launched the Gagosian Quarterly website in conjuntion with a brand and web redesign by Graphic Thought Facility.",
   },
   {
-    id: "I-2015",
-    heading: "Independent Design",
+    id: "visual",
+    heading: "Visual Design",
     role: "Publications Coordinator",
     date: "2010–2017",
     para:

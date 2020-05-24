@@ -15,7 +15,7 @@ export const Type = styled.div`
   /* text-decoration-thickness: auto; */
 
   /* BASE Mobile Display */
-  font-size: 2rem;
+  font-size: 1.3rem;
 
   @media ${device.tablet} {
     font-size: 2rem;
@@ -79,7 +79,7 @@ export const Heading = styled(Type)`
   font-style: italic;
   font-weight: 100;
   /* color: orangered; */
-  font-size: ${props => (props.fontSize ? props.fontSize : "2rem")};
+  font-size: ${props => (props.fontSize ? props.fontSize : "1.7rem")};
 
   @media ${device.tablet} {
     font-size: ${props => (props.fontSize ? props.fontSize : "4rem")};

@@ -94,19 +94,19 @@ export const ImageGallery = ({ dir }) => {
       crossFade: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next swiper-button-black gallery-next",
-      prevEl: ".swiper-button-prev swiper-button-black gallery-prev",
+      // nextEl: ".swiper-button-next swiper-button-black gallery-next",
+      // prevEl: ".swiper-button-prev swiper-button-black gallery-prev",
       clickable: true,
     },
     // pagination: {
     //   el: ".swiper-pagination",
     //   type: "fraction",
     // },
-    scrollbar: {
-      el: ".swiper-scrollbar",
-      draggable: true,
+    // scrollbar: {
+      // el: ".swiper-scrollbar",
+      // draggable: true,
       // hide: true,
-    },
+    // },
     keyboard: {
       enabled: true,
       onlyInViewport: false,

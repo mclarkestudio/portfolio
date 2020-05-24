@@ -50,7 +50,7 @@ const Contact = () => {
         <br />
         <br />
         <HoverLink
-          href="mailto:mclarkstudio@gmail.com"
+          href="mailto:mclarkestudio@gmail.com"
           linkContent="Email"
           hoverContent="mclarkestudio@gmail.com"
           hoverColor="white"

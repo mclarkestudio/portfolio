@@ -18,13 +18,13 @@ const fourthArticleId = WebCopy[3].id
 
 const RightButton = styled.div`
   margin-left: auto;
-  margin-right: 1rem;
   margin-top: 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
   word-wrap: nowrap;
 
   @media ${device.tablet} {
     font-size: inherit;
+    /* font-size: 1.3rem; */
   }
 
   a {
@@ -70,7 +70,7 @@ const Article = ({ i, ...props }) => {
             <sup>{i.id}</sup>
           </a> */}
           <Type ref={titleRef}>
-            <Heading id={i.id}>{i.heading}</Heading>
+            <Heading>{i.heading}</Heading>
           </Type>
         </RowItem>
         <BackHomeButton i={i} />
@@ -150,7 +150,6 @@ const Article = ({ i, ...props }) => {
           style={{ cursor: "pointer", display: "contents" }}
         >
           <hr />
-          <a name={i.id} />
           <StickyHeader i={i} />
         </motion.header>
         <AnimatePresence initial={false}>
@@ -165,6 +164,7 @@ const Article = ({ i, ...props }) => {
                 collapsed: { opacity: 0, height: 0 },
               }}
               transition={{ duration: 0.7, ease: [0.04, 0.62, 0.23, 0.98] }}
+              id={i.id}
             >
               <Type>{i.role}</Type>
               <br />

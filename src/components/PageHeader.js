@@ -17,6 +17,18 @@ const StyledDiv = styled.div`
   }
 `
 
+const NoWrapTitle = styled.span`
+    white-space: nowrap;
+
+  /* @media ${device.tablet} {
+    height: 85vh;
+  }
+  
+  @media ${device.laptop} {
+    height: 84vh;
+  } */
+`
+
 const PageHeader = ({ location }) => {
   var isAbout = location.pathname.includes("about") ? true : false
   var isProjects = location.pathname === "/" ? true : false
@@ -44,16 +56,18 @@ const PageHeader = ({ location }) => {
         <Row>
           <RowItem>
             <Type>
-              <span style={{ whiteSpace: "nowrap" }}>
+              <NoWrapTitle>
                 Matthew Clarke,&nbsp;
-              </span>
+              </NoWrapTitle>
               {isAbout && <ProjectsLink />}
               {isProjects && <AboutLink />}
               {!isAbout && !isProjects && <AllLinks />}
               ,&nbsp;
               <a href="#contact">Contact</a>.
               <br />
-              Design Lead. Product Design and Development.
+              <span>
+                Design Lead. Product Design and Development.
+              </span>
               <br />
               <br />
               {/* <Type style={{ maxWidth: "800px" }}>
@@ -76,7 +90,7 @@ const PageHeader = ({ location }) => {
             </Type>
             {/* <Type>◭◭∊x ⋰ ⋮⋱⋰⋮ ⋮</Type> */}
             <Type textAlign="right">
-              ❂ <Clock format="h:mm a" interval={1000} ticking={true} />
+              ❂ <Clock format="h:mm a" interval={1000} ticking={true} /> 
             </Type>
           </span>
         </Row>
