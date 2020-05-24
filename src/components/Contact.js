@@ -11,7 +11,6 @@ const DarkDiv = styled.div`
   color: white;
   padding: 1rem;
 
-  *,
   a {
     color: white;
   }

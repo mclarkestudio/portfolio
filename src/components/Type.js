@@ -29,14 +29,21 @@ export const Type = styled.div`
   /* 🔗 LINKS */
   a {
     color: black;
-    text-decoration-style: dotted;
+    /* text-decoration-style: dotted; */
+    text-decoration: none;
+
+    border-bottom: 2px dotted black;
+    border-bottom-color: ${props => props.hoverColor ? 'white' : null};
+    margin-bottom: -1px;
+    vertical-align: baseline;
+    line-height: 100%;
   }
 
   a:hover {
     font-family: 'IBM Plex Mono', Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace;
-
+    border-bottom: 0px dotted transparent;
     /* Line hieght offsets virticle jump */
-    line-height: 120%;
+    line-height: 100%;
     /* Line hieght offsets virticle jump */
 
     /* color: #ff0018; */
