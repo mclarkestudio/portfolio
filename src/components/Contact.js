@@ -1,7 +1,6 @@
 import React from "react"
 import { Heading } from "./Type"
 import styled from "styled-components"
-// import { TextBlock } from "./layout"
 import HoverLink from "./hoverLink"
 
 import resume from '../static/Matthew-Clarke-Resume.pdf'
@@ -9,7 +8,6 @@ import resume from '../static/Matthew-Clarke-Resume.pdf'
 const DarkDiv = styled.div`
   background-color: #000000;
   color: white;
-  /* margin: 1.5rem -1.5rem -1.5rem -1.5rem; */
   padding: 2rem;
 
   *,
@@ -21,24 +19,6 @@ const DarkDiv = styled.div`
     border-bottom-color: white;
   }
 `
-
-// const Box = styled.div`
-//   margin: 1rem;
-//   padding: 1rem;
-//   border: 5px solid white;
-// `
-
-// const Box = styled.div`
-//   background-color: #000000;
-//   color: white;
-//   /* margin: 1.5rem -1.5rem -1.5rem -1.5rem; */
-//   padding: 2rem;
-
-//   *,
-//   a {
-//     color: white;
-//   }
-// `
 
 const Contact = () => {
   return (
