@@ -19,21 +19,13 @@ const StyledDiv = styled.div`
 
 const NoWrapTitle = styled.span`
     white-space: nowrap;
-
-  /* @media ${device.tablet} {
-    height: 85vh;
-  }
-  
-  @media ${device.laptop} {
-    height: 84vh;
-  } */
 `
 
 const PageHeader = ({ location }) => {
   var isAbout = location.pathname.includes("about") ? true : false
   var isProjects = location.pathname === "/" ? true : false
   //   var isOther = !isProjects | !isAbout ? true : false
-  console.log(location)
+  // console.log(location)
 
   const ProjectsLink = () => <Link to="/" style={{ whiteSpace: 'nowrap' }}>← Projects</Link>
   const AboutLink = () => <Link to="about">About</Link>
@@ -44,10 +36,6 @@ const PageHeader = ({ location }) => {
       <AboutLink />
     </>
   )
-
-  //   const ProjectsSpan = <Link to="/">← Projects</Link>
-  //   const AboutSpan = <Link to="about">About</Link>
-  //   const otherSpan = ProjectsSpan + ",&nbsp;" + AboutSpan
 
   return (
     <>
@@ -70,13 +58,6 @@ const PageHeader = ({ location }) => {
               </span>
               <br />
               <br />
-              {/* <Type style={{ maxWidth: "800px" }}>
-        New York-based designer with 6 years experience building digital user
-        interfaces within agile product teams.
-      </Type> */}
-              {/* {ProjectCopy.map(i => (
-        <HoverLink key={i.id} linkContent={i.id} hoverContent={i.heading} />
-      ))} */}
             </Type>
             <br />
             {/* <div style={{ width: "70%", maxWidth: "1300px", marginLeft: "auto" }}>

@@ -9,7 +9,7 @@ import Contact from "./Contact"
 import "./styles.css"
 // Fonts
 import "../static/fonts/Inter/inter.css"
-import "../static/fonts/IBM-Plex/css/ibm-plex.css"
+import "../static/fonts/IBM-Plex/css/ibm-plex.min.css"
 import PageHeader from "./PageHeader"
 
 export const TextBlock = styled.div`
