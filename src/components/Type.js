@@ -33,7 +33,7 @@ export const Type = styled.div`
   }
 
   a:hover {
-    font-family: 'IBM Plex Mono';
+    font-family: 'IBM Plex Mono', Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 
     /* Line hieght offsets virticle jump */
     line-height: 120%;
