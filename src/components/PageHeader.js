@@ -21,6 +21,12 @@ const NoWrapTitle = styled.span`
     white-space: nowrap;
 `
 
+const StyledLink = styled.a`
+  &:hover {
+    color: white !important;
+  }
+`
+
 const PageHeader = ({ location }) => {
   var isAbout = location.pathname.includes("about") ? true : false
   var isProjects = location.pathname === "/" ? true : false
@@ -40,8 +46,6 @@ const PageHeader = ({ location }) => {
   return (
     <>
       <StyledDiv>
-        {/* #home anchor content */}
-        <a name="home" style={{ display: 'none' }}>Home</a>
         <Row>
           <RowItem>
             <Type>

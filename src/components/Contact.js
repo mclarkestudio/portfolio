@@ -25,15 +25,19 @@ const DarkDiv = styled.div`
   }
 `
 
+const StyledLink = styled.a`
+  &:hover {
+    color: white !important;
+  }
+`
+
 const Contact = () => {
   return (
     <>
       <DarkDiv>
         <hr />
         <Heading>
-          {/* #contact anchor content */}
-          <a name="contact" style={{ display: 'none' }}>Contact</a>
-          <span>Contact</span>
+          <StyledLink name="contact">Contact</StyledLink>
         </Heading>
         <hr />
         <br />
