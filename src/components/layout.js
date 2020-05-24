@@ -39,10 +39,10 @@ export const Row = styled.div`
 
 export const RowItem = styled.div`
   flex: 1 1 auto;
-  padding: 1rem 1em 1rem 0rem;
+  padding: 1rem 0rem 1rem 0rem;
   margin-left: ${props => (props.marginLeft ? props.marginLeft : null)};
   @media ${device.tablet} {
-    padding: 1rem 4rem 1rem 0;
+    padding: 1rem 0rem 1rem 0;
   }
   /* max-width: 800px; */
 `

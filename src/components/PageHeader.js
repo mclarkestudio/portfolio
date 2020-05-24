@@ -35,7 +35,7 @@ const PageHeader = ({ location }) => {
   //   var isOther = !isProjects | !isAbout ? true : false
   console.log(location)
 
-  const ProjectsLink = () => <Link to="/">← Projects</Link>
+  const ProjectsLink = () => <Link to="/" style={{ whiteSpace: 'nowrap' }}>← Projects</Link>
   const AboutLink = () => <Link to="about">About</Link>
   const AllLinks = () => (
     <>
