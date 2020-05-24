@@ -4,11 +4,12 @@ import styled from "styled-components"
 import HoverLink from "./hoverLink"
 
 import resume from '../static/Matthew-Clarke-Resume.pdf'
+import device from "./devices"
 
 const DarkDiv = styled.div`
   background-color: #000000;
   color: white;
-  padding: 2rem;
+  padding: 1rem;
 
   *,
   a {
@@ -17,6 +18,10 @@ const DarkDiv = styled.div`
 
   hr {
     border-bottom-color: white;
+  }
+
+  @media ${device.tablet} {
+    padding: 2rem;
   }
 `
 
