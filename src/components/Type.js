@@ -4,8 +4,8 @@ import device from "./devices"
 export const Type = styled.div`
   /* BASE TYPEFACE */
   color: black;
-  font-family: "Neue Haas Grotesk", sans-serif;
-  font-family: Inter, sans-serif;
+  /* font-family: "Neue Haas Grotesk", sans-serif; */
+  font-family: Inter, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
   font-style: normal;
   font-weight: ${props => (props.bold ? 600 : 300)};
   line-height: 142.02%;
