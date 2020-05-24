@@ -5,6 +5,7 @@
   "version": "0.2.0",
   "author": "Matthew Clarke <mclarkestudio@gmail.com>",
   "dependencies": {
+    "@ibm/plex": "^4.0.2",
     "babel-plugin-styled-components": "^1.10.7",
     "element-overlap": "^1.0.1",
     "framer-motion": "^1.10.3",

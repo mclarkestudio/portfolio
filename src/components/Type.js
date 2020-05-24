@@ -4,7 +4,7 @@ import device from "./devices"
 export const Type = styled.div`
   /* BASE TYPEFACE */
   color: black;
-  /* font-family: "Neue Haas Grotesk", sans-serif; */
+  font-family: "Neue Haas Grotesk", sans-serif;
   font-family: Inter, sans-serif;
   font-style: normal;
   font-weight: ${props => (props.bold ? 600 : 300)};
@@ -33,7 +33,7 @@ export const Type = styled.div`
   }
 
   a:hover {
-    font-family: IBM Plex Mono;
+    font-family: 'IBM Plex Mono';
 
     /* Line hieght offsets virticle jump */
     line-height: 120%;
