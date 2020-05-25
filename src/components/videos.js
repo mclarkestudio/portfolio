@@ -37,7 +37,7 @@ const VideoWrapper = ({ children }) => {
 
   // Video Speed
   const setPlayBack = () => {
-    videoRef.current.playbackRate = 1
+    videoRef.current.playbackRate = 1.5
   }
 
   return (
