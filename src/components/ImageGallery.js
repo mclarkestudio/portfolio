@@ -9,7 +9,12 @@ import "swiper/css/swiper.css"
 
 import "./imagegallery.css"
 import device from "./devices"
-import { LiminalVideo, DatavoreWebVideo, DatavoreProductVideo } from "./videos"
+import {
+  LiminalVideo,
+  DatavoreWebVideo,
+  DatavoreProductVideo,
+  SplashlightVideo,
+} from "./videos"
 
 export const ImageWrapper = styled.div`
   padding-bottom: 16px;
@@ -128,6 +133,13 @@ export const ImageGallery = ({ dir, video }) => {
         {dir === "datavore" ? (
           <ImageWrapper>
             <DatavoreWebVideo />
+          </ImageWrapper>
+        ) : (
+          <Fragment></Fragment>
+        )}
+        {dir === "splashlight" ? (
+          <ImageWrapper>
+            <SplashlightVideo />
           </ImageWrapper>
         ) : (
           <Fragment></Fragment>

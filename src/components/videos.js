@@ -2,12 +2,16 @@ import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import device from "./devices"
 
-import LiminalSource from "../videos/liminal.mp4"
-import DatavoreProductSource from "../videos/datavore.mp4"
-import DatavoreWebSource from "../videos/datavore-web.mp4"
+import liminalSource from "../videos/liminal.mp4"
 import liminalScreen from "../images/liminalScreen.png"
-import datavoreWebScreen from "../images/datavoreWebScreen.png"
+
+import datavoreProductSource from "../videos/datavore.mp4"
 import datavoreProductScreen from "../images/datavoreProductScreen.png"
+import datavoreWebSource from "../videos/datavore-web.mp4"
+import datavoreWebScreen from "../images/datavoreWebScreen.png"
+
+import splashlightSource from "../videos/splashlight.mp4"
+import splashlightScreen from "../images/splashlightScreen.png"
 
 const VideoBackground = styled.div`
   display: flex;
@@ -66,7 +70,7 @@ const VideoWrapper = ({ children, poster }) => {
 export const LiminalVideo = () => {
   return (
     <VideoWrapper poster={liminalScreen}>
-      <source src={LiminalSource} type="video/mp4" />
+      <source src={liminalSource} type="video/mp4" />
     </VideoWrapper>
   )
 }
@@ -74,7 +78,7 @@ export const LiminalVideo = () => {
 export const DatavoreWebVideo = () => {
   return (
     <VideoWrapper poster={datavoreWebScreen}>
-      <source src={DatavoreWebSource} type="video/mp4" />
+      <source src={datavoreWebSource} type="video/mp4" />
     </VideoWrapper>
   )
 }
@@ -82,7 +86,15 @@ export const DatavoreWebVideo = () => {
 export const DatavoreProductVideo = () => {
   return (
     <VideoWrapper poster={datavoreProductScreen}>
-      <source src={DatavoreProductSource} type="video/mp4" />
+      <source src={datavoreProductSource} type="video/mp4" />
+    </VideoWrapper>
+  )
+}
+
+export const SplashlightVideo = () => {
+  return (
+    <VideoWrapper poster={splashlightScreen}>
+      <source src={splashlightSource} type="video/mp4" />
     </VideoWrapper>
   )
 }
