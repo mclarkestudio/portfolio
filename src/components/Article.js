@@ -8,6 +8,7 @@ import { Type, Paragraph, StickyTitle, Heading } from "./Type"
 import { ImageGallery } from "./ImageGallery"
 import { WebCopy } from "../copy/webCopy"
 import device from "./devices"
+import { LiminalVideo } from "./videos"
 
 // import Hero2 from "../images/hero2.svg"
 
@@ -86,6 +87,7 @@ const Article = ({ i, ...props }) => {
     return (
       <>
         {/* --- LIMINAL --- */}
+        <LiminalVideo />
         {i.id === firstArticleId && <ImageGallery dir="liminal" />}
         {/* --- DATAVORE --- */}
         {i.id === secondArticleId && <ImageGallery dir="datavore" />}
