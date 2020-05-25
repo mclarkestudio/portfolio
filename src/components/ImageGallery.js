@@ -9,7 +9,7 @@ import "swiper/css/swiper.css"
 
 import "./imagegallery.css"
 import device from "./devices"
-import { LiminalVideo } from "./videos"
+import { LiminalVideo, DatavoreWebVideo, DatavoreProductVideo } from "./videos"
 
 export const ImageWrapper = styled.div`
   padding-bottom: 16px;
@@ -88,8 +88,8 @@ export const ImageGallery = ({ dir, video }) => {
   const gallerySwiperParams = {
     themeColor: "black",
     // getSwiper: getGallerySwiper,
-    spaceBetween: 30,
-    effect: "fade",
+    // spaceBetween: 30,
+    // effect: "fade",
     // autoplay: {
     //   delay: 3000,
     // },
@@ -110,9 +110,24 @@ export const ImageGallery = ({ dir, video }) => {
   return (
     <div>
       <Swiper {...gallerySwiperParams} rebuildOnUpdate>
+        {/* Returning Fragments because swiper always wants a react element? (hack) */}
         {dir === "liminal" ? (
           <ImageWrapper>
             <LiminalVideo />
+          </ImageWrapper>
+        ) : (
+          <Fragment></Fragment>
+        )}
+        {dir === "datavore" ? (
+          <ImageWrapper>
+            <DatavoreProductVideo />
+          </ImageWrapper>
+        ) : (
+          <Fragment></Fragment>
+        )}
+        {dir === "datavore" ? (
+          <ImageWrapper>
+            <DatavoreWebVideo />
           </ImageWrapper>
         ) : (
           <Fragment></Fragment>

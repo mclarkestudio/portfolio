@@ -1,8 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import { ImageWrapper } from "./ImageGallery"
+import device from "./devices"
 
 import LiminalSource from "../videos/liminal.mp4"
+import DatavoreProductSource from "../videos/datavore.mp4"
+import DatavoreWebSource from "../videos/datavore-web.mp4"
 
 const VideoBackground = styled.div`
   display: flex;
@@ -14,7 +16,12 @@ const VideoBackground = styled.div`
 `
 
 const VideoContainer = styled.div`
+  /* @TODO: use media queries soon with image height control */
   width: 70%;
+
+  @media ${device.laptop} {
+    width: 70%;
+  }
 `
 
 const StyledVideo = styled.video`
@@ -28,7 +35,7 @@ const VideoWrapper = ({ children }) => {
   return (
     <VideoBackground>
       <VideoContainer>
-        <StyledVideo width="100%" autoPlay loop>
+        <StyledVideo width="100%" autoPlay loop preload="auto">
           {children}
         </StyledVideo>
       </VideoContainer>
@@ -40,6 +47,22 @@ export const LiminalVideo = () => {
   return (
     <VideoWrapper>
       <source src={LiminalSource} type="video/mp4" />
+    </VideoWrapper>
+  )
+}
+
+export const DatavoreWebVideo = () => {
+  return (
+    <VideoWrapper>
+      <source src={DatavoreWebSource} type="video/mp4" />
+    </VideoWrapper>
+  )
+}
+
+export const DatavoreProductVideo = () => {
+  return (
+    <VideoWrapper>
+      <source src={DatavoreProductSource} type="video/mp4" />
     </VideoWrapper>
   )
 }
