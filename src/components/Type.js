@@ -31,7 +31,6 @@ export const Type = styled.div`
   /* 🔗 LINKS */
   a {
     color: black;
-    /* text-decoration-style: dotted; */
     text-decoration: none;
 
     border-bottom: 2px dotted black;
@@ -45,11 +44,11 @@ export const Type = styled.div`
     font-family: "IBM Plex Mono", Menlo, Consolas, Monaco, "Liberation Mono",
       "Lucida Console", monospace;
     border-bottom: 0px dotted transparent;
-    /* Line hieght offsets virticle jump */
-    line-height: 100%;
-    /* Line hieght offsets virticle jump */
 
-    /* color: #ff0018; */
+    /* Line hieght offsets virticle jump?? */
+    line-height: 100%;
+    /* Line hieght offsets virticle jump?? */
+
     color: ${props => (props.hoverColor ? props.hoverColor : "#ff0018")};
     font-style: italic;
     font-weight: 200;
@@ -89,7 +88,6 @@ export const Heading = styled(Type)`
     "Lucida Console", monospace;
   font-style: italic;
   font-weight: 200;
-  /* color: orangered; */
   font-size: ${props => (props.fontSize ? props.fontSize : "1.7rem")};
 
   @media ${device.tablet} {

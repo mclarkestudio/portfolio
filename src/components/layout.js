@@ -9,18 +9,17 @@ import Contact from "./Contact"
 import "./styles.css"
 
 // Fonts
+// -mc.css only includes font faces used
 import "../static/fonts/Inter/inter-mc.css"
 import "../static/fonts/IBM-Plex/css/ibm-plex-mc.css"
 
 export const TextBlock = styled.div`
   flex: 1 1 auto;
-  /* margin: 1rem auto; */
   max-width: 800px;
 `
 
 export const ContentBlock = styled.div`
   flex: 1 1 auto;
-  /* margin: 1rem auto; */
   max-width: 720px;
   margin: auto;
 `
@@ -28,9 +27,7 @@ export const ContentBlock = styled.div`
 export const Row = styled.div`
   display: flex;
   flex-direction: ${props => (props.mobileRow ? "row" : "column")};
-  /* max-width: 1920px; */
   justify-content: space-between;
-  /* margin: auto; */
 
   @media ${device.tablet} {
     flex-direction: row;
@@ -44,7 +41,6 @@ export const RowItem = styled.div`
   @media ${device.tablet} {
     padding: 1rem 0rem 1rem 0;
   }
-  /* max-width: 800px; */
 `
 
 export const MainLayout = styled.div`
@@ -60,17 +56,15 @@ export const MainLayout = styled.div`
 
 const Layout = ({ children, location }) => {
   return (
-    <>
-      <MainLayout>
-        <main>
-          <PageHeader location={location} />
-          {children}
-          <footer>
-            <Contact />
-          </footer>
-        </main>
-      </MainLayout>
-    </>
+    <MainLayout>
+      <main>
+        <PageHeader location={location} />
+        {children}
+        <footer>
+          <Contact />
+        </footer>
+      </main>
+    </MainLayout>
   )
 }
 

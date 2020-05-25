@@ -18,7 +18,7 @@ const StyledDiv = styled.div`
 `
 
 const NoWrapTitle = styled.span`
-    white-space: nowrap;
+  white-space: nowrap;
 `
 
 const StyledLink = styled.a`
@@ -30,10 +30,12 @@ const StyledLink = styled.a`
 const PageHeader = ({ location }) => {
   var isAbout = location.pathname.includes("about") ? true : false
   var isProjects = location.pathname === "/" ? true : false
-  //   var isOther = !isProjects | !isAbout ? true : false
-  // console.log(location)
 
-  const ProjectsLink = () => <Link to="/" style={{ whiteSpace: 'nowrap' }}>← Projects</Link>
+  const ProjectsLink = () => (
+    <Link to="/" style={{ whiteSpace: "nowrap" }}>
+      ← Projects
+    </Link>
+  )
   const AboutLink = () => <Link to="about">About</Link>
   const AllLinks = () => (
     <>
@@ -49,25 +51,18 @@ const PageHeader = ({ location }) => {
         <Row>
           <RowItem>
             <Type>
-              <NoWrapTitle>
-                Matthew Clarke,&nbsp;
-              </NoWrapTitle>
+              <NoWrapTitle>Matthew Clarke,&nbsp;</NoWrapTitle>
               {isAbout && <ProjectsLink />}
               {isProjects && <AboutLink />}
               {!isAbout && !isProjects && <AllLinks />}
               ,&nbsp;
               <a href="#contact">Contact</a>.
               <br />
-              <span>
-                Design Lead. Product Design and Development.
-              </span>
+              <span>Design Lead. Product Design and Development.</span>
               <br />
               <br />
             </Type>
             <br />
-            {/* <div style={{ width: "70%", maxWidth: "1300px", marginLeft: "auto" }}>
-            <Image />
-          </div> */}
           </RowItem>
           <span>
             <br />
@@ -76,7 +71,7 @@ const PageHeader = ({ location }) => {
             </Type>
             {/* <Type>◭◭∊x ⋰ ⋮⋱⋰⋮ ⋮</Type> */}
             <Type textAlign="right">
-              ❂ <Clock format="h:mm a" interval={1000} ticking={true} /> 
+              ❂ <Clock format="h:mm a" interval={1000} ticking={true} />
             </Type>
           </span>
         </Row>

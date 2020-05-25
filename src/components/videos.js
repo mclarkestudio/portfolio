@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import device from "./devices"
 
@@ -32,10 +32,24 @@ const StyledVideo = styled.video`
 `
 
 const VideoWrapper = ({ children }) => {
+  const videoRef = useRef()
+
+  // Video Speed
+  const setPlayBack = () => {
+    videoRef.current.playbackRate = 0.8
+  }
+
   return (
     <VideoBackground>
       <VideoContainer>
-        <StyledVideo width="100%" autoPlay loop preload="auto">
+        <StyledVideo
+          onCanPlay={() => setPlayBack()}
+          ref={videoRef}
+          width="100%"
+          autoPlay
+          loop
+          preload="auto"
+        >
           {children}
         </StyledVideo>
       </VideoContainer>
