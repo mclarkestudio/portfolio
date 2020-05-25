@@ -1,6 +1,8 @@
 import React from "react"
-import LiminalSource from "../videos/liminal.mp4"
 import styled from "styled-components"
+import { ImageWrapper } from "./ImageGallery"
+
+import LiminalSource from "../videos/liminal.mp4"
 
 const VideoBackground = styled.div`
   display: flex;
@@ -37,7 +39,7 @@ const VideoWrapper = ({ children }) => {
 export const LiminalVideo = () => {
   return (
     <VideoWrapper>
-      <source preload src={LiminalSource} type="video/mp4" />
+      <source src={LiminalSource} type="video/mp4" />
     </VideoWrapper>
   )
 }

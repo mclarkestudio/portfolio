@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import PropTypes from "prop-types"
@@ -11,7 +11,7 @@ import "./imagegallery.css"
 import device from "./devices"
 import { LiminalVideo } from "./videos"
 
-const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div`
   padding-bottom: 16px;
 
   /* -webkit-box-shadow: 4px 15px 81px -15px rgba(255, 0, 0, 0.37);
@@ -33,7 +33,7 @@ export const highQualityFluidImage = graphql`
   }
 `
 
-export const ImageGallery = ({ dir }) => {
+export const ImageGallery = ({ dir, video }) => {
   // Get all images in each /dir in /images/
   // Add an image to /images/liminal/, etc
   const data = useStaticQuery(graphql`
@@ -58,8 +58,8 @@ export const ImageGallery = ({ dir }) => {
   // The array of nodes from graphql
   const dataEdges = data.allFile.edges
   // Group image nodes into directories
-  const fn = R.groupBy(R.path(["node", "relativeDirectory"]))
-  const groupedNodes = fn(dataEdges)
+  const groupImages = R.groupBy(R.path(["node", "relativeDirectory"]))
+  const groupedNodes = groupImages(dataEdges)
   // console.info(groupedNodes, 'Image Nodes Grouped By Directory')
   // Return directory based on props
   function getDirData(dir) {
@@ -93,14 +93,6 @@ export const ImageGallery = ({ dir }) => {
     // autoplay: {
     //   delay: 3000,
     // },
-    // fadeEffect: {
-    //   crossFade: true,
-    // },
-    // navigation: {
-    //   nextEl: ".swiper-button-next swiper-button-black gallery-next",
-    //   prevEl: ".swiper-button-prev swiper-button-black gallery-prev",
-    //   clickable: true,
-    // },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -109,66 +101,22 @@ export const ImageGallery = ({ dir }) => {
       //   return '<span className="' + className + '">' + (index + 1) + "</span>"
       // },
     },
-    // scrollbar: {
-    //   el: ".swiper-scrollbar",
-    //   draggable: true,
-    //   hide: true,
-    // },
     keyboard: {
       enabled: true,
       onlyInViewport: false,
     },
   }
 
-  // const thumbnailSwiperParams = {
-  //   getSwiper: getThumbnailSwiper,
-  //   spaceBetween: 10,
-  //   centeredSlides: true,
-  //   slidesPerView: "auto",
-  //   touchRatio: 0.2,
-  //   slideToClickedSlide: true,
-  //   slideActiveClass: "gallery-thumbs--item__active",
-  //   wrapperClass: "swiper-wrapper",
-  //   a11y: {
-  //     prevSlideMessage: "Previous slide",
-  //     nextSlideMessage: "Next slide",
-  //   },
-  //   mousewheel: true,
-  // }
-
-  // useEffect(() => {
-  //   if (
-  //     gallerySwiper !== null &&
-  //     gallerySwiper.controller &&
-  //     thumbnailSwiper !== null &&
-  //     thumbnailSwiper.controller
-  //   ) {
-  //     gallerySwiper.controller.control = thumbnailSwiper
-  //     thumbnailSwiper.controller.control = gallerySwiper
-  //   }
-  // }, [gallerySwiper, thumbnailSwiper])
-
-  // console.log(gallerySwiper, "Gallery Swiper")
-  // console.log(thumbnailSwiper, "Thumbnail Swiper")
-
   return (
     <div>
-      {/* <div className="gallery-thumbs">
-        <Swiper {...thumbnailSwiperParams}>
-          {renderData.map(i => (
-            <div key={i.node.id} className="gallery-thumbs--item">
-              <Img
-                fluid={i.node.childImageSharp.fluid}
-                alt={i.node.childImageSharp.fluid}
-              />
-            </div>
-          ))}
-        </Swiper>
-      </div> */}
-      <Swiper {...gallerySwiperParams}>
-        <ImageWrapper>{dir === "liminal" && <LiminalVideo />}</ImageWrapper>
-        {/* <LiminalVideo />
-        <LiminalVideo /> */}
+      <Swiper {...gallerySwiperParams} rebuildOnUpdate>
+        {dir === "liminal" ? (
+          <ImageWrapper>
+            <LiminalVideo />
+          </ImageWrapper>
+        ) : (
+          <Fragment></Fragment>
+        )}
         {renderData.map(i => (
           <ImageWrapper>
             <Img
