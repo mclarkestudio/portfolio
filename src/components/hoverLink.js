@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import Type from "./Type"
-import styled from 'styled-components'
+import styled from "styled-components"
 import device from "./devices"
 
 // Mobile links should not have hover state, and should include linkcontent as type
@@ -33,7 +33,6 @@ const DesktopLinkContent = styled.span`
 `
 
 const HoverLink = ({ href, linkContent, hoverContent, hoverColor, props }) => {
-
   const [hovered, setHovered] = useState(false)
   function toggleHover(i) {
     setHovered(!hovered)
@@ -41,9 +40,7 @@ const HoverLink = ({ href, linkContent, hoverContent, hoverColor, props }) => {
 
   return (
     <>
-      <Type 
-        hoverColor={hoverColor}
-        >
+      <Type hoverColor={hoverColor}>
         <a
           onMouseEnter={() => toggleHover()}
           onMouseLeave={() => toggleHover()}
@@ -57,7 +54,7 @@ const HoverLink = ({ href, linkContent, hoverContent, hoverColor, props }) => {
           <br />
         </MobileLinkContent>
         <DesktopLinkContent>
-          {hovered && <span >{hoverContent}</span>}
+          {hovered && <span>{hoverContent}</span>}
         </DesktopLinkContent>
       </Type>
     </>

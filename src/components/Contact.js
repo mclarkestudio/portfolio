@@ -3,7 +3,7 @@ import { Heading } from "./Type"
 import styled from "styled-components"
 import HoverLink from "./hoverLink"
 
-import resume from '../static/Matthew-Clarke-Resume.pdf'
+import resume from "../static/Matthew-Clarke-Resume.pdf"
 import device from "./devices"
 
 const DarkDiv = styled.div`
@@ -11,6 +11,7 @@ const DarkDiv = styled.div`
   color: white;
   padding: 1rem;
 
+  *,
   a {
     color: white;
   }
