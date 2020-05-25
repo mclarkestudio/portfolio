@@ -4,7 +4,21 @@
   max-height: 800px;
 } */
 
-.swiper-pagination-progressbar-fill {
+.swiper-pagination-bullet {
+  opacity: 1;
+  background: white;
+  height: 12px;
+  width: 12px;
+  border: 2px dotted black;
+  margin-top: 4px;
+}
+
+.swiper-pagination-bullet-active {
+  background: black;
+  opacity: 1;
+}
+
+/* .swiper-pagination-progressbar-fill {
   background: yellow !important;
 }
 
@@ -20,10 +34,10 @@
   mix-blend-mode: difference;
 }
 
-/* .gallery-next::after,
+.gallery-next::after,
 .gallery-pre::after {
   padding: 50vh;
-} */
+}
 
 .gallery-thumbs {
   height: 3rem !important;
@@ -35,7 +49,7 @@
   width: 25%;
   height: 5rem !important;
   cursor: pointer;
-  /* z-index: 3; */
+  z-index: 3;
   opacity: 0.5;
   transition: opacity 0.4s;
 }
@@ -43,4 +57,4 @@
 .gallery-thumbs--item:hover,
 .gallery-thumbs--item__active {
   opacity: 1;
-}
+} */

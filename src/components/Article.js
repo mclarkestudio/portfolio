@@ -87,7 +87,6 @@ const Article = ({ i, ...props }) => {
     return (
       <>
         {/* --- LIMINAL --- */}
-        <LiminalVideo />
         {i.id === firstArticleId && <ImageGallery dir="liminal" />}
         {/* --- DATAVORE --- */}
         {i.id === secondArticleId && <ImageGallery dir="datavore" />}

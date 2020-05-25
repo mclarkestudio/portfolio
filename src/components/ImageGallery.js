@@ -5,9 +5,11 @@ import PropTypes from "prop-types"
 import * as R from "ramda"
 import styled from "styled-components"
 import Swiper from "react-id-swiper"
+import "swiper/css/swiper.css"
 
 import "./imagegallery.css"
 import device from "./devices"
+import { LiminalVideo } from "./videos"
 
 const ImageWrapper = styled.div`
   padding-bottom: 16px;
@@ -81,31 +83,36 @@ export const ImageGallery = ({ dir }) => {
   const renderData = getDirData(dir)
 
   // SWIPER -------------------------------------------------------
-  const [gallerySwiper, getGallerySwiper] = useState(null)
-  const [thumbnailSwiper, getThumbnailSwiper] = useState(null)
+  // const [gallerySwiper, getGallerySwiper] = useState(null)
+  // const [thumbnailSwiper, getThumbnailSwiper] = useState(null)
   const gallerySwiperParams = {
     themeColor: "black",
-    getSwiper: getGallerySwiper,
-    spaceBetween: 10,
-    autoplay: {
-      delay: 3000,
-    },
-    fadeEffect: {
-      crossFade: true,
-    },
-    navigation: {
-      // nextEl: ".swiper-button-next swiper-button-black gallery-next",
-      // prevEl: ".swiper-button-prev swiper-button-black gallery-prev",
-      clickable: true,
-    },
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   type: "fraction",
+    // getSwiper: getGallerySwiper,
+    spaceBetween: 30,
+    effect: "fade",
+    // autoplay: {
+    //   delay: 3000,
     // },
+    // fadeEffect: {
+    //   crossFade: true,
+    // },
+    // navigation: {
+    //   nextEl: ".swiper-button-next swiper-button-black gallery-next",
+    //   prevEl: ".swiper-button-prev swiper-button-black gallery-prev",
+    //   clickable: true,
+    // },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      type: "bullets",
+      // renderBullet: (index, className) => {
+      //   return '<span className="' + className + '">' + (index + 1) + "</span>"
+      // },
+    },
     // scrollbar: {
-      // el: ".swiper-scrollbar",
-      // draggable: true,
-      // hide: true,
+    //   el: ".swiper-scrollbar",
+    //   draggable: true,
+    //   hide: true,
     // },
     keyboard: {
       enabled: true,
@@ -113,33 +120,33 @@ export const ImageGallery = ({ dir }) => {
     },
   }
 
-  const thumbnailSwiperParams = {
-    getSwiper: getThumbnailSwiper,
-    spaceBetween: 10,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    touchRatio: 0.2,
-    slideToClickedSlide: true,
-    slideActiveClass: "gallery-thumbs--item__active",
-    wrapperClass: "swiper-wrapper",
-    a11y: {
-      prevSlideMessage: "Previous slide",
-      nextSlideMessage: "Next slide",
-    },
-    mousewheel: true,
-  }
+  // const thumbnailSwiperParams = {
+  //   getSwiper: getThumbnailSwiper,
+  //   spaceBetween: 10,
+  //   centeredSlides: true,
+  //   slidesPerView: "auto",
+  //   touchRatio: 0.2,
+  //   slideToClickedSlide: true,
+  //   slideActiveClass: "gallery-thumbs--item__active",
+  //   wrapperClass: "swiper-wrapper",
+  //   a11y: {
+  //     prevSlideMessage: "Previous slide",
+  //     nextSlideMessage: "Next slide",
+  //   },
+  //   mousewheel: true,
+  // }
 
-  useEffect(() => {
-    if (
-      gallerySwiper !== null &&
-      gallerySwiper.controller &&
-      thumbnailSwiper !== null &&
-      thumbnailSwiper.controller
-    ) {
-      gallerySwiper.controller.control = thumbnailSwiper
-      thumbnailSwiper.controller.control = gallerySwiper
-    }
-  }, [gallerySwiper, thumbnailSwiper])
+  // useEffect(() => {
+  //   if (
+  //     gallerySwiper !== null &&
+  //     gallerySwiper.controller &&
+  //     thumbnailSwiper !== null &&
+  //     thumbnailSwiper.controller
+  //   ) {
+  //     gallerySwiper.controller.control = thumbnailSwiper
+  //     thumbnailSwiper.controller.control = gallerySwiper
+  //   }
+  // }, [gallerySwiper, thumbnailSwiper])
 
   // console.log(gallerySwiper, "Gallery Swiper")
   // console.log(thumbnailSwiper, "Thumbnail Swiper")
@@ -159,6 +166,9 @@ export const ImageGallery = ({ dir }) => {
         </Swiper>
       </div> */}
       <Swiper {...gallerySwiperParams}>
+        <ImageWrapper>{dir === "liminal" && <LiminalVideo />}</ImageWrapper>
+        {/* <LiminalVideo />
+        <LiminalVideo /> */}
         {renderData.map(i => (
           <ImageWrapper>
             <Img
