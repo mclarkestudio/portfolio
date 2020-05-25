@@ -6,6 +6,8 @@ import LiminalSource from "../videos/liminal.mp4"
 import DatavoreProductSource from "../videos/datavore.mp4"
 import DatavoreWebSource from "../videos/datavore-web.mp4"
 import liminalScreen from "../images/liminalScreen.png"
+import datavoreWebScreen from "../images/datavoreWebScreen.png"
+import datavoreProductScreen from "../images/datavoreProductScreen.png"
 
 const VideoBackground = styled.div`
   display: flex;
@@ -32,7 +34,7 @@ const StyledVideo = styled.video`
   border-bottom-style: inset;
 `
 
-const VideoWrapper = ({ children }) => {
+const VideoWrapper = ({ children, poster }) => {
   const videoRef = useRef()
 
   // Video Speed
@@ -44,6 +46,7 @@ const VideoWrapper = ({ children }) => {
     <VideoBackground>
       <VideoContainer>
         <StyledVideo
+          poster={poster}
           ref={videoRef}
           onCanPlay={() => setPlayBack()}
           width="100%"
@@ -51,7 +54,6 @@ const VideoWrapper = ({ children }) => {
           muted
           autoPlay
           loop
-          poster={liminalScreen}
           preload="auto"
         >
           {children}
@@ -63,7 +65,7 @@ const VideoWrapper = ({ children }) => {
 
 export const LiminalVideo = () => {
   return (
-    <VideoWrapper>
+    <VideoWrapper poster={liminalScreen}>
       <source src={LiminalSource} type="video/mp4" />
     </VideoWrapper>
   )
@@ -71,7 +73,7 @@ export const LiminalVideo = () => {
 
 export const DatavoreWebVideo = () => {
   return (
-    <VideoWrapper>
+    <VideoWrapper poster={datavoreWebScreen}>
       <source src={DatavoreWebSource} type="video/mp4" />
     </VideoWrapper>
   )
@@ -79,7 +81,7 @@ export const DatavoreWebVideo = () => {
 
 export const DatavoreProductVideo = () => {
   return (
-    <VideoWrapper>
+    <VideoWrapper poster={datavoreProductScreen}>
       <source src={DatavoreProductSource} type="video/mp4" />
     </VideoWrapper>
   )
