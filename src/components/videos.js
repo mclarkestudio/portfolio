@@ -5,6 +5,7 @@ import device from "./devices"
 import LiminalSource from "../videos/liminal.mp4"
 import DatavoreProductSource from "../videos/datavore.mp4"
 import DatavoreWebSource from "../videos/datavore-web.mp4"
+import liminalScreen from "../images/liminalScreen.png"
 
 const VideoBackground = styled.div`
   display: flex;
@@ -36,18 +37,21 @@ const VideoWrapper = ({ children }) => {
 
   // Video Speed
   const setPlayBack = () => {
-    videoRef.current.playbackRate = 0.8
+    videoRef.current.playbackRate = 1
   }
 
   return (
     <VideoBackground>
       <VideoContainer>
         <StyledVideo
-          onCanPlay={() => setPlayBack()}
           ref={videoRef}
+          onCanPlay={() => setPlayBack()}
           width="100%"
+          playsinline
+          muted
           autoPlay
           loop
+          poster={liminalScreen}
           preload="auto"
         >
           {children}

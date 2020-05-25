@@ -67,9 +67,9 @@ export const ImageGallery = ({ dir, video }) => {
       // If I have props.dir, then lookup dir data in groupedNodes
       case dir:
         var p = dir
-        console.info(
-          `🖼️ Rendering ${groupedNodes[p].length} images from /${p} into ImageGallery`
-        )
+        // console.info(
+        //   `🖼️ Rendering ${groupedNodes[p].length} images from /${p} into ImageGallery`
+        // )
         return groupedNodes[p]
       default:
         console.error(
