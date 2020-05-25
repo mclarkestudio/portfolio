@@ -5,7 +5,6 @@ import styled from "styled-components"
 const VideoBackground = styled.div`
   display: flex;
   padding: 5rem 0;
-
   justify-content: center;
   align-items: center;
 
@@ -19,16 +18,26 @@ const VideoContainer = styled.div`
 const StyledVideo = styled.video`
   box-shadow: 3px 3px 10px 6px #ccc;
   border-radius: 4px;
+  border-bottom: 1px solid white;
+  border-bottom-style: inset;
 `
 
-export const LiminalVideo = () => {
+const VideoWrapper = ({ children }) => {
   return (
     <VideoBackground>
       <VideoContainer>
         <StyledVideo width="100%" autoPlay loop>
-          <source src={LiminalSource} type="video/mp4" />
+          {children}
         </StyledVideo>
       </VideoContainer>
     </VideoBackground>
+  )
+}
+
+export const LiminalVideo = () => {
+  return (
+    <VideoWrapper>
+      <source preload src={LiminalSource} type="video/mp4" />
+    </VideoWrapper>
   )
 }
