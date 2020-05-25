@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: auto;
+  src: url("Inter-Light.woff2?v=3.13") format("woff2"),
+    url("Inter-Light.woff?v=3.13") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 300;
+  font-display: auto;
+  src: url("Inter-LightItalic.woff2?v=3.13") format("woff2"),
+    url("Inter-LightItalic.woff?v=3.13") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: auto;
+  src: url("Inter-SemiBold.woff2?v=3.13") format("woff2"),
+    url("Inter-SemiBold.woff?v=3.13") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 600;
+  font-display: auto;
+  src: url("Inter-SemiBoldItalic.woff2?v=3.13") format("woff2"),
+    url("Inter-SemiBoldItalic.woff?v=3.13") format("woff");
+}
