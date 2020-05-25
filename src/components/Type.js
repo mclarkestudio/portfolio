@@ -5,7 +5,9 @@ export const Type = styled.div`
   /* BASE TYPEFACE */
   color: black;
   /* font-family: "Neue Haas Grotesk", sans-serif; */
-  font-family: Inter, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+    "helvetica neue", helvetica, Ubuntu, roboto, noto, "segoe ui", arial,
+    sans-serif;
   font-style: normal;
   font-weight: ${props => (props.bold ? 600 : 300)};
   line-height: 142.02%;
@@ -33,14 +35,15 @@ export const Type = styled.div`
     text-decoration: none;
 
     border-bottom: 2px dotted black;
-    border-bottom-color: ${props => props.hoverColor ? 'white' : null};
+    border-bottom-color: ${props => (props.hoverColor ? "white" : null)};
     margin-bottom: -1px;
     vertical-align: baseline;
     line-height: 100%;
   }
 
   a:hover {
-    font-family: 'IBM Plex Mono', Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace;
+    font-family: "IBM Plex Mono", Menlo, Consolas, Monaco, "Liberation Mono",
+      "Lucida Console", monospace;
     border-bottom: 0px dotted transparent;
     /* Line hieght offsets virticle jump */
     line-height: 100%;
@@ -82,7 +85,8 @@ export const StickyTitle = styled(StickyDiv)`
 `
 
 export const Heading = styled(Type)`
-  font-family: 'IBM Plex Mono', Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace;
+  font-family: "IBM Plex Mono", Menlo, Consolas, Monaco, "Liberation Mono",
+    "Lucida Console", monospace;
   font-style: italic;
   font-weight: 200;
   /* color: orangered; */
