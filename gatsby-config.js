@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Matthew Clarke. Product Design and Development`,
-    description: `Matthew has spent the past 5 years designing human-centered tools and improving user experience and interface development.`,
+    description: `Matthew is a product designer with 6 years experience helping agile teams craft elegant products and services.`,
     author: `Matthew Clarke`,
   },
   plugins: [
