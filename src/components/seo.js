@@ -61,6 +61,14 @@ function SEO({ description, lang, meta, title }) {
           content: `https://www.mclarkestudio.com` + ogImage,
         },
         {
+          property: `og:image:width`,
+          content: `120`,
+        },
+        {
+          property: `og:image:height`,
+          content: `630`,
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
