@@ -3,7 +3,7 @@ import { Heading } from "./Type"
 import styled from "styled-components"
 import HoverLink from "./hoverLink"
 
-import resume from "../static/Matthew-Clarke-Resume.pdf"
+import resume from "../static/Matthew-Clarke-Product-Design-Lead-Resume.pdf"
 import device from "./devices"
 
 const DarkDiv = styled.div`
@@ -40,7 +40,6 @@ const Contact = () => {
           <StyledLink name="contact">Contact</StyledLink>
         </Heading>
         <hr />
-
         <br />
         <br />
         <HoverLink
