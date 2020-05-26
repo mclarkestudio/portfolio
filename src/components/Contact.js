@@ -40,6 +40,17 @@ const Contact = () => {
           <StyledLink name="contact">Contact</StyledLink>
         </Heading>
         <hr />
+
+        <br />
+        <br />
+        <HoverLink
+          href={resume}
+          linkContent="Download Resume"
+          hoverContent=""
+          hoverColor="white"
+          download
+          target="_blank"
+        />
         <br />
         <br />
         <HoverLink
@@ -80,14 +91,6 @@ const Contact = () => {
         <br />
         <br />
         <br />
-        <HoverLink
-          href={resume}
-          linkContent="Download Resume"
-          hoverContent=""
-          hoverColor="white"
-          download
-          target="_blank"
-        />
         <br />
         <br />
         <br />
