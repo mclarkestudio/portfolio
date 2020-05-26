@@ -24,7 +24,8 @@ const AboutPage = ({ location }) => {
         <Type>
           <div style={{ maxWidth: "800px" }}>
             <span>Hi!</span> I'm Matthew Clarke, a product designer with 6 years
-            experience helping agile teams craft elegant products and services.
+            experience helping agile teams craft and launch new products and
+            services.
             <br />
             <br />
             <Paragraph>
