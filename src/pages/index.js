@@ -9,7 +9,7 @@ const IndexPage = ({ location }) => {
   // Route location is provided by gatsby per page component
   return (
     <>
-      <SEO title="Home" />
+      <SEO title="Matthew Clarke. Product Designer, Developer." />
       <Layout location={location}>
         <br />
         <br />
