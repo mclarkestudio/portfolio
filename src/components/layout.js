@@ -46,7 +46,7 @@ export const RowItem = styled.div`
 export const MainLayout = styled.div`
   padding: 0 1rem;
   margin: 0rem auto;
-  max-width: 1280px;
+  max-width: 1200px;
 
   @media ${device.laptop} {
     padding: 0 3rem;

@@ -14,17 +14,18 @@ import {
   DatavoreWebVideo,
   DatavoreProductVideo,
   SplashlightVideo,
+  SplashlightWebVideo,
 } from "./videos"
 
 export const ImageWrapper = styled.div`
-  padding-bottom: 16px;
+  padding-bottom: 42px;
 
   /* -webkit-box-shadow: 4px 15px 81px -15px rgba(255, 0, 0, 0.37);
   -moz-box-shadow: 4px 15px 81px -15px rgba(0, 0, 0, 0.37);
   box-shadow: 4px 15px 81px -15px rgba(0, 0, 0, 0.37); */
 
   @media ${device.tablet} {
-    padding-bottom: 32px;
+    padding-bottom: 44px;
   }
 `
 
@@ -140,6 +141,13 @@ export const ImageGallery = ({ dir, video }) => {
         {dir === "splashlight" ? (
           <ImageWrapper>
             <SplashlightVideo />
+          </ImageWrapper>
+        ) : (
+          <Fragment></Fragment>
+        )}
+        {dir === "splashlight" ? (
+          <ImageWrapper>
+            <SplashlightWebVideo />
           </ImageWrapper>
         ) : (
           <Fragment></Fragment>

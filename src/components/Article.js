@@ -8,7 +8,6 @@ import { Type, Paragraph, StickyTitle, Heading } from "./Type"
 import { ImageGallery } from "./ImageGallery"
 import { WebCopy } from "../copy/webCopy"
 import device from "./devices"
-import { LiminalVideo } from "./videos"
 
 // import Hero2 from "../images/hero2.svg"
 
@@ -16,6 +15,7 @@ const firstArticleId = WebCopy[0].id
 const secondArticleId = WebCopy[1].id
 const thirdArticleId = WebCopy[2].id
 const fourthArticleId = WebCopy[3].id
+const fifthArticleId = WebCopy[4].id
 
 const RightButton = styled.div`
   margin-left: auto;
@@ -46,17 +46,6 @@ const StyledArticle = styled.article`
   }
 `
 
-const BackHomeButton = ({ i }) => {
-  return (
-    <RightButton>
-      {i.date}
-      {/* <a href="/#home" title="Back to top">
-        <sup>⤴</sup>
-      </a> */}
-    </RightButton>
-  )
-}
-
 const Article = ({ i, ...props }) => {
   // Init references in function component
   // to be declared in JSX ref={}
@@ -74,7 +63,7 @@ const Article = ({ i, ...props }) => {
             <Heading>{i.heading}</Heading>
           </Type>
         </RowItem>
-        <BackHomeButton i={i} />
+        <RightButton>{i.date}</RightButton>
       </Row>
     </StickyTitle>
   )
@@ -94,6 +83,8 @@ const Article = ({ i, ...props }) => {
         {i.id === thirdArticleId && <ImageGallery dir="splashlight" />}
         {/* --- GAGOSIAN --- */}
         {i.id === fourthArticleId && <ImageGallery dir="gallery" />}
+        {/* --- MORE WORK --- */}
+        {i.id === fifthArticleId && <ImageGallery dir="visual" />}
       </>
     )
   }
@@ -106,7 +97,8 @@ const Article = ({ i, ...props }) => {
           <Paragraph>
             <span dangerouslySetInnerHTML={createMarkup()}></span>
           </Paragraph>
-          <Paragraph>{i.para2}</Paragraph>
+          {i.para2 && <Paragraph>{i.para2}</Paragraph>}
+          {i.para3 && <Paragraph>{i.para3}</Paragraph>}
         </TextBlock>
       </RowItem>
       <RowItem>

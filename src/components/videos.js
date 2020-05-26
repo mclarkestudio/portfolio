@@ -12,6 +12,8 @@ import datavoreWebScreen from "../images/datavoreWebScreen.png"
 
 import splashlightSource from "../videos/splashlight.mp4"
 import splashlightScreen from "../images/splashlightScreen.png"
+import splashlightWebSource from "../videos/splashlight-web.mp4"
+import splashlightWebScreen from "../images/splashlightWebScreen.png"
 
 const VideoBackground = styled.div`
   display: flex;
@@ -38,12 +40,12 @@ const StyledVideo = styled.video`
   border-bottom-style: inset;
 `
 
-const VideoWrapper = ({ children, poster }) => {
+const VideoWrapper = ({ children, poster, playbackSpeed }) => {
   const videoRef = useRef()
 
   // Video Speed
   const setPlayBack = () => {
-    videoRef.current.playbackRate = 1.5
+    videoRef.current.playbackRate = playbackSpeed || 1.5
   }
 
   return (
@@ -93,8 +95,16 @@ export const DatavoreProductVideo = () => {
 
 export const SplashlightVideo = () => {
   return (
-    <VideoWrapper poster={splashlightScreen}>
+    <VideoWrapper poster={splashlightScreen} playbackSpeed="1.25">
       <source src={splashlightSource} type="video/mp4" />
+    </VideoWrapper>
+  )
+}
+
+export const SplashlightWebVideo = () => {
+  return (
+    <VideoWrapper poster={splashlightWebScreen}>
+      <source src={splashlightWebSource} type="video/mp4" />
     </VideoWrapper>
   )
 }

@@ -25,7 +25,7 @@ export const Type = styled.div`
   }
 
   @media ${device.laptop} {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   /* 🔗 LINKS */
@@ -58,11 +58,11 @@ export const Type = styled.div`
 
 export const Paragraph = styled(Type)`
   margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 
   @media ${device.tablet} {
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `
 
