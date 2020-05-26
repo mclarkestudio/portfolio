@@ -94,6 +94,14 @@ module.exports = {
         // dataLayerName: "YOUR_DATA_LAYER_NAME",
       },
     },
+    {
+      resolve: `gatsby-plugin-subfont`,
+      options: {
+        silent: true,
+        fallback: false,
+        inlineFonts: true,
+      },
+    },
     // `gatsby-transformer-json`,
     // {
     //   resolve: `gatsby-source-filesystem`,
