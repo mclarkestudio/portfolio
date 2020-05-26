@@ -64,10 +64,10 @@ export const WebCopy = [
   },
   {
     id: "visual",
-    heading: "More work...",
+    heading: "Independent Designs",
     date: "Ongoing",
     para:
-      "The Gagosian Quarterly, in print and online, offers behind-the-art access and editorial content by leading art world professionals. You can find studio visits, artist profiles, and the most recent Gagosian publications. From 2015–2017, we launched the Gagosian Quarterly website in conjuntion with a brand and web redesign by Graphic Thought Facility.",
+      "Over the years, I've been fortunate enough to work on brand identity and strategy for brands including Dolby Laboratories, Olu & Company, Detroit Art Week, New Museum of Contemporary Art, and Vice Media.",
   },
 ]
 

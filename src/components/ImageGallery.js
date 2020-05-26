@@ -93,6 +93,7 @@ export const ImageGallery = ({ dir, video }) => {
   // const [thumbnailSwiper, getThumbnailSwiper] = useState(null)
   const gallerySwiperParams = {
     themeColor: "black",
+    watchOverflow: true,
     // getSwiper: getGallerySwiper,
     // spaceBetween: 30,
     // effect: "fade",
