@@ -42,7 +42,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:url`,
-          content: `http://www.mclarkestudio.com/`,
+          content: `https://www.mclarkestudio.com/`,
         },
         {
           property: `og:title`,
@@ -57,6 +57,10 @@ function SEO({ description, lang, meta, title }) {
           content: `http://www.mclarkestudio.com` + ogImage,
         },
         {
+          property: `og:image:secure_url`,
+          content: `https://www.mclarkestudio.com` + ogImage,
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
@@ -66,7 +70,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: "twitter:image",
-          content: `http://www.mclarkestudio.com` + ogImage,
+          content: `https://www.mclarkestudio.com` + ogImage,
         },
         {
           name: `twitter:creator`,
