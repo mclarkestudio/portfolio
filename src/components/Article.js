@@ -23,6 +23,8 @@ const RightButton = styled.div`
   font-size: 1rem;
   word-wrap: nowrap;
 
+  flex: 0 0 auto;
+
   @media ${device.tablet} {
     font-size: inherit;
     /* font-size: 1.3rem; */
