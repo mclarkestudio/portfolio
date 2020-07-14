@@ -46,6 +46,15 @@ const StyledArticle = styled.article`
   }
 `
 
+const StyledSpan = styled.div`
+  padding-left: 6px;
+  /* font-size: 0.4em; */
+  font-weight: 400;
+  /* color: ${props => props.isOpen ? 'black' : 'lightgray'}; */
+  display: inline-block;
+  transform: ${props => (props.isOpen ? "rotate(180deg)" : "rotate(0deg)")};
+`
+
 const Article = ({ i, ...props }) => {
   // Init references in function component
   // to be declared in JSX ref={}
@@ -60,10 +69,10 @@ const Article = ({ i, ...props }) => {
             <sup>{i.id}</sup>
           </a> */}
           <Type ref={titleRef}>
-            <Heading>{i.heading}</Heading>
+          <Heading>{i.heading}</Heading>
           </Type>
         </RowItem>
-        <RightButton>{i.date}</RightButton>
+        <RightButton>{i.date}<StyledSpan isOpen={isOpen}>{'⇃'}</StyledSpan></RightButton>
       </Row>
     </StickyTitle>
   )
@@ -144,7 +153,7 @@ const Article = ({ i, ...props }) => {
           style={{ cursor: "pointer", display: "contents" }}
         >
           <hr />
-          <StickyHeader i={i} />
+          <StickyHeader i={i} isOpen={isOpen} />
         </motion.header>
         <AnimatePresence initial={false}>
           {isOpen && (

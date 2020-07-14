@@ -4,7 +4,7 @@ export const WebCopy = [
     id: "liminal",
     heading: "Liminal",
     slug: "A personal media library for the web.",
-    role: "Designer, Developer",
+    role: "Principal Designer, Developer",
     resp:
       "Product concept, mobile interface design, desktop interface design, and cross-platform full-stack development.",
     para:
@@ -12,7 +12,7 @@ export const WebCopy = [
     para3:
       "I started Liminal in 2020 to organize my research topics and daily media consumption. It is currently in development in close collaboration with family and friends.",
     para2:
-      "With core feature support for RSS feeds, YouTube media activity, bookmarking, and browser history storage, Liminal provides complete data access to a single timeline of your media consumption––allowing you to track a single topic across a range of sources. Built in knowledge services, such as a structured data inspector and Wikipedia API, allow you to quickly store and discover commonly known people, places, and things.",
+      "With core feature support for RSS feeds, YouTube media activity, bookmarking, and browser history storage, Liminal provides complete data access to a single timeline of your media consumption––allowing you to track a single topic across a range of sources. Built-in knowledge services, such as a structured data inspector and Wikipedia API, allow you to quickly store and discover commonly known people, places, and things.",
     date: "2020+",
   },
   {
@@ -24,7 +24,7 @@ export const WebCopy = [
     para:
       "Datavore is a code-free data platform for advanced time series analysis. It was built for analysts and data scientists to efficiently track indicators across datasets in order to validate and backtest data signals from a wide-range of sources, timelines, and strengths.",
     para2:
-      "Joining the team in 2019, I helped extend the core product to include granular data tagging, a feature that allows analysts to segment and deploy reports for big, real-time datasets. This provides a unique opportunity for data providers and customers to test hypotheses without exchanging raw datasets. It also allieves security concerns from consumers and businesses over personal identity tracing in anonymized datasets––setting a hopeful, optimistic standard for an era of wild-west data exchanges.",
+      "Joining the team in 2019, I helped extend the core product to include granular data tagging, a feature that allows analysts to segment and deploy reports for big, real-time datasets. This provides a unique opportunity for data providers and customers to test hypotheses without exchanging raw datasets. It also allieviates security concerns from consumers and businesses over personal identity tracing in anonymized datasets––setting a hopeful, optimistic standard for an era of wild-west data exchanges.",
     para3:
       "As Design Lead on a 4 person development team, I took a highly iterative approach to the design process. We updated the client interfaces with weekly deploys and prioritized user feedback from analysts and early-adopters at daily standup meetings.",
     slug: "The code-free tool for advanced time-series analysis.",

@@ -39,7 +39,7 @@ const AboutPage = ({ location }) => {
               its mission, and roadmap.
               <br />
               <br />
-              With a background in art and publishing, I'm both a meticulously
+              With a background in art and publishing, I'm both a meticulous
               editor and aesthetically-driven, curious person. I pride myself in
               knowing the fundamentals of human-computer interactions and how to
               ensure consistency in innovative digital products. Before working

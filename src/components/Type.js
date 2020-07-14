@@ -78,7 +78,7 @@ const StickyDiv = styled(Type)`
 `
 
 export const StickyTitle = styled(StickyDiv)`
-  margin-bottom: 3rem;
+  padding-bottom: 3rem;
   z-index: 3;
   transition: background-color 0.45s;
 `
