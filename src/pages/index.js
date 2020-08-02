@@ -18,7 +18,7 @@ const IndexPage = ({ location }) => {
   const [mouseActive, setMouseActive] = useState(false)
   return (
     <>
-      <SEO title="Matthew Clarke. Principal Product Designer, Developer." />
+      <SEO title="Matthew Clarke. Principal Product Designer." />
       <Layout location={location}>
         <hr />
         <br />

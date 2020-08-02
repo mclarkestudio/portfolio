@@ -58,7 +58,7 @@ const PageHeader = ({ location }) => {
               {/* ,&nbsp; */}
               {/* <a href="#contact">Contact</a>. */}
               <br />
-              <span>Principal Product Designer, Developer.</span>
+              <span>Principal Product Designer</span>
               <br />
               <br />
             </Type>
