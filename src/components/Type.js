@@ -3,7 +3,7 @@ import device from "./devices"
 
 export const Type = styled.div`
   /* BASE TYPEFACE */
-  color: black;
+  color: white;
   /* font-family: "Neue Haas Grotesk", sans-serif; */
   font-family: Inter, -apple-system, BlinkMacSystemFont, "avenir next", avenir,
     "helvetica neue", helvetica, Ubuntu, roboto, noto, "segoe ui", arial,

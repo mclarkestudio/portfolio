@@ -51,14 +51,14 @@ const PageHeader = ({ location }) => {
         <Row>
           <RowItem>
             <Type>
-              <NoWrapTitle>Matthew Clarke,&nbsp;</NoWrapTitle>
-              {isAbout && <ProjectsLink />}
+              <NoWrapTitle>Matthew Clarke</NoWrapTitle>
+              {/* {isAbout && <ProjectsLink />}
               {isProjects && <AboutLink />}
-              {!isAbout && !isProjects && <AllLinks />}
-              ,&nbsp;
-              <a href="#contact">Contact</a>.
+              {!isAbout && !isProjects && <AllLinks />} */}
+              {/* ,&nbsp; */}
+              {/* <a href="#contact">Contact</a>. */}
               <br />
-              <span>Design Lead. Product Design and Development.</span>
+              <span>Principal Product Designer, Developer.</span>
               <br />
               <br />
             </Type>
@@ -67,7 +67,7 @@ const PageHeader = ({ location }) => {
           <span>
             <br />
             <Type textAlign="right" whiteSpace="nowrap">
-              ⌖ New York City
+              ⌖ Brooklyn, NY
             </Type>
             {/* <Type>◭◭∊x ⋰ ⋮⋱⋰⋮ ⋮</Type> */}
             <Type textAlign="right">

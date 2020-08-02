@@ -60,9 +60,9 @@ const Layout = ({ children, location }) => {
       <main>
         <PageHeader location={location} />
         {children}
-        <footer>
+        {/* <footer>
           <Contact />
-        </footer>
+        </footer> */}
       </main>
     </MainLayout>
   )

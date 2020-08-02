@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: black;
   padding: 0;
   margin: 0;
 }
@@ -25,5 +25,5 @@ strong {
 
 hr {
   border: transparent 1px solid;
-  border-bottom: 2px dotted #000000;
+  border-bottom: 2px dotted #fff;
 }
