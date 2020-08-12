@@ -25,23 +25,9 @@ const IndexPage = ({ location }) => {
         <br />
         <ParagraphBlock onMouseEnter={e => setMouseActive(false)}>
           <Type>
-            🛈 Matthew is currently designing a new software application to help
+            Matthew is currently designing a new software application to help
             people learn about artists online.
           </Type>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
           <br />
           <br />
           <br />

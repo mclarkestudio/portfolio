@@ -3,12 +3,12 @@ import device from "./devices"
 
 export const Type = styled.div`
   /* BASE TYPEFACE */
-  color: white;
+  color: black;
   /* font-family: "Neue Haas Grotesk", sans-serif; */
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "avenir next", avenir,
-    "helvetica neue", helvetica, Ubuntu, roboto, noto, "segoe ui", arial,
-    sans-serif;
-  font-style: normal;
+  font-family: "IBM Plex Mono", Inter, -apple-system, BlinkMacSystemFont,
+    "avenir next", avenir, "helvetica neue", helvetica, Ubuntu, roboto, noto,
+    "segoe ui", arial, sans-serif;
+  font-style: italic;
   font-weight: ${props => (props.bold ? 600 : 300)};
   line-height: 142.02%;
   white-space: ${props => (props.whiteSpace ? props.whiteSpace : null)};
@@ -25,7 +25,7 @@ export const Type = styled.div`
   }
 
   @media ${device.laptop} {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
   /* 🔗 LINKS */
@@ -34,7 +34,7 @@ export const Type = styled.div`
     text-decoration: none;
 
     border-bottom: 2px dotted black;
-    border-bottom-color: ${props => (props.hoverColor ? "white" : null)};
+    border-bottom-color: ${props => (props.hoverColor ? "pink" : null)};
     margin-bottom: -1px;
     vertical-align: baseline;
     line-height: 100%;
