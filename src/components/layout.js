@@ -49,8 +49,8 @@ export const MainLayout = styled.div`
   max-width: 1200px;
 
   @media ${device.laptop} {
-    padding: 0 3rem;
-    margin: 1.5rem auto;
+    /* padding: 0 3rem; */
+    margin: 0rem auto;
   }
 `
 
