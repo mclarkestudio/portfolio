@@ -29,15 +29,15 @@ export const ImageWrapper = styled.div`
   }
 `
 
-export const highQualityFluidImage = graphql`
-  fragment highQualityFluidImage on File {
-    childImageSharp {
-      fluid(maxWidth: 1280, quality: 100) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-`
+// export const highQualityFluidImage = graphql`
+//   fragment highQualityFluidImage on File {
+//     childImageSharp {
+//       fluid(maxWidth: 1280, quality: 100) {
+//         ...GatsbyImageSharpFluid
+//       }
+//     }
+//   }
+// `
 
 export const ImageGallery = ({ dir, video }) => {
   // Get all images in each /dir in /images/

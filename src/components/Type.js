@@ -5,11 +5,11 @@ export const Type = styled.div`
   /* BASE TYPEFACE */
   color: black;
   /* font-family: "Neue Haas Grotesk", sans-serif; */
-  font-family: "IBM Plex Mono", Inter, -apple-system, BlinkMacSystemFont,
-    "avenir next", avenir, "helvetica neue", helvetica, Ubuntu, roboto, noto,
-    "segoe ui", arial, sans-serif;
-  font-style: italic;
-  font-weight: ${props => (props.bold ? 600 : 300)};
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+    "helvetica neue", helvetica, Ubuntu, roboto, noto, "segoe ui", arial,
+    sans-serif;
+  /* font-style: italic; */
+  font-weight: ${props => (props.bold ? 600 : 200)};
   line-height: 142.02%;
   white-space: ${props => (props.whiteSpace ? props.whiteSpace : null)};
 

@@ -50,18 +50,7 @@ const PageHeader = ({ location }) => {
       <StyledDiv>
         <Row>
           <RowItem>
-            <Type>
-              <NoWrapTitle>Matthew Clarke</NoWrapTitle>
-              {/* {isAbout && <ProjectsLink />}
-              {isProjects && <AboutLink />}
-              {!isAbout && !isProjects && <AllLinks />} */}
-              {/* ,&nbsp; */}
-              {/* <a href="#contact">Contact</a>. */}
-              <br />
-              <span>Principal Product Designer</span>
-              <br />
-              <br />
-            </Type>
+            <Type>Matthew is an artist, designer, and software developer.</Type>
             <br />
           </RowItem>
           <span>
@@ -69,7 +58,7 @@ const PageHeader = ({ location }) => {
             <Type textAlign="right" whiteSpace="nowrap">
               ⌖ Brooklyn, NY
             </Type>
-            {/* <Type>◭◭∊x ⋰ ⋮⋱⋰⋮ ⋮</Type> */}
+            {/* <Type>⋮⋱⋰⋮</Type> */}
             <Type textAlign="right">
               ❂ <Clock format="h:mm a" interval={1000} ticking={true} />
             </Type>
