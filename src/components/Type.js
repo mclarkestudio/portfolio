@@ -20,12 +20,12 @@ export const Type = styled.div`
   font-size: 1.3rem;
 
   @media ${device.tablet} {
-    font-size: 2rem;
+    font-size: 1.3rem;
     text-align: ${props => (props.textAlign ? props.textAlign : null)};
   }
 
   @media ${device.laptop} {
-    font-size: 2rem;
+    font-size: 1.3rem;
   }
 
   /* 🔗 LINKS */
