@@ -16,8 +16,8 @@ import R from "ramda"
 export const highQualityFluidImage = graphql`
   fragment highQualityFluidImage on File {
     childImageSharp {
-      fixed(width: 600, quality: 100) {
-        ...GatsbyImageSharpFixed
+      fluid(maxWidth: 900, quality: 100) {
+        ...GatsbyImageSharpFluid
       }
     }
   }
@@ -54,10 +54,11 @@ const IndexPage = ({ location }) => {
         {/* <Type>☰ ☱ ☲ ☳ ☴ ☵ ☶ ☷</Type> */}
         <hr />
         {/* <LiminalVideo /> */}
+        {/* <Heading>Picture-Rain-Space</Heading> */}
         {renderData.map(i => (
           <Img
             key={i.node.id}
-            fixed={i.node.childImageSharp.fixed}
+            fluid={i.node.childImageSharp.fluid}
             alt={i.node.name}
           />
         ))}

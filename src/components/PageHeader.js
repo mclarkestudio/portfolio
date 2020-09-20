@@ -1,5 +1,5 @@
 import React from "react"
-import Type from "./Type"
+import Type, { Heading } from "./Type"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import device from "./devices"
@@ -7,7 +7,10 @@ import { Row, RowItem } from "./layout"
 import Clock from "react-live-clock"
 
 const StyledDiv = styled.div`
-  /* height: 87vh; */
+  /* position: sticky; */
+  /* top: 0; */
+  /* width: 100%; */
+  /* height: 900px; */
 
   @media ${device.tablet} {
     /* height: 85vh; */
@@ -50,8 +53,9 @@ const PageHeader = ({ location }) => {
       <StyledDiv>
         <Row>
           <RowItem>
-            <Type>Matthew is an artist, designer, and software developer.</Type>
-            <br />
+            <Type>
+              Matthew is an artist, designer, <br /> and software developer.
+            </Type>
           </RowItem>
           <span>
             <br />
@@ -64,6 +68,30 @@ const PageHeader = ({ location }) => {
             </Type>
           </span>
         </Row>
+        <br />
+        <br />
+        <Row>
+          <span style={{ minWidth: "20%" }}>
+            <Type>Currently </Type>
+          </span>
+          <span>
+            <Type>Building a new tool to research art online.</Type>
+          </span>
+        </Row>
+        <br />
+        <br />
+        <Row>
+          <span style={{ minWidth: "20%" }}>
+            <Type>Previously </Type>
+          </span>
+          <span>
+            <Type>
+              Gagosian Gallery, Vice Media, New Museum of Contemporary Art
+            </Type>
+          </span>
+        </Row>
+        <br />
+        <br />
       </StyledDiv>
     </>
   )
