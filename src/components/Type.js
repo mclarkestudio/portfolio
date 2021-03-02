@@ -25,7 +25,7 @@ export const Type = styled.div`
   }
 
   @media ${device.laptop} {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   /* 🔗 LINKS */
